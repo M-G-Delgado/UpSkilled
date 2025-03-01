@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Mission - UpSkilled | Real Learning, Real Value</title>
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="UpSkilled empowers individuals and business partners through practical, in-person learning with local experts. Discover our mission and vision focused on hands-on group learning, dynamic field trips, and team building that replaces boring classrooms with real-life experiences." />
+  <meta name="keywords" content="UpSkilled, In-Person Learning, Hands-on Courses, Practical Skills, Group Learning, Field Trips, Team Building, Real Life Skills, Independence" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="css/nav_footer_styles.css" rel="stylesheet">
+  <style>
+    /* Base Colors and Typography for a Clean Black & White Design */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --primary-color: #000000;
+      --secondary-color: #555555;
+      --accent-color: #000000;
+      --card-bg: #f8f8f8;
+      --nav-bg: #ffffff;
+      --footer-bg: #f1f1f1;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    /* Navigation Bar */
+    .custom-navbar {
+      background-color: var(--nav-bg);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--secondary-color);
+    }
+    .custom-navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    .navbar-nav .nav-link {
+      color: var(--text-color);
+      font-weight: 500;
+      margin-right: 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: var(--accent-color);
+    }
+    /* Main Container */
+    main.container {
+      margin-top: 100px;
+      margin-bottom: 50px;
+    }
+    /* Section Box – Rounded Boxes with Padding */
+    .section-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--secondary-color);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-header img.header-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .section-header p.lead {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Content Box */
+    .content-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    /* Core Values / Mission Cards */
+    .core-values {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .core-value-card {
+      background-color: var(--bg-color);
+      border: 1px solid var(--secondary-color);
+      border-radius: 10px;
+      padding: 1rem;
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .core-value-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: var(--primary-color);
+    }
+    .core-value-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    /* Vision Section */
+    .vision-section {
+      margin-bottom: 2rem;
+    }
+    .vision-section p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    /* Quote Section - New Layout */
+    .quote-section {
+      background-color: #e9e9e9;
+      border-left: 5px solid var(--secondary-color);
+      padding: 1.5rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 800px;
+      text-align: center;
+      font-style: italic;
+      color: var(--secondary-color);
+    }
+    .quote-section p {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .quote-author {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+    /* Team Section */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .team-member {
+      text-align: center;
+      flex: 1 1 250px;
+    }
+    .team-member img {
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .team-member h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+    .team-member p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    /* Footer */
+    .custom-footer {
+      background-color: var(--footer-bg);
+      color: var(--text-color);
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--secondary-color);
+    }
+    .custom-footer a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .custom-footer a:hover {
+      color: var(--accent-color);
+    }
+    /* CTA Buttons */
+    .cta-buttons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 25px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .cta-button:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    .back-to-top:hover {
+      background-color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+    <div class="container-fluid">
+      <!-- "UpSkilled" now links to index.html -->
+      <a class="navbar-brand custom-navbar-brand" href="index.html">UpSkilled</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="customNavbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#selection-heading">Course Catalogue</a></li>
+          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
+          <li class="nav-item"><a class="nav-link active" href="our_mission.html">Our Mission</a></li>
+        </ul>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-globe"></i> English
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Our Mission Section -->
+    <section class="section-box content-box">
+      <header class="section-header">
+        <h2>Our Mission</h2>
+      </header>
+      <p>
+        At UpSkilled, our mission is to empower both customers and business partners. We bring people together for practical, in-person learning with local experts—because real life happens off the screen.
+      </p>
+      <p>
+        For customers, we offer hands-on courses that help you master everyday skills and become more independent. For business partners, we remove the headache of managing advertising, admin tasks, insurance, and payment fees. Our approach cuts out the red tape and saves you money—so you can focus on what truly matters.
+      </p>
+      <p>
+        Imagine a world where you gain valuable skills, save time and money, and live with greater freedom. Join us and turn that dream into reality.
+      </p>
+      <p class="text-center">
+        <a class="cta-button" href="become_a_partner.html">Join UpSkilled Today</a>
+      </p>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="section-box vision-section">
+      <header class="section-header">
+        <h2>Our Vision</h2>
+      </header>
+      <p>
+        We envision a future where learning is dynamic and collaborative. At UpSkilled, we believe that group learning, field trips, and hands-on experiences are far more valuable than sitting in a dull classroom. We see schools and universities taking students on interactive field trips where they learn by doing, not just by listening.
+      </p>
+      <p>
+        We also believe in the power of team building through practical experiences—imagine your colleagues learning together how to fix, build, or create, forging stronger bonds and a more creative, independent work environment.
+      </p>
+      <p>
+        Our vision is about more than education. It's about inspiring independence, real-world problem solving, and a genuine love for learning. We want to replace boring lectures with engaging, practical experiences that transform lives.
+      </p>
+      <div class="quote-section">
+        <p>"A donkey laden with books is neither an intellectual nor wise."</p>
+        <p class="quote-author">Saadi Shirazi, Ancient Persian Poet</p>
+      </div>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="section-box">
+      <header class="section-header">
+        <h2>Meet the Team</h2>
+      </header>
+      <div class="team">
+        <article class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Michael Delgado - Founder">
+          <h3>Michael Delgado</h3>
+          <p>Founder</p>
+          <p>
+            Michael leads UpSkilled with a passion for practical learning and a vision to transform everyday life.
+          </p>
+        </article>
+        <article class="team-member">
+          <img src="https://via.placeholder.com/150" alt="Alexandra Cicoare - Sales &amp; Relationships">
+          <h3>Alexandra Cicoare</h3>
+          <p>Sales &amp; Relationships</p>
+          <p>
+            Alexandra drives growth and builds strong partnerships so that our mission reaches every community.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta-buttons">
+      <a class="cta-button" href="index.html#selection-heading">View Course Catalogue</a>
+      <a class="cta-button" href="become_a_partner.html">Offer Courses</a>
+      <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">&#x2191;</button>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="custom-social-icons mb-3">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="quick-links mb-3">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms &amp; Conditions</a> |
+        <a href="become_a_partner.html">Become a Partner</a> |
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Minimal Back-to-Top Script -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+      backToTopButton.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+  </script>
+</body>
+</html>

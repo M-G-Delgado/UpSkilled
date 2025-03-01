@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UpSkilled – Transform Your Skills with Hands-On Learning</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Join UpSkilled for immersive, in-person workshops led by local experts. Learn practical skills that empower you to fix, build, and create – no more endless tutorials!" />
+  <meta name="keywords" content="UpSkilled, hands-on learning, DIY, skill workshops, practical training, local experts" />
+  <link rel="canonical" href="https://www.yourwebsite.com/index.html" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="UpSkilled – Transform Your Skills with Hands-On Learning" />
+  <meta property="og:description" content="Stop watching tutorials and start doing! UpSkilled offers immersive workshops taught by local experts." />
+  <meta property="og:image" content="https://placehold.co/600x400?text=Real+Learning" />
+  <meta property="og:url" content="https://www.yourwebsite.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UpSkilled – Transform Your Skills with Hands-On Learning" />
+  <meta name="twitter:description" content="Join UpSkilled for immersive, in-person workshops that give you practical, real-world skills." />
+  <meta name="twitter:image" content="https://placehold.co/600x400?text=Real+Learning" />
+
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" />
+
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand custom-navbar-brand" href="index.html">UpSkilled</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="customNavbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#selection-heading">Browse Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
+          <li class="nav-item"><a class="nav-link" href="our_mission.html">Our Mission</a></li>
+        </ul>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Get Help</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i> English</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item lang-option" data-lang="en" href="#">English</a></li>
+              <li><a class="dropdown-item lang-option" data-lang="de" href="#">Deutsch</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <img src="https://placehold.co/40x40?text=User" id="profileIcon" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#authModalTopRight">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="container-fluid p-0">
+    <section class="hero-banner" role="banner">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="https://placehold.co/600x400?text=Course+Banner"
+        aria-label="Background video"
+        loading="lazy"
+      >
+        <source src="vid/banner_vid2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-fallback-carousel carousel slide" data-bs-ride="carousel" style="display: none;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://placehold.co/600x400?text=Slide+1" class="d-block w-100" alt="Slide 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://placehold.co/600x400?text=Slide+2" class="d-block w-100" alt="Slide 2" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://placehold.co/600x400?text=Slide+3" class="d-block w-100" alt="Slide 3" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title" id="heroTitle">Transform Your Skills with Hands-On Learning</h1>
+        <p class="hero-subtitle">
+          Join UpSkilled and step into immersive, in-person workshops led by local experts. Leave endless tutorials behind and start doing!
+        </p>
+        <a href="#selection-heading" class="btn btn-primary" style="background-color: var(--accent-color); border: none; padding: 0.75rem 1.5rem;">Find Your Workshop Today</a>
+      </div>
+    </section>
+  </header>
+
+  <!-- Sales Letter Section -->
+  <section class="sales-letter">
+    <div class="container">
+      <h2>Discover the Power of Real-World Learning</h2>
+      <p>
+        Imagine saving money and gaining confidence by learning skills from experts. UpSkilled offers a proven 70/30 method—70% hands-on practice and 30% expert demo—to ensure you leave with real, applicable skills.
+      </p>
+      <ul class="benefits">
+        <li><strong>Save Money:</strong> Learn cost-saving DIY techniques.</li>
+        <li><strong>Expert Guidance:</strong> Train with trusted local pros.</li>
+        <li><strong>Personalized Learning:</strong> Enjoy small group attention.</li>
+        <li><strong>Practical Resources:</strong> Get take-home guides.</li>
+      </ul>
+      <p class="text-center mt-3">
+        <a href="#courseListing" class="btn btn-primary" style="background-color: var(--accent-color); border: none; padding: 0.75rem 1.5rem;">Join a Workshop Now</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Selection Section -->
+  <section class="selection-section mb-4" id="selection-heading">
+    <div class="card selection-card mx-auto" style="max-width: 800px;">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-4">Find Your Next Workshop</h3>
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="courseSearch" class="form-label">Search Courses</label>
+            <input
+              type="text"
+              id="courseSearch"
+              class="form-control"
+              placeholder="e.g., Car Maintenance"
+              aria-label="Search for courses"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="city" class="form-label">Choose a City</label>
+            <select class="form-select" id="city" aria-label="Select City"></select>
+          </div>
+          <div class="col-md-6">
+            <label for="category" class="form-label">Choose a Course Category</label>
+            <select class="form-select" id="category" aria-label="Select Course Category"></select>
+          </div>
+        </div>
+        <div class="sorting-control mt-3 d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <label for="sortCourses" class="fw-bold me-1">Sort By:</label>
+            <select id="sortCourses" class="form-select form-select-sm" style="max-width: 180px;">
+              <option value="default">Default</option>
+              <option value="mostReviews">Most Reviews</option>
+              <option value="leastReviews">Least Reviews</option>
+            </select>
+          </div>
+        </div>
+        <p id="categoryIntro" class="mt-3">Pick a course category to see more details.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="courseListing">
+    <div class="course-listings-wrapper">
+      <div id="loadingSpinner" class="text-center" style="display: none; color: #fff; font-size: 1.2rem;">
+        Loading courses, please wait...
+      </div>
+      <div id="course-container" class="course-container">
+        <p id="noCourses" style="display: none; color: #fff; text-align: center; font-size: 1.2rem;">
+          No courses found. Try another city or category!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter container">
+    <h2 class="section-heading" id="newsletterTitle">Get Early Access</h2>
+    <p id="newsletterText">
+      Subscribe now for exclusive early access, member discounts, and expert DIY tips!
+    </p>
+    <form action="#" method="post">
+      <input type="text" name="city" placeholder="Enter your city" required />
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit" class="btn btn-primary" id="subscribeButton">Join the Movement</button>
+    </form>
+    <p style="font-size: 0.9rem; margin-top: 1rem;">Coming Soon: Trade skills with UpSkilled Swap!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="custom-social-icons mb-3">
+        <a href="#"><i class="fas fa-instagram"></i></a>
+        <a href="#"><i class="fas fa-twitter"></i></a>
+        <a href="#"><i class="fas fa-facebook-f"></i></a>
+      </div>
+      <div class="quick-links mb-3">
+        <a href="privacy.html" id="footerPrivacy">Privacy Policy</a> |
+        <a href="terms.html" id="footerTerms">Terms & Conditions</a> |
+        <a href="become_a_partner.html" id="footerPartner">Become a Partner</a> |
+        <a href="contact.html" id="footerContact">Get Help</a>
+      </div>
+      <p>Training 5,000 underserved learners by 2030. Join the movement!</p>
+      <p>© 2025 UpSkilled. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Course Details Modal -->
+  <div class="modal fade" id="courseDetailsModal" tabindex="-1" aria-labelledby="courseDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseDetailsModalLabel">
+            <span id="modalCourseTitle" class="display-5 fw-bold">Course Title</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
+          <ul class="nav nav-tabs sticky-tabs" id="courseTab" role="tablist" aria-label="Course information tabs">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="details-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#details"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="details"
+              >
+                <span id="detailsTabText" class="fw-medium">Details</span>
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="reviews-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#reviews"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="reviews"
+              >
+                <span id="reviewsTabText" class="fw-medium">Success Stories</span>
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="booking-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#booking"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="booking"
+              >
+                <span id="bookingTabText" class="fw-medium">Booking</span>
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="courseTabContent">
+            <!-- Details Tab -->
+            <div class="tab-pane fade show active p-3" id="details" role="tabpanel" aria-labelledby="details-tab">
+              <div class="course-details-container">
+                <p id="modalCourseDescription" class="lead-text fs-5 fw-normal mb-4">
+                  Experience our proven 70/30 method – 70% hands-on practice, 30% expert demo – and gain skills you can use immediately.
+                </p>
+                <div class="course-highlights mb-4">
+                  <h6 class="fs-5 fw-bold text-primary mb-2">What You’ll Learn</h6>
+                  <ul id="modalCourseBullets" class="list-unstyled"></ul>
+                </div>
+                <div class="course-meta mb-4">
+                  <p class="fs-5 fw-bold mb-2"><strong>Level:</strong> <span id="modalCourseLevel"></span></p>
+                  <p class="fs-5 fw-bold mb-2"><strong>Max Class Size:</strong> <span id="courseMaxClassSize" class="fw-medium"></span> Learners</p>
+                </div>
+                <div class="course-gallery mb-4">
+                  <div id="modalCourseImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="modalCourseImagesInner"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#modalCourseImagesCarousel" data-bs-slide="prev" aria-label="Previous Image">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#modalCourseImagesCarousel" data-bs-slide="next" aria-label="Next Image">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="course-instructor-business mt-4">
+                  <div class="instructor-details mb-3">
+                    <img id="modalInstructorImage" src="" alt="Instructor Image" style="width:80px; height:80px; border-radius:50%;" />
+                    <div id="modalInstructorName" class="fw-bold mt-2">Instructor Name</div>
+                    <div id="modalInstructorExp" class="fs-6">Instructor Experience</div>
+                  </div>
+                  <div class="business-details">
+                    <img id="modalBusinessImage" src="" alt="Business Image" style="width:80px; height:80px;" />
+                    <div id="modalBusinessName" class="fw-bold mt-2">Business Name</div>
+                    <div id="modalBusinessBadge" class="fs-6">Business Badge</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Success Stories Tab -->
+            <div class="tab-pane fade p-3" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+              <div class="reviews-header mb-3 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <label for="reviewsSortSelect" class="fw-bold me-1">Sort by:</label>
+                  <select id="reviewsSortSelect" class="form-select form-select-sm" style="max-width: 180px;">
+                    <option value="latest" selected>Latest</option>
+                    <option value="highest">Highest Rated</option>
+                    <option value="lowest">Lowest Rated</option>
+                  </select>
+                </div>
+                <div id="modalRating" class="fs-4 fw-bold"></div>
+              </div>
+              <div id="modalReviewCount" class="text-muted fs-6 mt-2"></div>
+              <div id="modalReviews" class="reviews-list">
+                <!-- Reviews will be loaded here dynamically -->
+              </div>
+            </div>
+            <!-- Booking Tab -->
+            <div class="tab-pane fade p-3" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+              <h4 id="bookingTabHeading" class="fs-4 fw-bold text-center mb-3">Risk-Free Booking</h4>
+              <form id="bookingForm" class="mb-3" style="max-width: 600px; margin: 0 auto;">
+                <div class="row g-2 date-attendees">
+                  <div class="col-12">
+                    <label class="form-label fs-5 fw-bold" id="selectDateLabel">Select Date</label>
+                    <div id="dateOptions" class="d-flex flex-column align-items-center justify-content-center gap-2" style="width: 100%;"></div>
+                  </div>
+                  <div class="col-12">
+                    <label for="attendees" class="form-label fs-5 fw-bold" id="attendeesLabel">Attendees</label>
+                    <select id="attendees" class="form-select" style="max-width: 200px; margin: 0 auto;">
+                      <option value="1">1</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="courseLength" style="text-align: center; font-weight: bold; margin-top: 1rem;"></div>
+                <div class="mt-3 text-center">
+                  <label class="form-label fs-6 fw-bold" id="totalPriceLabel">Total Price (incl. 19% VAT)</label>
+                  <p id="totalPrice" class="fs-3 fw-bold">€0.00</p>
+                  <p class="price-details fs-6 fw-normal">
+                    Base Price: €<span id="basePrice">0.00</span> | Tax (19%): €<span id="taxAmount">0.00</span>
+                  </p>
+                </div>
+                <div class="mt-3 text-center gamification-section">
+                  <p id="skillPoints" class="fs-5 fw-bold text-success">Earn XX Skill Points</p>
+                  <p id="userLevel" class="fs-6 fw-bold">Level: Explorer</p>
+                  <div class="progress" style="max-width: 200px; margin: 0 auto;">
+                    <div id="levelProgressBar" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                  <button type="button" class="btn btn-primary fs-5 fw-medium" id="reserveSpotButton" style="width: 150px;">Reserve Spot</button>
+                  <button type="button" class="btn btn-secondary fs-5 fw-medium" id="contactButton">Get Help</button>
+                </div>
+              </form>
+              <div class="booking-guarantee mt-3">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div class="p-3 border rounded" style="background-color: #e8f5e9;">
+                      <h6 class="fw-bold text-success">7 Day Money Back Guarantee</h6>
+                      <p class="mb-0">Not satisfied? Request a full refund within 7 days.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div class="p-3 border rounded" style="background-color: #fff3e0;">
+                      <h6 class="fw-bold text-warning">24 Hour Cancellation Policy</h6>
+                      <p class="mb-0">Cancel at least 24 hours in advance for a full refund.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary fs-5 fw-medium" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal -->
+  <div class="modal fade" id="imageLightboxModal" tabindex="-1" aria-labelledby="imageLightboxModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img id="lightboxImage" src="" class="img-fluid w-100" alt="Large Image" />
+        </div>
+        <div class="modal-footer p-2">
+          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login/Signup Modal (Positioned Top and Right, 7% Margins on Larger Screens) -->
+  <div class="modal fade" id="authModalTopRight" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-top-right">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Become a Member!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="authForm">
+            <div class="mb-3">
+              <input type="email" class="form-control" id="authEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <input type="password" class="form-control" id="authPassword" placeholder="Enter your password" required>
+            </div>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+              <button type="submit" class="btn btn-primary" id="loginButton">Log In</button>
+              <div class="auth-divider"></div>
+              <button type="submit" class="btn btn-secondary" id="signupButton">Sign Up</button>
+            </div>
+          </form>
+          <p class="mt-2 text-center">Forgot password? <a href="#" id="forgotPasswordLink">Reset it</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Popup -->
+  <div id="siteNotice" class="notice-box">
+    <div class="notice-text">
+      <p>We use cookies to ensure the best experience on our website. Some are essential for functionality, while others help us analyze and improve our services. By clicking "Accept," you agree to our use of cookies as described in our <a href="privacy.html" target="_blank">Privacy Policy</a>.</p>
+      <div class="notice-options">
+        <button id="agreeNotice" class="btn btn-primary">Accept</button>
+        <button id="disagreeNotice" class="btn btn-secondary">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <button class="custom-back-to-top" aria-label="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Inline Notification Script (Google Analytics removed) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const noticeBox = document.getElementById("siteNotice");
+      const agreeButton = document.getElementById("agreeNotice");
+      const disagreeButton = document.getElementById("disagreeNotice");
+      const consent = localStorage.getItem("userChoice");
+
+      if (consent === "accepted") {
+        noticeBox.style.display = "none";
+      } else if (consent === "declined") {
+        noticeBox.style.display = "none";
+      } else {
+        setTimeout(() => { noticeBox.style.display = "block"; }, 100);
+      }
+
+      agreeButton.addEventListener("click", function() {
+        localStorage.setItem("userChoice", "accepted");
+        noticeBox.style.display = "none";
+      });
+
+      disagreeButton.addEventListener("click", function() {
+        localStorage.setItem("userChoice", "declined");
+        noticeBox.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>

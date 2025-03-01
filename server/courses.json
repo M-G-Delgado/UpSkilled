@@ -1,0 +1,1186 @@
+{
+  "Frankfurt am Main": {
+    "Car Maintenance": [
+      {
+        "courseId": "FRA-CM-001",
+        "title": "Fundamentals of Car Maintenance",
+        "description": "Tired of costly repairs? Discover car maintenance basics in this hands-on workshop. Master oil changes and tire checks to save money and drive confidently. Enroll now to keep your car running smoothly!",
+        "details": [
+          "Learn to perform oil changes with expert techniques to extend engine life",
+          "Master tire pressure and fluid checks using pro gauges for safer driving",
+          "Identify wear signs with guided practice to prevent breakdowns and costs",
+          "Gain hands-on skills with tools to maintain your car like a mechanic"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Car+Maintenance+1",
+            "alt": "Car maintenance workshop with tools and equipment"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1031/1031684.png",
+            "text": "Oil Change",
+            "alt": "Icon of an oil can"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/3209/3209515.png",
+            "text": "Tire Inspection",
+            "alt": "Icon of a tire gauge"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/861/861060.png",
+            "text": "Brake Check",
+            "alt": "Icon of brake pads"
+          }
+        ],
+        "duration": "3 hours",
+        "price": "€50",
+        "level": "Beginner",
+        "prerequisites": [
+          "Basic car knowledge"
+        ],
+        "maxClassSize": 10,
+        "skillTags": [
+          "DIY",
+          "Automotive",
+          "Maintenance"
+        ],
+        "equipmentProvided": [
+          "Basic toolkit",
+          "Safety gloves"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Mark Mechanic",
+          "experience": "Over 10 years in car repair and maintenance",
+          "image": "https://randomuser.me/api/portraits/men/11.jpg"
+        },
+        "business": {
+          "name": "Frankfurt AutoCare",
+          "badge": "Certified Auto Service",
+          "image": "https://cdn-icons-png.flaticon.com/128/1946/1946436.png"
+        },
+        "venue": "Frankfurt Vehicle Center",
+        "certification": "Basic Car Maintenance Certificate",
+        "learningOutcomes": [
+          "Perform routine oil changes",
+          "Inspect tire pressure and fluids",
+          "Identify early signs of wear",
+          "Apply preventive maintenance techniques"
+        ],
+        "dates": [
+          {
+            "date": "March 20, 2025 (9:00 AM - 12:00 PM)",
+            "spotsAvailable": 8,
+            "status": "Open"
+          },
+          {
+            "date": "April 10, 2025 (1:00 PM - 4:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          },
+          {
+            "date": "May 5, 2025 (10:00 AM - 1:00 PM)",
+            "spotsAvailable": 6,
+            "status": "Open"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Alice",
+            "date": "2025-03-21",
+            "rating": 4,
+            "text": "The course provided a solid introduction to car maintenance. I now feel confident performing basic repairs on my own."
+          },
+          {
+            "name": "Bob",
+            "date": "2025-03-22",
+            "rating": 5,
+            "text": "Excellent hands-on experience with clear instructions. The demonstrations were thorough and very helpful."
+          },
+          {
+            "name": "Charlie",
+            "date": "2025-03-23",
+            "rating": 4,
+            "text": "Very practical workshop that covers essential maintenance techniques. The instructor was knowledgeable and engaging."
+          }
+        ]
+      },
+      {
+        "courseId": "FRA-CM-002",
+        "title": "Advanced Diagnostic Techniques",
+        "description": "Engine trouble? Unlock pro-level diagnostics in this workshop. Learn OBD-II scanning and troubleshooting to fix issues fast. Boost your skills and confidence—sign up today!",
+        "details": [
+          "Decode OBD-II scans with expert guidance to diagnose issues accurately",
+          "Troubleshoot engine problems using real-world scenarios and tools",
+          "Analyze vehicle performance with advanced techniques to optimize fixes"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Car+Maintenance+2",
+            "alt": "Advanced diagnostic workshop setup"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480728.png",
+            "text": "Diagnostics",
+            "alt": "Diagnostic tools icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480741.png",
+            "text": "Engine Check",
+            "alt": "Engine icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480733.png",
+            "text": "Troubleshooting",
+            "alt": "Wrench icon"
+          }
+        ],
+        "duration": "4 hours",
+        "price": "€75",
+        "level": "Intermediate",
+        "prerequisites": [
+          "Fundamentals of Car Maintenance"
+        ],
+        "maxClassSize": 8,
+        "skillTags": [
+          "Diagnostics",
+          "Automotive",
+          "Engine"
+        ],
+        "equipmentProvided": [
+          "OBD-II scanner",
+          "Diagnostic tools"
+        ],
+        "language": "English",
+        "isFeatured": false,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Lisa Diagnostics",
+          "experience": "Over 12 years in automotive diagnostics",
+          "image": "https://randomuser.me/api/portraits/women/22.jpg"
+        },
+        "business": {
+          "name": "Frankfurt AutoTech",
+          "badge": "Expert Diagnostics",
+          "image": "https://cdn-icons-png.flaticon.com/128/4800/4800090.png"
+        },
+        "venue": "Frankfurt Diagnostic Center",
+        "certification": "Advanced Diagnostic Certificate",
+        "learningOutcomes": [
+          "Interpret complex diagnostic codes",
+          "Operate modern diagnostic tools",
+          "Troubleshoot engine issues effectively",
+          "Apply advanced maintenance techniques"
+        ],
+        "dates": [
+          {
+            "date": "March 25, 2025 (10:00 AM - 2:00 PM)",
+            "spotsAvailable": 6,
+            "status": "Open"
+          },
+          {
+            "date": "April 15, 2025 (2:00 PM - 6:00 PM)",
+            "spotsAvailable": 4,
+            "status": "Open"
+          },
+          {
+            "date": "May 10, 2025 (9:00 AM - 1:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Diana",
+            "date": "2025-03-26",
+            "rating": 5,
+            "text": "A challenging course that provided deep insights into advanced diagnostics. I learned to use OBD-II tools more effectively and troubleshoot engine problems with precision."
+          },
+          {
+            "name": "Ethan",
+            "date": "2025-03-27",
+            "rating": 4,
+            "text": "The hands-on practice was excellent. The course improved my troubleshooting skills significantly and clarified complex diagnostic processes."
+          },
+          {
+            "name": "Fiona",
+            "date": "2025-03-28",
+            "rating": 5,
+            "text": "Very comprehensive and detailed. The instructor explained complex concepts clearly, and the practical sessions were extremely beneficial."
+          }
+        ]
+      },
+      {
+        "courseId": "FRA-CM-003",
+        "title": "Brake System Inspection & Maintenance",
+        "description": "Brake woes? Dive into this safety-first course to master brake care. Learn inspection and repair skills to ensure reliability. Join now to drive with peace of mind!",
+        "details": [
+          "Inspect brake pads and rotors with pro tools to ensure top-notch safety",
+          "Test hydraulic systems hands-on to maintain flawless braking performance",
+          "Repair brakes with expert techniques to keep your vehicle road-ready"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Brake+Maintenance",
+            "alt": "Brake system inspection in progress"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480735.png",
+            "text": "Brake Check",
+            "alt": "Icon of brake pads"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1063/1063736.png",
+            "text": "Safety",
+            "alt": "Icon representing safety"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480744.png",
+            "text": "Inspection",
+            "alt": "Inspection icon"
+          }
+        ],
+        "duration": "3.5 hours",
+        "price": "€65",
+        "level": "Beginner",
+        "prerequisites": [
+          "Basic Car Maintenance"
+        ],
+        "maxClassSize": 10,
+        "skillTags": [
+          "Brakes",
+          "Safety",
+          "DIY"
+        ],
+        "equipmentProvided": [
+          "Brake tools",
+          "Inspection checklist"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Samuel Brake",
+          "experience": "9 years in brake system maintenance",
+          "image": "https://randomuser.me/api/portraits/men/33.jpg"
+        },
+        "business": {
+          "name": "Frankfurt BrakeWorks",
+          "badge": "Brake Specialist",
+          "image": "https://cdn-icons-png.flaticon.com/128/1946/1946440.png"
+        },
+        "venue": "Frankfurt Brake Workshop",
+        "certification": "Brake Maintenance Certificate",
+        "learningOutcomes": [
+          "Inspect brake components thoroughly",
+          "Perform essential brake repairs",
+          "Ensure overall vehicle safety"
+        ],
+        "dates": [
+          {
+            "date": "March 30, 2025 (8:00 AM - 12:00 PM)",
+            "spotsAvailable": 10,
+            "status": "Open"
+          },
+          {
+            "date": "April 20, 2025 (10:00 AM - 2:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          },
+          {
+            "date": "May 15, 2025 (9:00 AM - 1:00 PM)",
+            "spotsAvailable": 5,
+            "status": "Open"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "George",
+            "date": "2025-03-31",
+            "rating": 4,
+            "text": "A thorough course covering all aspects of brake system maintenance. The practical sessions were very informative."
+          },
+          {
+            "name": "Helen",
+            "date": "2025-04-01",
+            "rating": 4,
+            "text": "Clear and effective demonstrations made it easy to understand brake inspections and repairs."
+          },
+          {
+            "name": "Ian",
+            "date": "2025-04-02",
+            "rating": 5,
+            "text": "Excellent hands-on training that significantly improved my understanding of brake systems."
+          }
+        ]
+      }
+    ],
+    "Baking & Pastry": [
+      {
+        "courseId": "FRA-BP-001",
+        "title": "Artisan Bread Crafting",
+        "description": "Craving bakery-fresh bread? Join this hands-on workshop to master artisan techniques. Learn sourdough and shaping for irresistible loaves. Bake like a pro—enroll today!",
+        "details": [
+          "Craft sourdough starters from scratch for authentic, tangy bread flavors",
+          "Shape dough with pro techniques to create perfect, bakery-style loaves",
+          "Bake artisan bread with expert methods for a crispy crust and soft core"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Artisan+Bread",
+            "alt": "Artisan bread being crafted"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2917/2917999.png",
+            "text": "Sourdough",
+            "alt": "Icon of sourdough starter"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2797/2797084.png",
+            "text": "Fermentation",
+            "alt": "Fermentation process icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2465/2465672.png",
+            "text": "Baking",
+            "alt": "Oven icon"
+          }
+        ],
+        "duration": "5 hours",
+        "price": "€60",
+        "level": "Beginner",
+        "prerequisites": [
+          "Basic kitchen skills"
+        ],
+        "maxClassSize": 12,
+        "skillTags": [
+          "Baking",
+          "Artisan",
+          "Bread"
+        ],
+        "equipmentProvided": [
+          "Oven access",
+          "Mixing bowls",
+          "Baking tools"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Olivia Baker",
+          "experience": "8 years in artisan baking",
+          "image": "https://randomuser.me/api/portraits/women/31.jpg"
+        },
+        "business": {
+          "name": "Frankfurt Breadworks",
+          "badge": "Award-Winning Bakery",
+          "image": "https://cdn-icons-png.flaticon.com/128/2809/2809840.png"
+        },
+        "venue": "Frankfurt Culinary Institute",
+        "certification": "Artisan Bread Certificate",
+        "learningOutcomes": [
+          "Master sourdough starter creation",
+          "Understand fermentation science",
+          "Produce bakery-quality artisan bread"
+        ],
+        "dates": [
+          {
+            "date": "March 22, 2025 (8:00 AM - 1:00 PM)",
+            "spotsAvailable": 10,
+            "status": "Open"
+          },
+          {
+            "date": "April 12, 2025 (9:00 AM - 2:00 PM)",
+            "spotsAvailable": 5,
+            "status": "Open"
+          },
+          {
+            "date": "May 2, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Marianne",
+            "date": "2025-03-23",
+            "rating": 5,
+            "text": "An inspiring course that taught me both the art and science behind artisan bread crafting. Every step was clear and well demonstrated."
+          },
+          {
+            "name": "Nate",
+            "date": "2025-03-24",
+            "rating": 4,
+            "text": "The hands-on approach was very effective and I learned how to create a robust sourdough starter and mix the dough perfectly."
+          },
+          {
+            "name": "Olivia",
+            "date": "2025-03-25",
+            "rating": 5,
+            "text": "Fantastic workshop! The instructor’s detailed explanations and demonstrations gave me the confidence to bake artisan bread at home."
+          }
+        ]
+      },
+      {
+        "courseId": "FRA-BP-002",
+        "title": "Pastry and Dessert Artistry",
+        "description": "Want stunning desserts? This workshop unveils pastry secrets with hands-on practice. Master dough and decorating to wow your guests. Sign up to bake like a pro!",
+        "details": [
+          "Perfect pastry dough with folding techniques for flaky, delicious results",
+          "Craft fillings with expert flavor balancing to elevate your desserts",
+          "Decorate like a pro using piping skills for visually stunning creations"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Pastry+Artistry",
+            "alt": "Beautifully decorated pastries"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2713/2713334.png",
+            "text": "Pastry",
+            "alt": "Pastry icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2933/2933081.png",
+            "text": "Decoration",
+            "alt": "Decoration tools icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/2404/2404870.png",
+            "text": "Desserts",
+            "alt": "Dessert icon"
+          }
+        ],
+        "duration": "4.5 hours",
+        "price": "€70",
+        "level": "Intermediate",
+        "prerequisites": [
+          "Basic baking skills"
+        ],
+        "maxClassSize": 10,
+        "skillTags": [
+          "Pastry",
+          "Desserts",
+          "Decoration"
+        ],
+        "equipmentProvided": [
+          "Oven access",
+          "Mixer",
+          "Pastry tools"
+        ],
+        "language": "English",
+        "isFeatured": false,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Clara Sweet",
+          "experience": "12 years in pastry arts",
+          "image": "https://randomuser.me/api/portraits/women/42.jpg"
+        },
+        "business": {
+          "name": "Frankfurt Pastry Co.",
+          "badge": "Pastry Expert",
+          "image": "https://cdn-icons-png.flaticon.com/128/4800/4800093.png"
+        },
+        "venue": "Frankfurt Culinary Institute",
+        "certification": "Pastry Arts Certificate",
+        "learningOutcomes": [
+          "Master pastry dough techniques",
+          "Create intricate dessert designs",
+          "Blend flavors and textures for stunning results"
+        ],
+        "dates": [
+          {
+            "date": "March 28, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 9,
+            "status": "Open"
+          },
+          {
+            "date": "April 18, 2025 (11:00 AM - 4:00 PM)",
+            "spotsAvailable": 3,
+            "status": "Open"
+          },
+          {
+            "date": "May 8, 2025 (12:00 PM - 5:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Samantha",
+            "date": "2025-03-29",
+            "rating": 5,
+            "text": "The pastry artistry course exceeded my expectations. Detailed instruction and plenty of practice made it invaluable."
+          },
+          {
+            "name": "Travis",
+            "date": "2025-03-30",
+            "rating": 4,
+            "text": "I learned innovative techniques for dessert decoration. The course was creative and hands-on."
+          },
+          {
+            "name": "Veronica",
+            "date": "2025-03-31",
+            "rating": 5,
+            "text": "A beautifully structured course that taught me how to craft desserts with flair and precision."
+          }
+        ]
+      }
+    ]
+  },
+  "Mars": {
+    "Space Engineering": [
+      {
+        "courseId": "MAR-SE-001",
+        "title": "Fundamentals of Spacecraft Design",
+        "description": "Dream of space? Kickstart your journey with this hands-on design course. Learn propulsion and integration to build spacecraft. Join now to launch your aerospace future!",
+        "details": [
+          "Design spacecraft components with simulations to understand space travel",
+          "Master propulsion basics hands-on to power spacecraft efficiently",
+          "Integrate systems with expert-led projects for functional spacecraft designs"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Spacecraft+Design",
+            "alt": "Illustration of spacecraft design"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1234/1234567.png",
+            "text": "Propulsion",
+            "alt": "Rocket icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1234/1234568.png",
+            "text": "Structure",
+            "alt": "Structural design icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1234/1234569.png",
+            "text": "Systems",
+            "alt": "Systems integration icon"
+          }
+        ],
+        "duration": "4 hours",
+        "price": "€100",
+        "level": "Beginner",
+        "prerequisites": [
+          "Basic physics"
+        ],
+        "maxClassSize": 15,
+        "skillTags": [
+          "Space",
+          "Design",
+          "Engineering"
+        ],
+        "equipmentProvided": [
+          "Design software",
+          "Simulation tools"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Stella Nova",
+          "experience": "12 years in aerospace engineering",
+          "image": "https://randomuser.me/api/portraits/women/50.jpg"
+        },
+        "business": {
+          "name": "Mars Space Institute",
+          "badge": "Pioneers in Space",
+          "image": "https://cdn-icons-png.flaticon.com/128/1234/1234568.png"
+        },
+        "venue": "Mars Orbital Center",
+        "certification": "Spacecraft Design Certificate",
+        "learningOutcomes": [
+          "Understand fundamental spacecraft design principles",
+          "Learn propulsion and structural basics",
+          "Integrate systems for small spacecraft"
+        ],
+        "dates": [
+          {
+            "date": "April 5, 2025 (10:00 AM - 2:00 PM)",
+            "spotsAvailable": 12,
+            "status": "Open"
+          },
+          {
+            "date": "April 20, 2025 (1:00 PM - 5:00 PM)",
+            "spotsAvailable": 7,
+            "status": "Open"
+          },
+          {
+            "date": "May 10, 2025 (9:00 AM - 1:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Nova",
+            "date": "2025-04-06",
+            "rating": 5,
+            "text": "A fantastic introduction to spacecraft design with practical insights and interactive projects that made the theory come alive."
+          },
+          {
+            "name": "Orion",
+            "date": "2025-04-07",
+            "rating": 4,
+            "text": "Well structured course that covers the essentials of aerospace engineering. Highly recommended for beginners."
+          },
+          {
+            "name": "Cosmo",
+            "date": "2025-04-08",
+            "rating": 5,
+            "text": "The hands-on projects and case studies provided a clear understanding of spacecraft design fundamentals."
+          }
+        ]
+      },
+      {
+        "courseId": "MAR-SE-002",
+        "title": "Advanced Propulsion Systems",
+        "description": "Rocket power calling? Explore advanced propulsion in this course. Master engine mechanics and fuel efficiency to lead space missions. Enroll now to soar ahead!",
+        "details": [
+          "Analyze rocket engines with simulations to boost spacecraft performance",
+          "Optimize fuel dynamics hands-on for efficient, powerful propulsion",
+          "Master thrust control with expert tools to excel in aerospace design"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Propulsion+Systems",
+            "alt": "Diagram of advanced propulsion systems"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480728.png",
+            "text": "Engine",
+            "alt": "Engine icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480741.png",
+            "text": "Thrust",
+            "alt": "Thrust icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/1480/1480733.png",
+            "text": "Efficiency",
+            "alt": "Efficiency icon"
+          }
+        ],
+        "duration": "5 hours",
+        "price": "€150",
+        "level": "Advanced",
+        "prerequisites": [
+          "Fundamentals of Spacecraft Design"
+        ],
+        "maxClassSize": 12,
+        "skillTags": [
+          "Propulsion",
+          "Aerospace",
+          "Engineering"
+        ],
+        "equipmentProvided": [
+          "Simulation software",
+          "Data analysis tools"
+        ],
+        "language": "English",
+        "isFeatured": false,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Orion Pax",
+          "experience": "15 years in rocket propulsion",
+          "image": "https://randomuser.me/api/portraits/men/60.jpg"
+        },
+        "business": {
+          "name": "Mars Space Institute",
+          "badge": "Pioneers in Space",
+          "image": "https://cdn-icons-png.flaticon.com/128/1234/1234568.png"
+        },
+        "venue": "Mars Orbital Center",
+        "certification": "Advanced Propulsion Certificate",
+        "learningOutcomes": [
+          "Analyze advanced propulsion technologies",
+          "Optimize rocket engine performance",
+          "Apply simulation techniques for fuel efficiency"
+        ],
+        "dates": [
+          {
+            "date": "April 10, 2025 (11:00 AM - 4:00 PM)",
+            "spotsAvailable": 9,
+            "status": "Open"
+          },
+          {
+            "date": "April 25, 2025 (2:00 PM - 7:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          },
+          {
+            "date": "May 15, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 5,
+            "status": "Open"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Luna",
+            "date": "2025-04-11",
+            "rating": 5,
+            "text": "A cutting-edge course that demystified advanced propulsion systems. The simulations and hands-on sessions made complex concepts accessible."
+          },
+          {
+            "name": "Helios",
+            "date": "2025-04-12",
+            "rating": 4,
+            "text": "Detailed explanations and practical exercises greatly enhanced my understanding of rocket engine performance."
+          },
+          {
+            "name": "Solar",
+            "date": "2025-04-13",
+            "rating": 5,
+            "text": "An innovative course that perfectly balanced theory with real-world application. I learned so much about fuel dynamics."
+          }
+        ]
+      },
+      {
+        "courseId": "MAR-SE-003",
+        "title": "Orbital Mechanics and Trajectories",
+        "description": "Space awaits! Unlock orbital mechanics in this course. Learn trajectory planning and simulations to navigate missions. Join now to steer the future of space travel!",
+        "details": [
+          "Calculate orbital paths with simulations to plan precise space missions",
+          "Master gravitational effects hands-on for effective trajectory designs",
+          "Simulate maneuvers with pro tools to navigate spacecraft flawlessly"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Orbital+Mechanics",
+            "alt": "Diagram showing orbital trajectories"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/6132/6132221.png",
+            "text": "Physics",
+            "alt": "Physics icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/6132/6132225.png",
+            "text": "Trajectory",
+            "alt": "Trajectory icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/6132/6132227.png",
+            "text": "Simulation",
+            "alt": "Simulation icon"
+          }
+        ],
+        "duration": "6 hours",
+        "price": "€140",
+        "level": "Intermediate",
+        "prerequisites": [
+          "Fundamentals of Spacecraft Design"
+        ],
+        "maxClassSize": 14,
+        "skillTags": [
+          "Orbital",
+          "Mechanics",
+          "Trajectory"
+        ],
+        "equipmentProvided": [
+          "Simulation software",
+          "Calculators"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Celeste Orbit",
+          "experience": "10 years in orbital mechanics",
+          "image": "https://randomuser.me/api/portraits/women/72.jpg"
+        },
+        "business": {
+          "name": "Mars Space Institute",
+          "badge": "Orbital Experts",
+          "image": "https://cdn-icons-png.flaticon.com/128/1234/1234568.png"
+        },
+        "venue": "Mars Orbital Center",
+        "certification": "Orbital Mechanics Certificate",
+        "learningOutcomes": [
+          "Understand orbital dynamics",
+          "Plan mission trajectories",
+          "Utilize simulation tools for orbital maneuvers"
+        ],
+        "dates": [
+          {
+            "date": "April 15, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 11,
+            "status": "Open"
+          },
+          {
+            "date": "April 30, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          },
+          {
+            "date": "May 20, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 7,
+            "status": "Open"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Vega",
+            "date": "2025-04-16",
+            "rating": 5,
+            "text": "An exceptional course on orbital mechanics with clear, practical examples and engaging simulations that truly clarified complex concepts."
+          },
+          {
+            "name": "Rigel",
+            "date": "2025-04-17",
+            "rating": 4,
+            "text": "Challenging yet rewarding; the interactive simulations helped me grasp the nuances of trajectory planning."
+          },
+          {
+            "name": "Altair",
+            "date": "2025-04-18",
+            "rating": 5,
+            "text": "Comprehensive and engaging, this course provided real-world examples that made orbital dynamics accessible."
+          }
+        ]
+      },
+      {
+        "courseId": "MAR-SE-004",
+        "title": "Spacecraft Systems Integration",
+        "description": "Ready to build spacecraft? This course dives into integration mastery. Learn comms, power, and navigation skills to excel in space tech. Enroll to lead the way!",
+        "details": [
+          "Integrate comms and power systems with simulations for reliable designs",
+          "Master navigation setup hands-on to ensure spacecraft precision in orbit",
+          "Troubleshoot subsystems with expert tools for top-tier spacecraft builds"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Systems+Integration",
+            "alt": "Illustration of integrated spacecraft systems"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/861/861062.png",
+            "text": "Communication",
+            "alt": "Antenna icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/861/861063.png",
+            "text": "Power",
+            "alt": "Battery icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/861/861064.png",
+            "text": "Navigation",
+            "alt": "Compass icon"
+          }
+        ],
+        "duration": "5 hours",
+        "price": "€160",
+        "level": "Advanced",
+        "prerequisites": [
+          "Orbital Mechanics and Trajectories"
+        ],
+        "maxClassSize": 12,
+        "skillTags": [
+          "Systems Integration",
+          "Aerospace",
+          "Engineering"
+        ],
+        "equipmentProvided": [
+          "Integration software",
+          "Testing tools"
+        ],
+        "language": "English",
+        "isFeatured": false,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Galileo Space",
+          "experience": "14 years in spacecraft integration",
+          "image": "https://randomuser.me/api/portraits/men/80.jpg"
+        },
+        "business": {
+          "name": "Mars Space Institute",
+          "badge": "Systems Integration Leader",
+          "image": "https://cdn-icons-png.flaticon.com/128/1234/1234568.png"
+        },
+        "venue": "Mars Orbital Center",
+        "certification": "Systems Integration Certificate",
+        "learningOutcomes": [
+          "Integrate communication and power systems",
+          "Design reliable navigation systems",
+          "Troubleshoot complex integrated systems"
+        ],
+        "dates": [
+          {
+            "date": "April 20, 2025 (9:00 AM - 2:00 PM)",
+            "spotsAvailable": 10,
+            "status": "Open"
+          },
+          {
+            "date": "May 5, 2025 (10:00 AM - 3:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          },
+          {
+            "date": "May 25, 2025 (11:00 AM - 4:00 PM)",
+            "spotsAvailable": 6,
+            "status": "Open"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Cassiopeia",
+            "date": "2025-04-21",
+            "rating": 4,
+            "text": "A highly technical course that explained systems integration with clarity. The hands-on project was especially useful."
+          },
+          {
+            "name": "Andromeda",
+            "date": "2025-04-22",
+            "rating": 5,
+            "text": "The integration workshop was detailed and engaging, providing practical insights into how various systems work together."
+          },
+          {
+            "name": "Perseus",
+            "date": "2025-04-23",
+            "rating": 4,
+            "text": "Very informative and detailed, this course enhanced my understanding of spacecraft system integration."
+          }
+        ]
+      }
+    ],
+    "Martian Agriculture": [
+      {
+        "courseId": "MAR-MA-001",
+        "title": "Introduction to Martian Farming",
+        "description": "Grow food on Mars? This course reveals how with hydroponics and soil simulation. Master sustainable farming to feed the future. Join now to pioneer Martian agriculture!",
+        "details": [
+          "Set up hydroponic systems hands-on to grow crops in Martian conditions",
+          "Simulate Martian soil with pro techniques for sustainable food production",
+          "Select optimal crops with expert insights to thrive on the Red Planet"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Martian+Farming",
+            "alt": "Illustration of Martian farming techniques"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789395.png",
+            "text": "Hydroponics",
+            "alt": "Hydroponics icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789396.png",
+            "text": "Soil Simulation",
+            "alt": "Soil simulation icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789397.png",
+            "text": "Crop Management",
+            "alt": "Crop management icon"
+          }
+        ],
+        "duration": "3 hours",
+        "price": "€90",
+        "level": "Beginner",
+        "prerequisites": [
+          "Basic biology"
+        ],
+        "maxClassSize": 15,
+        "skillTags": [
+          "Agriculture",
+          "Martian",
+          "Farming"
+        ],
+        "equipmentProvided": [
+          "Hydroponic kit",
+          "Growth chamber"
+        ],
+        "language": "English",
+        "isFeatured": true,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Green",
+          "experience": "5 years in Martian agriculture research",
+          "image": "https://randomuser.me/api/portraits/men/70.jpg"
+        },
+        "business": {
+          "name": "Mars AgriTech",
+          "badge": "Innovator in Martian Farming",
+          "image": "https://cdn-icons-png.flaticon.com/128/789/789396.png"
+        },
+        "venue": "Mars Agricultural Dome",
+        "certification": "Martian Farming Certificate",
+        "learningOutcomes": [
+          "Understand Martian environmental challenges",
+          "Set up effective hydroponic systems",
+          "Select and manage crops suited for Mars"
+        ],
+        "dates": [
+          {
+            "date": "April 15, 2025 (9:00 AM - 12:00 PM)",
+            "spotsAvailable": 14,
+            "status": "Open"
+          },
+          {
+            "date": "April 30, 2025 (1:00 PM - 4:00 PM)",
+            "spotsAvailable": 10,
+            "status": "Open"
+          },
+          {
+            "date": "May 15, 2025 (10:00 AM - 1:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Red",
+            "date": "2025-04-16",
+            "rating": 5,
+            "text": "A groundbreaking course that opened my eyes to the challenges and possibilities of farming on Mars. The hands-on approach was inspiring."
+          },
+          {
+            "name": "Blue",
+            "date": "2025-04-17",
+            "rating": 4,
+            "text": "Engaging and forward-thinking with practical demonstrations that made complex ideas easy to understand."
+          },
+          {
+            "name": "Yellow",
+            "date": "2025-04-18",
+            "rating": 5,
+            "text": "Extremely informative and hands-on. I now understand the basics of setting up a Martian farm."
+          }
+        ]
+      },
+      {
+        "courseId": "MAR-MA-002",
+        "title": "Advanced Martian Crop Optimization",
+        "description": "Maximize Mars harvests! This advanced course boosts yields with climate and nutrient mastery. Learn sustainable farming to feed colonists. Enroll to grow the future!",
+        "details": [
+          "Control Martian climate with pro tech to optimize crop growth efficiently",
+          "Master nutrient delivery hands-on for sustainable, high-yield harvests",
+          "Develop eco-farming skills with projects to feed Mars colonies effectively"
+        ],
+        "images": [
+          {
+            "url": "https://placehold.co/600x400?text=Crop+Optimization",
+            "alt": "Martian crop optimization process"
+          }
+        ],
+        "topics": [
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789395.png",
+            "text": "Hydroponics",
+            "alt": "Hydroponics icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789398.png",
+            "text": "Climate Control",
+            "alt": "Climate control icon"
+          },
+          {
+            "icon": "https://cdn-icons-png.flaticon.com/128/789/789399.png",
+            "text": "Sustainability",
+            "alt": "Eco icon"
+          }
+        ],
+        "duration": "4 hours",
+        "price": "€110",
+        "level": "Advanced",
+        "prerequisites": [
+          "Introduction to Martian Farming"
+        ],
+        "maxClassSize": 12,
+        "skillTags": [
+          "Agriculture",
+          "Optimization",
+          "Martian"
+        ],
+        "equipmentProvided": [
+          "Climate control module",
+          "Nutrient analysis kit"
+        ],
+        "language": "English",
+        "isFeatured": false,
+        "videoPreview": "https://placehold.co/video.mp4",
+        "instructor": {
+          "name": "Dr. Red",
+          "experience": "8 years in Martian crop research",
+          "image": "https://randomuser.me/api/portraits/men/80.jpg"
+        },
+        "business": {
+          "name": "Mars AgriTech",
+          "badge": "Martian Farming Innovator",
+          "image": "https://cdn-icons-png.flaticon.com/128/789/789396.png"
+        },
+        "venue": "Mars Agricultural Dome",
+        "certification": "Advanced Crop Optimization Certificate",
+        "learningOutcomes": [
+          "Implement climate control techniques",
+          "Optimize nutrient delivery for crops",
+          "Develop sustainable Martian agriculture practices"
+        ],
+        "dates": [
+          {
+            "date": "April 20, 2025 (10:00 AM - 2:00 PM)",
+            "spotsAvailable": 12,
+            "status": "Open"
+          },
+          {
+            "date": "May 5, 2025 (3:00 PM - 7:00 PM)",
+            "spotsAvailable": 8,
+            "status": "Open"
+          },
+          {
+            "date": "May 20, 2025 (11:00 AM - 3:00 PM)",
+            "spotsAvailable": 0,
+            "status": "Full"
+          }
+        ],
+        "reviews": [
+          {
+            "name": "Green",
+            "date": "2025-04-21",
+            "rating": 4,
+            "text": "A challenging course that delved deep into the complexities of crop optimization in an alien environment. Very detailed and thought-provoking."
+          },
+          {
+            "name": "Violet",
+            "date": "2025-04-22",
+            "rating": 5,
+            "text": "The course provided innovative solutions and practical techniques for maximizing crop yield in Martian conditions."
+          },
+          {
+            "name": "Indigo",
+            "date": "2025-04-23",
+            "rating": 4,
+            "text": "Extremely informative and well-organized, with a strong focus on sustainability and practical applications."
+          }
+        ]
+      }
+    ]
+  }
+}
+

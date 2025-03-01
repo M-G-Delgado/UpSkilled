@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" id="top" itemscope itemtype="http://schema.org/ContactPage">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - UpSkilled | Get in Touch Today</title>
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="Contact UpSkilled to learn more about our practical, in-person courses and partnerships. Reach out with your questions or feedback and discover how real-life skills can change your life." />
+  <meta name="keywords" content="UpSkilled, Contact, In-Person Learning, Practical Courses, Local Experts, Get in Touch" />
+  <meta name="robots" content="index, follow" />
+  <!-- Structured Data (JSON-LD) for ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Us - UpSkilled",
+    "description": "Contact UpSkilled to learn more about our practical, in-person courses and partnerships.",
+    "url": "https://www.upskilled.com/contact.html",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+49 123 456 7890",
+      "contactType": "customer service",
+      "areaServed": "DE",
+      "availableLanguage": ["English", "German"]
+    }
+  }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <!-- Shared Navigation and Footer Styles -->
+  <link href="css/nav_footer_styles.css" rel="stylesheet">
+  <style>
+    /* Base Colors and Typography */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --primary-color: #000000;
+      --secondary-color: #555555;
+      --accent-color: #000000;
+      --card-bg: #f8f8f8;
+      --nav-bg: #ffffff;
+      --footer-bg: #f1f1f1;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    /* Navigation Bar – Same as Other Pages */
+    .custom-navbar {
+      background-color: var(--nav-bg);
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--secondary-color);
+    }
+    .custom-navbar-brand {
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    .navbar-nav .nav-link {
+      color: var(--text-color);
+      font-weight: 500;
+      margin-right: 1rem;
+    }
+    .navbar-nav .nav-link:hover {
+      color: var(--accent-color);
+    }
+    /* Main Container */
+    main.container {
+      margin-top: 100px;
+      margin-bottom: 50px;
+    }
+    /* Section Box – Rounded Box with Padding */
+    .section-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--secondary-color);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    /* Modern Fixed-Width Form with Horizontal Labels */
+    .fixed-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form.needs-validation {
+      background-color: #ffffff;
+      padding: 2rem;
+      border: 1px solid var(--secondary-color);
+      border-radius: 15px;
+    }
+    /* Horizontal layout for labels and fields */
+    .form-group-row {
+      margin-bottom: 1rem;
+    }
+    .form-group-row .col-form-label {
+      text-align: left;
+      font-weight: 500;
+    }
+    /* Input Groups: Ensure icons do not obstruct borders */
+    .input-group-text {
+      background-color: transparent;
+      border: none; /* Remove borders so the icon doesn't conflict with the input border */
+      color: var(--secondary-color);
+      padding: 0.5rem; /* Add padding for a clear separation */
+    }
+    .form-control {
+      border-right: 0;
+      border-radius: 0;
+      padding-right: 2.5rem;
+    }
+    .form-control:focus {
+      box-shadow: none;
+    }
+    .invalid-feedback {
+      font-size: 0.85rem;
+    }
+    /* Expandable Textarea */
+    textarea.form-control {
+      overflow: hidden;
+      resize: none;
+    }
+    /* Dropdown Menu for Message Category */
+    select.form-select {
+      border-radius: 0;
+      border-right: 0;
+      padding-right: 2.5rem;
+    }
+    /* FAQ Section Styles */
+    .faq-section {
+      background-color: #ffffff;
+      padding: 2rem;
+      border: 1px solid var(--secondary-color);
+      border-radius: 15px;
+    }
+    .faq-section h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    /* Grouped FAQ Topics */
+    .faq-topic {
+      margin-top: 2rem;
+    }
+    .faq-topic h5 {
+      font-weight: 600;
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--secondary-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    /* Arrange FAQ Topics in a Grid */
+    .faq-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .faq-grid > .col-md-6 {
+      flex: 1 1 calc(50% - 2rem);
+    }
+    @media (max-width: 767px) {
+      .faq-grid > .col-md-6 {
+        flex: 1 1 100%;
+      }
+    }
+    /* Footer – Use the Same Style as Other Pages */
+    .custom-footer {
+      background-color: var(--footer-bg);
+      color: var(--text-color);
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--secondary-color);
+    }
+    .custom-footer a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .custom-footer a:hover {
+      color: var(--accent-color);
+    }
+    /* CTA Buttons */
+    .cta-buttons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta-button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 25px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .cta-button:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+    /* Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    .back-to-top:hover {
+      background-color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand custom-navbar-brand" href="index.html">UpSkilled</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="customNavbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#selection-heading">Course Catalogue</a></li>
+          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
+          <li class="nav-item"><a class="nav-link" href="our_mission.html">Our Mission</a></li>
+        </ul>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html" aria-label="Contact Us">
+              <i class="fas fa-envelope"></i> Contact Us
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-globe"></i> English
+           </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Deutsch</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container mt-5 pt-5">
+    <section class="section-box" itemscope itemtype="http://schema.org/ContactPage">
+      <header class="text-center mb-4">
+        <h2 itemprop="headline">Contact Us</h2>
+      </header>
+      <!-- Tabs for Contact Form and FAQ -->
+      <ul class="nav nav-tabs" id="contactTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="contact-form-tab" data-bs-toggle="tab" data-bs-target="#contact-form" type="button" role="tab" aria-controls="contact-form" aria-selected="true">
+            Send a Message
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false">
+            FAQ
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content mt-4" id="contactTabContent">
+        <!-- Contact Form Tab Pane -->
+        <div class="tab-pane fade show active" id="contact-form" role="tabpanel" aria-labelledby="contact-form-tab">
+          <form id="contactForm" class="needs-validation fixed-form" novalidate aria-label="Contact Form">
+            <!-- Full Name -->
+            <div class="row form-group-row mb-3">
+              <label for="name" class="col-sm-3 col-form-label">Full Name</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="name" placeholder="Your Full Name" aria-required="true" required>
+                  <span class="input-group-text"><i class="fas fa-user" aria-hidden="true"></i></span>
+                </div>
+                <div class="invalid-feedback">Please provide your full name.</div>
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="row form-group-row mb-3">
+              <label for="email" class="col-sm-3 col-form-label">Email</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input type="email" class="form-control" id="email" placeholder="Your Email" aria-required="true" required>
+                  <span class="input-group-text"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                </div>
+                <div class="invalid-feedback">Please provide a valid email address.</div>
+              </div>
+            </div>
+            <!-- Subject -->
+            <div class="row form-group-row mb-3">
+              <label for="subject" class="col-sm-3 col-form-label">Subject</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject" aria-required="true" required>
+                  <span class="input-group-text"><i class="fas fa-tag" aria-hidden="true"></i></span>
+                </div>
+                <div class="invalid-feedback">Please provide a subject.</div>
+              </div>
+            </div>
+            <!-- Category Dropdown -->
+            <div class="row form-group-row mb-3">
+              <label for="category" class="col-sm-3 col-form-label">Category</label>
+              <div class="col-sm-9">
+                <select id="category" class="form-select" required aria-required="true">
+                  <option value="" selected disabled>Select a category</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Course Registration">Course Registration</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Partnership Inquiry">Partnership Inquiry</option>
+                  <option value="Feedback / Complaint">Feedback / Complaint</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a category.</div>
+              </div>
+            </div>
+            <!-- Message -->
+            <div class="row form-group-row mb-3">
+              <label for="message" class="col-sm-3 col-form-label">Message</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <textarea class="form-control" id="message" rows="5" placeholder="Your Message" aria-required="true" required oninput="autoExpand(this)"></textarea>
+                  <span class="input-group-text"><i class="fas fa-comment-dots" aria-hidden="true"></i></span>
+                </div>
+                <div class="invalid-feedback">Please provide a message.</div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary w-50">Send Message</button>
+              <div id="formFeedback" class="mt-3"></div>
+            </div>
+          </form>
+        </div>
+        <!-- FAQ Tab Pane -->
+        <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+          <div class="faq-grid">
+            <!-- Grouped FAQ: Payment -->
+            <div class="col-md-6">
+              <div class="faq-topic">
+                <h5>Payment</h5>
+                <div class="accordion" id="faqPayment">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="paymentHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#paymentCollapseOne" aria-expanded="true" aria-controls="paymentCollapseOne">
+                        <i class="fas fa-credit-card me-2"></i>What payment methods do you accept?
+                      </button>
+                    </h2>
+                    <div id="paymentCollapseOne" class="accordion-collapse collapse show" aria-labelledby="paymentHeadingOne" data-bs-parent="#faqPayment">
+                      <div class="accordion-body">
+                        We accept major credit cards, PayPal, and bank transfers.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="paymentHeadingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentCollapseTwo" aria-expanded="false" aria-controls="paymentCollapseTwo">
+                        <i class="fas fa-lock me-2"></i>How do you secure my payment information?
+                      </button>
+                    </h2>
+                    <div id="paymentCollapseTwo" class="accordion-collapse collapse" aria-labelledby="paymentHeadingTwo" data-bs-parent="#faqPayment">
+                      <div class="accordion-body">
+                        All transactions are secured using industry-standard encryption.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="paymentHeadingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paymentCollapseThree" aria-expanded="false" aria-controls="paymentCollapseThree">
+                        <i class="fas fa-calendar-check me-2"></i>When will I be charged?
+                      </button>
+                    </h2>
+                    <div id="paymentCollapseThree" class="accordion-collapse collapse" aria-labelledby="paymentHeadingThree" data-bs-parent="#faqPayment">
+                      <div class="accordion-body">
+                        Charges occur at registration or upon reservation confirmation.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grouped FAQ: Course Questions -->
+            <div class="col-md-6">
+              <div class="faq-topic">
+                <h5>Course Questions</h5>
+                <div class="accordion" id="faqCourses">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="courseHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#courseCollapseOne" aria-expanded="true" aria-controls="courseCollapseOne">
+                        <i class="fas fa-question-circle me-2"></i>How can I sign up for a course?
+                      </button>
+                    </h2>
+                    <div id="courseCollapseOne" class="accordion-collapse collapse show" aria-labelledby="courseHeadingOne" data-bs-parent="#faqCourses">
+                      <div class="accordion-body">
+                        Visit our Course Catalogue, select your course, and click "Reserve Spot."
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="courseHeadingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#courseCollapseTwo" aria-expanded="false" aria-controls="courseCollapseTwo">
+                        <i class="fas fa-clock me-2"></i>What is the duration of each course?
+                      </button>
+                    </h2>
+                    <div id="courseCollapseTwo" class="accordion-collapse collapse" aria-labelledby="courseHeadingTwo" data-bs-parent="#faqCourses">
+                      <div class="accordion-body">
+                        Durations vary; please refer to the Course Catalogue for specifics.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="courseHeadingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#courseCollapseThree" aria-expanded="false" aria-controls="courseCollapseThree">
+                        <i class="fas fa-book me-2"></i>Are there any prerequisites?
+                      </button>
+                    </h2>
+                    <div id="courseCollapseThree" class="accordion-collapse collapse" aria-labelledby="courseHeadingThree" data-bs-parent="#faqCourses">
+                      <div class="accordion-body">
+                        Most courses are beginner-friendly; any prerequisites will be mentioned in the course description.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grouped FAQ: Scheduling -->
+            <div class="col-md-6">
+              <div class="faq-topic">
+                <h5>Scheduling</h5>
+                <div class="accordion" id="faqScheduling">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="scheduleHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#scheduleCollapseOne" aria-expanded="true" aria-controls="scheduleCollapseOne">
+                        <i class="fas fa-calendar-alt me-2"></i>Can I cancel or reschedule my course?
+                      </button>
+                    </h2>
+                    <div id="scheduleCollapseOne" class="accordion-collapse collapse show" aria-labelledby="scheduleHeadingOne" data-bs-parent="#faqScheduling">
+                      <div class="accordion-body">
+                        Yes, you may cancel or reschedule up to 24 hours before the course starts.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="scheduleHeadingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#scheduleCollapseTwo" aria-expanded="false" aria-controls="scheduleCollapseTwo">
+                        <i class="fas fa-eye me-2"></i>How can I view the course schedule?
+                      </button>
+                    </h2>
+                    <div id="scheduleCollapseTwo" class="accordion-collapse collapse" aria-labelledby="scheduleHeadingTwo" data-bs-parent="#faqScheduling">
+                      <div class="accordion-body">
+                        The schedule is available on our Course Catalogue page.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="scheduleHeadingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#scheduleCollapseThree" aria-expanded="false" aria-controls="scheduleCollapseThree">
+                        <i class="fas fa-users me-2"></i>What if a course is fully booked?
+                      </button>
+                    </h2>
+                    <div id="scheduleCollapseThree" class="accordion-collapse collapse" aria-labelledby="scheduleHeadingThree" data-bs-parent="#faqScheduling">
+                      <div class="accordion-body">
+                        You may join the waiting list or choose another session. We will notify you if a spot becomes available.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grouped FAQ: Customer Support -->
+            <div class="col-md-6">
+              <div class="faq-topic">
+                <h5>Customer Support</h5>
+                <div class="accordion" id="faqSupport">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="supportHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseOne" aria-expanded="true" aria-controls="supportCollapseOne">
+                        <i class="fas fa-phone me-2"></i>How do I contact customer support?
+                      </button>
+                    </h2>
+                    <div id="supportCollapseOne" class="accordion-collapse collapse show" aria-labelledby="supportHeadingOne" data-bs-parent="#faqSupport">
+                      <div class="accordion-body">
+                        You can use this form or call us at <a href="tel:+491234567890" class="phone-link">+49 123 456 7890</a>.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="supportHeadingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseTwo" aria-expanded="false" aria-controls="supportCollapseTwo">
+                        <i class="fas fa-clock me-2"></i>What are your business hours?
+                      </button>
+                    </h2>
+                    <div id="supportCollapseTwo" class="accordion-collapse collapse" aria-labelledby="supportHeadingTwo" data-bs-parent="#faqSupport">
+                      <div class="accordion-body">
+                        Our support team is available Monday through Friday, 9 AM to 5 PM CET.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="supportHeadingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#supportCollapseThree" aria-expanded="false" aria-controls="supportCollapseThree">
+                        <i class="fas fa-reply me-2"></i>How long does it take to receive a response?
+                      </button>
+                    </h2>
+                    <div id="supportCollapseThree" class="accordion-collapse collapse" aria-labelledby="supportHeadingThree" data-bs-parent="#faqSupport">
+                      <div class="accordion-body">
+                        Typically, our response time is within 24 hours during business days.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Grouped FAQ: Cancellation & Refund Policy -->
+            <div class="col-md-6">
+              <div class="faq-topic">
+                <h5>Cancellation &amp; Refund Policy</h5>
+                <div class="accordion" id="faqRefund">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="refundHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#refundCollapseOne" aria-expanded="true" aria-controls="refundCollapseOne">
+                        <i class="fas fa-undo me-2"></i>What is your cancellation and refund policy?
+                      </button>
+                    </h2>
+                    <div id="refundCollapseOne" class="accordion-collapse collapse show" aria-labelledby="refundHeadingOne" data-bs-parent="#faqRefund">
+                      <div class="accordion-body">
+                        You can cancel or reschedule up to 24 hours before your course starts for a full refund.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="refundHeadingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#refundCollapseTwo" aria-expanded="false" aria-controls="refundCollapseTwo">
+                        <i class="fas fa-undo-alt me-2"></i>How do I request a refund?
+                      </button>
+                    </h2>
+                    <div id="refundCollapseTwo" class="accordion-collapse collapse" aria-labelledby="refundHeadingTwo" data-bs-parent="#faqRefund">
+                      <div class="accordion-body">
+                        Please fill out our cancellation form or contact our support team to request a refund.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="refundHeadingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#refundCollapseThree" aria-expanded="false" aria-controls="refundCollapseThree">
+                        <i class="fas fa-money-check-alt me-2"></i>Are there any cancellation fees?
+                      </button>
+                    </h2>
+                    <div id="refundCollapseThree" class="accordion-collapse collapse" aria-labelledby="refundHeadingThree" data-bs-parent="#faqRefund">
+                      <div class="accordion-body">
+                        No, as long as you cancel within the allowed timeframe, there are no cancellation fees.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End FAQ Grid -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="custom-footer" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="container">
+      <div class="custom-social-icons mb-3">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="quick-links mb-3">
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms &amp; Conditions</a> |
+        <a href="become_a_partner.html">Become a Partner</a> |
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <p>&copy; 2024 UpSkilled. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Live Chat Button (Optional) -->
+  <div class="live-chat-button" style="position: fixed; bottom: 20px; left: 20px;">
+    <button class="btn btn-success" id="liveChatBtn" aria-label="Open Live Chat">
+      <i class="fas fa-comments me-2"></i>Live Chat
+    </button>
+  </div>
+  <!-- Live Chat Modal (Optional) -->
+  <div class="chat-box" id="liveChatBox" style="display: none; position: fixed; bottom: 70px; left: 20px; background-color: #fff; border: 1px solid var(--secondary-color); border-radius: 10px; padding: 1rem;">
+    <div class="chat-box-content">
+      <p class="coming-soon">Live Chat Coming Soon!</p>
+    </div>
+  </div>
+
+  <!-- Back-to-Top Button -->
+  <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" aria-label="Scroll to Top">&#x2191;</button>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AJAX Form Submission and Enhanced Validation Script -->
+  <script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          if (form.checkValidity() === false) {
+            form.classList.add('was-validated');
+            return;
+          }
+          // Optionally: Integrate reCAPTCHA validation here
+
+          // Simulate AJAX submission using Fetch API (placeholder URL)
+          var formData = new FormData(form);
+          fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              document.getElementById('formFeedback').innerHTML = '<div class="alert alert-success">Your message has been sent successfully!</div>';
+              form.reset();
+              form.classList.remove('was-validated');
+            } else {
+              throw new Error('Network response was not ok.');
+            }
+          })
+          .catch(error => {
+            document.getElementById('formFeedback').innerHTML = '<div class="alert alert-danger">There was an error sending your message. Please try again later.</div>';
+            console.error('Form submission error:', error);
+          });
+        }, false);
+      }, false);
+    })();
+
+    // Back-to-top button display
+    window.addEventListener('scroll', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+      backToTopButton.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+
+    // Optional Live Chat Toggle
+    document.getElementById('liveChatBtn').addEventListener('click', function() {
+      var chatBox = document.getElementById('liveChatBox');
+      chatBox.style.display = (chatBox.style.display === 'none' || chatBox.style.display === '') ? 'block' : 'none';
+    });
+
+    // Auto-expand the textarea as the user types
+    function autoExpand(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = (textarea.scrollHeight) + 'px';
+    }
+  </script>
+</body>
+</html>
