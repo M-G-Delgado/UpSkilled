@@ -439,32 +439,6 @@ header.container-fluid {
   border-top: 1px solid var(--divider);
 }
 
-#modalCourseBullets {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: disc;
-  padding-left: 0;
-}
-
-#modalCourseBullets li {
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
-  font-size: 1rem;
-  text-align: center;
-}
-
-.price-details { text-align: center; }
-.course-info { display: inline-block; }
-
-label[for="sortCourses"],
-label[for="reviewsSortSelect"] { white-space: nowrap; }
-
-.gamification-section { margin-top: 1rem; }
-.gamification-section .progress { height: 10px; background-color: #e9ecef; border-radius: 5px; }
-.gamification-section .progress-bar { background-color: var(--secondary-color); }
-
 /* Partner Page Specific Styles */
 .partner-section-box {
   background-color: var(--card-bg);
@@ -474,176 +448,28 @@ label[for="reviewsSortSelect"] { white-space: nowrap; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Ensure the parent container prevents overflow */
+.partner-section-header {
+  overflow: hidden;
+}
+
+/* Updated header image style for partner page */
 .partner-section-header img.partner-header-image {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
 
-.partner-benefits .partner-icon,
-.partner-steps .partner-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--brand-primary);
-}
-
-.partner-steps p.partner-descriptive { font-weight: 500; color: var(--text-color); }
-
-.partner-earnings-calculator {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.partner-sliders-column { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; }
-.partner-sliders-column .partner-slider-group { text-align: center; }
-.partner-sliders-column label { font-weight: 600; margin-bottom: 0.5rem; }
-.partner-slider-value { margin-top: 0.5rem; font-weight: 500; }
-
-.partner-result-column {
-  padding: 1.5rem;
-  border: 1px solid var(--divider);
-  border-radius: 12px;
-  background-color: #fff;
-  text-align: left;
-}
-
-.partner-signup form {
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Notification Popup Styles (Renamed) */
-.notice-box {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 2000;
-  display: none;
-}
-
-.notice-text p { font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-color); }
-.notice-text a { color: var(--accent-color); text-decoration: underline; }
-.notice-text a:hover { color: var(--secondary-color); }
-
-.notice-options { display: flex; gap: 0.5rem; justify-content: flex-end; }
-.notice-options .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
-.notice-options .btn-primary { background-color: var(--accent-color); border: none; }
-.notice-options .btn-primary:hover { background-color: var(--secondary-color); }
-.notice-options .btn-secondary { background-color: #6c757d; border: none; }
-.notice-options .btn-secondary:hover { background-color: #5a6268; }
-
-/* Auth Modal Specific Styles */
-#authModalTopRight .modal-dialog {
-  position: fixed;
-  top: 7%;
-  right: 7%;
-  margin: 0;
-  width: 630px;
-  transform: translateX(0);
-  z-index: 1055;
-  resize: both;
-  overflow: auto;
-  min-width: 300px;
-  min-height: 200px;
-  max-width: 86vw;
-  max-height: calc(93vh - 7%);
-}
-
-#authModalTopRight .modal-content {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-#authModalTopRight .modal-header {
-  background-color: var(--brand-primary);
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.75rem 1rem;
-  border-bottom: 2px solid var(--secondary-color);
-  border-radius: 8px 8px 0 0;
-}
-
-#authModalTopRight .modal-body {
-  padding: 1.5rem;
-}
-
-#authModalTopRight .form-control {
-  width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: #fff;
-}
-
-#authModalTopRight .btn-primary {
-  background-color: var(--accent-color);
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  color: #fff;
-}
-
-#authModalTopRight .btn-primary:hover { background-color: var(--secondary-color); }
-
-#authModalTopRight .btn-secondary {
-  background-color: #6c757d;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  color: #fff;
-}
-
-#authModalTopRight .btn-secondary:hover { background-color: #5a6268; }
-
-#authModalTopRight .auth-divider {
-  width: 1px;
-  height: 30px;
-  background-color: var(--divider);
-}
-
-#authModalTopRight .d-flex.justify-content-center.align-items-center {
-  flex-direction: row;
-  gap: 1rem;
-}
-
-#authModalTopRight #forgotPasswordLink {
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#authModalTopRight #forgotPasswordLink:hover { color: #0056b3; }
-
 @media (max-width: 576px) {
-  #authModalTopRight .modal-dialog {
-    width: 86%;
-    max-width: none;
-    left: 7%;
-    right: 7%;
-    top: 7%;
-    transform: translateX(0);
-    resize: none;
-  }
-  #authModalTopRight .form-control { width: 100%; }
-  #authModalTopRight .d-flex.justify-content-center.align-items-center {
-    flex-direction: row;
-    gap: 1rem;
+  .partner-section-header img.partner-header-image {
+    width: 86%; /* 100% minus 7% margins on left and right */
+    margin-left: 7%;
+    margin-right: 7%;
   }
 }
+
+/* Additional partner-specific styles can be added here */
