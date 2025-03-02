@@ -3,9 +3,7 @@ const CourseLoader = {
   originalPrice: null,
   currentPrice: null,
   currentCourse: null,
-  courseDetailsModal: new bootstrap.Modal(document.getElementById("courseDetailsModal")),
-  authModal: null, // Initialize dynamically later
-  userData: { totalPoints: 0 },
+  courseDetailsModal: null, // Initialize dynamically for course details modal
 
   init() {
     console.log('Initializing CourseLoader...');
@@ -90,70 +88,26 @@ const CourseLoader = {
     console.log('Event listeners set up');
     this.setupHeroFallback();
     console.log('Hero fallback set up');
-    this.setupPartnerForm();
-    console.log('Partner form setup completed');
-    this.initializeAuthModal(); // Dynamically initialize authModal with aggressive retry
+    this.initializeCourseDetailsModal();
+    console.log('Course details modal setup completed');
   },
 
-  initializeAuthModal() {
-    console.log('Initializing authModal...');
-    const initializeModal = (attempt = 0, maxAttempts = 5) => {
-      const modalElement = document.getElementById("authModalTopRight");
-      if (modalElement) {
-        this.authModal = new bootstrap.Modal(modalElement);
-        console.log('authModal initialized successfully');
-        this.setupAuthModalEventListeners(); // Set up event listeners after initialization
-      } else if (attempt < maxAttempts) {
-        console.warn(`authModalTopRight not found, retrying (Attempt ${attempt + 1}/${maxAttempts})...`);
-        setTimeout(() => initializeModal(attempt + 1, maxAttempts), 500 * Math.pow(2, attempt)); // Exponential backoff (500ms, 1s, 2s, 4s, 8s)
-      } else {
-        console.error('authModalTopRight not found after max retries, skipping modal initialization');
-        this.authModal = null; // Explicitly set to null to prevent errors
+  initializeCourseDetailsModal() {
+    console.log('Initializing courseDetailsModal...');
+    const modalElement = document.getElementById("courseDetailsModal");
+    if (modalElement) {
+      try {
+        this.courseDetailsModal = new bootstrap.Modal(modalElement);
+        console.log('courseDetailsModal initialized successfully');
+      } catch (error) {
+        console.error('Error initializing courseDetailsModal:', error);
+        this.courseDetailsModal = null; // Set to null if initialization fails
+        this.showNotification('Course details modal failed to load. Some features may not work.', 'warning');
       }
-    };
-    initializeModal();
-  },
-
-  setupAuthModalEventListeners() {
-    console.log('Setting up authModal event listeners...');
-    const profileIcon = document.getElementById("profileIcon");
-    const loginButton = document.getElementById("loginButton");
-    const signupButton = document.getElementById("signupButton");
-    const navbarCollapse = document.getElementById("customNavbarNav");
-
-    if (profileIcon && this.authModal) {
-      profileIcon.addEventListener("click", () => {
-        console.log('Profile icon clicked');
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-        if (navbarCollapse && navbarCollapse.classList.contains("show")) bsCollapse.hide();
-        this.authModal.show();
-      });
     } else {
-      console.warn('Profile icon or authModal not found, profile click handler not set');
+      console.warn('courseDetailsModal not found in DOM, skipping initialization');
+      this.courseDetailsModal = null; // Ensure it’s null if the element doesn’t exist
     }
-
-    if (loginButton && this.authModal) {
-      loginButton.addEventListener("click", (e) => {
-        console.log('Login button clicked');
-        e.preventDefault();
-        alert("Login functionality coming soon!");
-        this.authModal.hide();
-      });
-    } else {
-      console.warn('Login button or authModal not found, login handler not set');
-    }
-
-    if (signupButton && this.authModal) {
-      signupButton.addEventListener("click", (e) => {
-        console.log('Signup button clicked');
-        e.preventDefault();
-        alert("Signup functionality coming soon!");
-        this.authModal.hide();
-      });
-    } else {
-      console.warn('Signup button or authModal not found, signup handler not set');
-    }
-    console.log('AuthModal event listeners setup completed');
   },
 
   setupEventListeners() {
@@ -193,127 +147,7 @@ const CourseLoader = {
     attendeesSelect.addEventListener("change", this.updateTotalPrice.bind(this));
     attendeesSelect.addEventListener("input", this.updateTotalPrice.bind(this));
 
-    console.log('Event listeners setup completed');
-  },
-
-  setupPartnerForm() {
-    console.log('Setting up partner form...');
-    const form = document.querySelector('.partner-signup form');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        console.log('Partner form submitted');
-        e.preventDefault();
-        const data = {
-          businessCategory: document.getElementById('businessCategory').value,
-          contactNumber: document.getElementById('contactNumber').value,
-          email: document.getElementById('email').value,
-          courseDescription: document.getElementById('courseDescription').value
-        };
-        console.log('Form data:', data);
-
-        // Client-side validation (creative enhancement)
-        if (!data.businessCategory || !data.contactNumber || !data.email || !data.courseDescription) {
-          this.showNotification('Error: All fields are required.', 'error');
-          return;
-        }
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-          this.showNotification('Error: Invalid email format.', 'error');
-          return;
-        }
-        if (!/^\d+$/.test(data.contactNumber)) {
-          this.showNotification('Error: Contact number must be numeric.', 'error');
-          return;
-        }
-
-        // Creative enhancement: Add retry logic with exponential backoff and detailed logging
-        const tryPartnerSubmit = (port, retries = 3, delay = 1000) => {
-          console.log(`Attempting partner submission to port ${port} (Retry ${4 - retries}/3)...`);
-          return fetch(`http://localhost:${port}/api/partners`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-            mode: 'cors'
-          })
-          .then(response => {
-            console.log(`Partner submission response from port ${port}: Status ${response.status} - ${response.statusText}`);
-            if (!response.ok) {
-              if (response.status === 404 && port < 3005 && retries > 0) {
-                console.log(`Port ${port} failed (404), retrying on ${port + 1} after ${delay}ms...`);
-                return new Promise(resolve => setTimeout(() => resolve(tryPartnerSubmit(port + 1, retries - 1, delay * 2)), delay));
-              }
-              throw new Error(`Submission failed: ${response.status} - ${response.statusText}`);
-            }
-            return response.json();
-          })
-          .catch(error => {
-            console.error(`Partner submission error on port ${port}:`, error);
-            if (port < 3005 && retries > 0) {
-              console.log(`Retrying partner submission on port ${port + 1} after ${delay}ms (Retries left: ${retries - 1})...`);
-              return new Promise(resolve => setTimeout(() => resolve(tryPartnerSubmit(port + 1, retries - 1, delay * 2)), delay));
-            }
-            throw error;
-          });
-        };
-
-        this.showNotification('Submitting partner form...', 'info');
-        tryPartnerSubmit(3000)
-          .then(result => {
-            console.log('Partner submission successful:', result);
-            this.showNotification(`Success: Partner registered! We'll contact you at ${data.email}.`, 'success');
-            form.reset(); // Clear form after success
-          })
-          .catch(err => {
-            console.error('Partner submission error:', err);
-            this.showNotification(`Error submitting form: ${err.message || 'Server or network issue. Please try again later.'}`, 'error');
-          });
-      });
-    }
-    console.log('Partner form setup completed');
-  },
-
-  // Creative enhancement: Notification system for form feedback
-  showNotification(message, type = 'info') {
-    console.log(`Showing notification: ${message} (Type: ${type})`);
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: ${type === 'success' ? '#d4edda' : type === 'error' ? '#f8d7da' : '#cce5ff'};
-      color: ${type === 'success' ? '#155724' : type === 'error' ? '#721c24' : '#004085'};
-      border-radius: 5px;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      animation: slideIn 0.5s ease-out, fadeOut 3s ease-out 2s;
-    `;
-    document.body.appendChild(notification);
-
-    // CSS animations
-    const styles = document.createElement('style');
-    styles.textContent = `
-      @keyframes slideIn {
-        from { right: -300px; opacity: 0; }
-        to { right: 20px; opacity: 1; }
-      }
-      @keyframes fadeOut {
-        from { opacity: 1; }
-        to { opacity: 0; }
-      }
-      .notification {
-        transition: opacity 0.5s;
-      }
-    `;
-    document.head.appendChild(styles);
-
-    // Remove notification after animation
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      setTimeout(() => notification.remove(), 500);
-    }, 5000);
+    console.log('Event listeners set up');
   },
 
   setupHeroFallback() {
@@ -496,7 +330,12 @@ const CourseLoader = {
       card.append(img, badge, levelBadge, title, info, reviewInfo, topicsDiv);
       card.addEventListener("click", () => {
         console.log(`Course card clicked for: ${course.title}`);
-        this.showCourseDetails(course);
+        if (this.courseDetailsModal) {
+          this.showCourseDetails(course);
+        } else {
+          console.error('courseDetailsModal is not initialized. Some features may not work.');
+          this.showNotification('Course details modal failed to load. Please try again.', 'error');
+        }
       });
       card.addEventListener("mouseenter", () => {
         console.log(`Hovering over course: ${course.title}`);
@@ -607,8 +446,14 @@ const CourseLoader = {
     if (this.currentCourse) {
       const points = this.getSkillPoints(this.currentCourse);
       console.log(`Awarding ${points} skill points for course: ${this.currentCourse.title}`);
-      this.userData.totalPoints += points;
-      this.showCourseDetails(this.currentCourse);
+      // Note: User data (points, levels) would typically be managed by userInteractions.js
+      // For now, this logs the action but doesn’t persist state
+      if (this.courseDetailsModal) {
+        this.showCourseDetails(this.currentCourse);
+      } else {
+        console.error('courseDetailsModal is not initialized. Skill points not updated in modal.');
+        this.showNotification('Course details modal failed to load. Some features may not work.', 'warning');
+      }
     }
   },
 
@@ -642,7 +487,9 @@ const CourseLoader = {
     const skillPoints = this.getSkillPoints(course);
     console.log(`Skill points for course: ${skillPoints}`);
     document.getElementById("skillPoints").textContent = `Earn ${skillPoints} Skill Points`;
-    const level = this.getLevel(this.userData.totalPoints);
+    // Note: Level and progress would typically be managed by userInteractions.js
+    // For now, this logs but doesn’t update UI state
+    const level = this.getLevel(0); // Default to 0 points for now
     console.log(`User level: ${level.name}, Progress: ${level.progress}%`);
     document.getElementById("userLevel").textContent = `Level: ${level.name}`;
     document.getElementById("levelProgressBar").style.width = `${level.progress}%`;
@@ -703,8 +550,13 @@ const CourseLoader = {
       console.log('No reviews available for course');
       document.getElementById("modalReviews").innerHTML = "<p>No reviews available.</p>";
     }
-    this.courseDetailsModal.show();
-    console.log('Course details modal shown');
+    if (this.courseDetailsModal) {
+      this.courseDetailsModal.show();
+    } else {
+      console.error('courseDetailsModal is not initialized. Course details cannot be shown.');
+      this.showNotification('Course details modal failed to load. Please try again.', 'error');
+    }
+    console.log('Course details modal shown or attempted');
   },
 
   addFocusBlur(elem) {
@@ -736,16 +588,54 @@ const CourseLoader = {
     } else {
       console.warn('Blur overlay not found, may already be removed');
     }
+  },
+
+  // Notification system for course-related feedback
+  showNotification(message, type = 'info') {
+    console.log(`Showing notification: ${message} (Type: ${type})`);
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: ${type === 'success' ? '#d4edda' : type === 'error' ? '#f8d7da' : '#cce5ff'};
+      color: ${type === 'success' ? '#155724' : type === 'error' ? '#721c24' : '#004085'};
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      animation: slideIn 0.5s ease-out, fadeOut 3s ease-out 2s;
+    `;
+    document.body.appendChild(notification);
+
+    // CSS animations
+    const styles = document.createElement('style');
+    styles.textContent = `
+      @keyframes slideIn {
+        from { right: -300px; opacity: 0; }
+        to { right: 20px; opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      .notification {
+        transition: opacity 0.5s;
+      }
+    `;
+    document.head.appendChild(styles);
+
+    // Remove notification after animation
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      setTimeout(() => notification.remove(), 500);
+    }, 5000);
   }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log('Document loaded, initializing CourseLoader');
   CourseLoader.init();
-  const backToTopButton = document.querySelector(".custom-back-to-top");
-  window.addEventListener("scroll", () => {
-    console.log('Scroll event triggered, Y position:', window.scrollY);
-    if (window.scrollY > 300) backToTopButton.classList.add("visible");
-    else backToTopButton.classList.remove("visible");
-  });
 });
