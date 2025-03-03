@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" id="top" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Primary Meta Tags for SEO -->
+  <title>Customer Dashboard - UpSkilled | Manage Your Learning Journey</title>
+  <meta name="description" content="Access your UpSkilled customer dashboard to view your course history, skill points, membership details, and more. Manage your hands-on learning journey with ease." />
+  <meta name="keywords" content="UpSkilled, Customer Dashboard, Course History, Skill Points, Membership, Hands-on Learning, Frankfurt Courses, Skill Mastery" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="UpSkilled Team" />
+  <meta name="publisher" content="UpSkilled" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Customer Dashboard - UpSkilled | Manage Your Learning Journey" />
+  <meta property="og:description" content="Log in to your UpSkilled dashboard to track your course history, skill points, membership, and more. Enhance your hands-on learning with personalized tools." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.upskilled.com/customer_dashboard.html" />
+  <meta property="og:image" content="https://www.upskilled.com/images/dashboard-upskilled.jpg" />
+  <meta property="og:site_name" content="UpSkilled" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Customer Dashboard - UpSkilled | Manage Your Learning Journey" />
+  <meta name="twitter:description" content="Log in to your UpSkilled dashboard to track your course history, skill points, membership, and more. Enhance your hands-on learning with personalized tools." />
+  <meta name="twitter:image" content="https://www.upskilled.com/images/dashboard-upskilled.jpg" />
+  <meta name="twitter:site" content="@UpSkilledOfficial" />
+  <!-- Canonical URL to prevent duplicate content -->
+  <link rel="canonical" href="https://www.upskilled.com/customer_dashboard.html" />
+  <!-- Favicon and Apple Touch Icons for Branding -->
+  <link rel="icon" type="image/png" href="/client/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/client/images/favicon.png" />
+  <!-- Structured Data (JSON-LD) for WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Customer Dashboard - UpSkilled",
+    "description": "Access your UpSkilled customer dashboard to manage your course history, skill points, membership, and more for hands-on learning in Frankfurt and beyond.",
+    "url": "https://www.upskilled.com/customer_dashboard.html",
+    "potentialAction": {
+      "@type": "ViewAction",
+      "target": "https://www.upskilled.com/customer_dashboard.html",
+      "name": "View Customer Dashboard"
+    }
+  }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Preload Critical Resources for Performance -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style" />
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" />
+  <link rel="preload" href="css/style.css" as="style" />
+  <!-- CSS and Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Sitemap and Robots.txt Links -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.upskilled.com/sitemap.xml" />
+</head>
+<body>
+  <!-- Navigation Bar (Same as Other Pages, Updated User Icon Behavior) -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top" aria-label="Main navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand custom-navbar-brand">UpSkilled</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="customNavbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#selection-heading">Browse Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
+          <li class="nav-item"><a class="nav-link" href="our_mission.html">Our Mission</a></li>
+        </ul>
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="contact.html">Get Help</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">English</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item lang-option" data-lang="en" href="#">English</a></li>
+              <li><a class="dropdown-item lang-option" data-lang="de" href="#">Deutsch</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <img src="https://placehold.co/40x40?text=User" id="profileIcon" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#userModal">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content: Customer Dashboard -->
+  <main class="container py-5">
+    <section class="dashboard-section">
+      <h1 class="text-center mb-4">Welcome to Your Customer Dashboard</h1>
+      <p class="text-center text-muted mb-5">Manage your learning journey, track your progress, and explore member benefits with UpSkilled.</p>
+
+      <!-- Centered Dashboard Tabs -->
+      <div class="d-flex justify-content-center">
+        <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="courseHistory-tab" data-bs-toggle="tab" data-bs-target="#courseHistory" type="button" role="tab" aria-controls="courseHistory" aria-selected="true">Course History</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="skillPoints-tab" data-bs-toggle="tab" data-bs-target="#skillPoints" type="button" role="tab" aria-controls="skillPoints" aria-selected="false">Skill Points</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="membership-tab" data-bs-toggle="tab" data-bs-target="#membership" type="button" role="tab" aria-controls="membership" aria-selected="false">Membership</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Course History Tab -->
+        <div class="tab-pane fade show active" id="courseHistory" role="tabpanel" aria-labelledby="courseHistory-tab">
+          <h2 class="mb-3">Your Course History</h2>
+          <p class="text-muted mb-4">View the courses you’ve attended, including details, dates, prices, and invoices.</p>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Price (excl. VAT)</th>
+                  <th scope="col">Invoice</th>
+                </tr>
+              </thead>
+              <tbody id="courseHistoryTable">
+                <!-- Placeholder Data (Replace with API/Data Integration) -->
+                <tr>
+                  <td>Basic Car Maintenance</td>
+                  <td>March 10, 2025</td>
+                  <td>€45</td>
+                  <td><a href="#" class="text-primary">View Invoice</a></td>
+                </tr>
+                <tr>
+                  <td>Advanced Furniture Design</td>
+                  <td>February 15, 2025</td>
+                  <td>€350</td>
+                  <td><a href="#" class="text-primary">View Invoice</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-muted">No courses attended yet? <a href="index.html#selection-heading" class="text-primary">Browse Courses</a> to get started!</p>
+        </div>
+
+        <!-- Skill Points Tab -->
+        <div class="tab-pane fade" id="skillPoints" role="tabpanel" aria-labelledby="skillPoints-tab">
+          <h2 class="mb-3">Your Skill Points</h2>
+          <p class="text-muted mb-4">Track your current level, skill points, progress to the next level, and member bonuses.</p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Current Level</h5>
+                  <p class="card-text" id="currentLevel">Explorer (Level 3)</p>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Total Skill Points</h5>
+                  <p class="card-text" id="totalSkillPoints">150 points</p>
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Points to Next Level</h5>
+                  <p class="card-text" id="pointsToNextLevel">50 points to Level 4 (Adventurer)</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">Level Overview</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Level 1: Beginner (0–50 points)</li>
+                    <li class="list-group-item">Level 2: Novice (50–100 points)</li>
+                    <li class="list-group-item">Level 3: Explorer (100–200 points)</li>
+                    <li class="list-group-item">Level 4: Adventurer (200–300 points)</li>
+                    <li class="list-group-item">Level 10: Legend (1000+ points)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Member Bonuses</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Priority Booking for Popular Workshops</li>
+                    <li class="list-group-item">10% Discount on Premium Courses</li>
+                    <li class="list-group-item">Exclusive Skill Challenges</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress mt-4">
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% to Next Level</div>
+          </div>
+        </div>
+
+        <!-- Membership Tab -->
+        <div class="tab-pane fade" id="membership" role="tabpanel" aria-labelledby="membership-tab">
+          <h2 class="mb-3">Your Membership</h2>
+          <p class="text-muted mb-4">View your current membership status, pricing, and upgrade options.</p>
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Current Membership</h5>
+              <p class="card-text" id="currentMembership">Free Membership</p>
+              <p class="text-muted">Benefits: Access to basic courses, limited skill points, and community support.</p>
+            </div>
+          </div>
+          <h5 class="mb-3">Membership Options</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Free Membership</h6>
+                  <p class="card-text">Free</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Access to basic courses</li>
+                    <li class="list-group-item">Limited skill points</li>
+                    <li class="list-group-item">Community support</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Premium Membership</h6>
+                  <p class="card-text">€99/year</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Access to all courses</li>
+                    <li class="list-group-item">Unlimited skill points</li>
+                    <li class="list-group-item">Priority booking</li>
+                    <li class="list-group-item">Exclusive member discounts</li>
+                  </ul>
+                  <button class="btn btn-primary mt-3" id="upgradeMembership">Upgrade Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Link to Customer Service -->
+      <div class="text-center mt-5">
+        <a href="contact.html" class="btn btn-outline-primary">Contact Customer Service</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Same as Other Pages) -->
+  <footer class="custom-footer" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="container">
+      <div class="custom-social-icons mb-3">
+        <a href="https://www.facebook.com/UpSkilledOfficial" aria-label="UpSkilled on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/UpSkilledOfficial" aria-label="UpSkilled on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/UpSkilledOfficial" aria-label="UpSkilled on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="quick-links mb-3">
+        <a href="/privacy-policy.html" rel="nofollow">Privacy Policy</a> |
+        <a href="/terms-conditions.html" rel="nofollow">Terms & Conditions</a> |
+        <a href="become_a_partner.html">Become a Partner</a> |
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <p>© 2025 UpSkilled. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Live Chat Button (Optional, with Accessibility) -->
+  <div class="live-chat-button" style="position: fixed; bottom: 20px; left: 20px;" role="button" aria-label="Open Live Chat">
+    <button class="btn btn-success" id="liveChatBtn">
+      <i class="fas fa-comments me-2"></i>Live Chat
+    </button>
+  </div>
+  <!-- Live Chat Modal (Optional) -->
+  <div class="chat-box" id="liveChatBox" style="display: none; position: fixed; bottom: 70px; left: 20px; background-color: #fff; border: 1px solid var(--secondary-color); border-radius: 10px; padding: 1rem;" role="dialog" aria-label="Live Chat Dialog">
+    <div class="chat-box-content">
+      <p class="coming-soon">Live Chat Coming Soon!</p>
+    </div>
+  </div>
+
+  <!-- Back-to-Top Button with Accessibility -->
+  <button class="custom-back-to-top" aria-label="Back to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- User Modal (Replacing Dropdown with Modal, Same Size as Login Modal) -->
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-top-right">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Your Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> <span id="userName">John Doe</span></p>
+          <p><strong>Current Date:</strong> <span id="userDate">March 03, 2025</span></p>
+          <p><strong>Level:</strong> <span id="userLevel">Explorer (Level 3)</span></p>
+          <button class="btn btn-danger mt-3 w-100" id="signOutButton">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS with Preload -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer preload></script>
+  <!-- User Interactions JS -->
+  <script src="js/userInteractions.js" defer preload></script>
+  <!-- Dashboard JS -->
+  <script src="js/dashboard.js" defer preload></script>
+  <!-- Inline Critical JS for Performance -->
+  <script>
+    // Placeholder for initial dashboard interactions
+    document.addEventListener('DOMContentLoaded', function() {
+      const upgradeButton = document.getElementById('upgradeMembership');
+      if (upgradeButton) {
+        upgradeButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          alert('Upgrade functionality coming soon! Please contact customer service for assistance.');
+        });
+      }
+
+      // Initialize tabs
+      const tabEl = document.querySelector('#dashboardTabs .nav-link.active');
+      if (tabEl) {
+        const tab = new bootstrap.Tab(tabEl);
+        tab.show();
+      }
+    });
+
+    // Lazy load non-critical images and videos for performance
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+      });
+    });
+  </script>
+  <!-- Google Analytics (or Other Analytics) for Tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXXXX');
+  </script>
+</body>
+</html>
