@@ -18,35 +18,8 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand custom-navbar-brand" href="index.html">UpSkilled</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="customNavbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html#selection-heading">Browse Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
-          <li class="nav-item"><a class="nav-link active" href="our_mission.html">Our Mission</a></li>
-        </ul>
-        <ul class="navbar-nav ms-3">
-          <li class="nav-item"><a class="nav-link" href="contact.html">Get Help</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">English</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item" href="#">English</a></li>
-              <li><a class="dropdown-item" href="#">Deutsch</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <img src="https://placehold.co/40x40?text=User" id="profileIcon" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#authModalTopRight">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Placeholder for Navigation Bar (dynamically loaded) -->
+  <div id="navbar"></div>
 
   <!-- Main Content -->
   <main class="container mission-container">
@@ -100,23 +73,8 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
-    <div class="container">
-      <div class="custom-social-icons mb-3">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-      </div>
-      <div class="quick-links mb-3">
-        <a href="#">Privacy Policy</a> |
-        <a href="#">Terms & Conditions</a> |
-        <a href="become_a_partner.html">Become a Partner</a> |
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <p>© 2025 UpSkilled. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Placeholder for Footer (dynamically loaded) -->
+  <div id="footer"></div>
 
   <!-- Back-to-Top Button -->
   <button class="custom-back-to-top" aria-label="Back to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
@@ -161,6 +119,29 @@
       const backToTopButton = document.querySelector('.custom-back-to-top');
       if (window.scrollY > 300) backToTopButton.classList.add("visible");
       else backToTopButton.classList.remove("visible");
+    });
+  </script>
+  <!-- Dynamic Template Loader Script -->
+  <script>
+    // Function to load a template file and inject its contents into a target element
+    function loadTemplate(url, elementId) {
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok for ' + url);
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById(elementId).innerHTML = data;
+        })
+        .catch(error => console.error('Error loading template:', error));
+    }
+    
+    // Load common elements after the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      loadTemplate("navbar.html", "navbar");
+      loadTemplate("footer.html", "footer");
     });
   </script>
 </body>

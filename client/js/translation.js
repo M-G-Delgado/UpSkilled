@@ -5,7 +5,7 @@ const TranslationManager = {
 
   init() {
     console.log('TranslationManager: Initializing...');
-    this.loadLanguages()
+    return this.loadLanguages()
       .then(() => {
         console.log('TranslationManager: Languages loaded successfully, rendering dropdown and applying translations');
         this.renderLanguageDropdown();
@@ -15,7 +15,11 @@ const TranslationManager = {
       .catch(error => {
         console.error('TranslationManager: Error initializing translations:', error);
         this.showNotification('Failed to load languages. Defaulting to English.', 'error');
-        this.applyTranslations('en'); // Fallback to English if loading fails
+        this.languages = [{ code: 'en', name: 'English', direction: 'ltr' }]; // Fallback languages
+        this.translations = { en: {} }; // Fallback empty translations
+        this.currentLanguage = 'en';
+        this.renderLanguageDropdown();
+        this.applyTranslations('en'); // Fallback to English
       });
   },
 
@@ -31,8 +35,8 @@ const TranslationManager = {
       })
       .then(data => {
         console.log('TranslationManager: Languages data received:', data);
-        this.languages = data.languages;
-        this.translations = data.translations;
+        this.languages = data.languages || [{ code: 'en', name: 'English', direction: 'ltr' }]; // Fallback
+        this.translations = data.translations || { en: {} }; // Fallback
         console.log('TranslationManager: Languages and translations stored successfully:', {
           languages: this.languages,
           translations: Object.keys(this.translations)
@@ -50,14 +54,9 @@ const TranslationManager = {
     const menu = document.querySelector('.dropdown-menu[aria-labelledby="languageDropdown"]');
     if (dropdown && menu) {
       console.log('TranslationManager: Dropdown and menu elements found, updating content');
-      const currentLang = this.languages.find(lang => lang.code === this.currentLanguage);
-      if (currentLang) {
-        console.log('TranslationManager: Setting dropdown text to:', currentLang.name);
-        dropdown.textContent = currentLang.name;
-      } else {
-        console.warn('TranslationManager: Current language not found, defaulting to English');
-        dropdown.textContent = 'English';
-      }
+      const currentLang = this.languages.find(lang => lang.code === this.currentLanguage) || { name: 'English' };
+      console.log('TranslationManager: Setting dropdown text to:', currentLang.name);
+      dropdown.textContent = currentLang.name;
       menu.innerHTML = this.languages.map(lang => `
         <li><a class="dropdown-item lang-option" data-lang="${lang.code}" href="#">${lang.name}</a></li>
       `).join('');
@@ -94,18 +93,18 @@ const TranslationManager = {
 
   applyTranslations(lang) {
     console.log('TranslationManager: Applying translations for language:', lang);
-    const translation = this.translations[lang];
-    if (!translation) {
+    if (!this.translations || !this.translations[lang]) {
       console.warn('TranslationManager: No translations found for language:', lang, '- Defaulting to English');
-      this.applyTranslations('en');
-      return;
+      lang = 'en'; // Fallback to English if translations aren’t available
     }
+
+    const translation = this.translations[lang] || {};
 
     // Update navigation bar
     console.log('TranslationManager: Updating navigation bar...');
     const navbarBrand = document.querySelector('.navbar-brand.custom-navbar-brand');
     const navbarLinks = document.querySelectorAll('.nav-link');
-    if (navbarBrand) navbarBrand.textContent = translation.navbar_brand;
+    if (navbarBrand) navbarBrand.textContent = translation.navbar_brand || 'UpSkilled';
     navbarLinks.forEach(link => {
       const i18nKey = link.getAttribute('data-i18n');
       if (i18nKey && translation[i18nKey]) {
@@ -126,7 +125,7 @@ const TranslationManager = {
       if (footerLinks[key]) {
         const i18nKey = `contact_footer_${key}`; // Assuming contact page keys for consistency
         console.log('TranslationManager: Updating footer link:', key, 'to:', translation[i18nKey]);
-        footerLinks[key].textContent = translation[i18nKey];
+        footerLinks[key].textContent = translation[i18nKey] || key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
       }
     });
 
@@ -135,11 +134,11 @@ const TranslationManager = {
     const footerCopyright = document.querySelector('footer p:nth-child(4)');
     if (footerImpact) {
       console.log('TranslationManager: Updating footer impact to:', translation.contact_footer_impact);
-      footerImpact.textContent = translation.contact_footer_impact;
+      footerImpact.textContent = translation.contact_footer_impact || 'Training 5,000 underserved learners by 2030. Join the movement!';
     }
     if (footerCopyright) {
       console.log('TranslationManager: Updating footer copyright to:', translation.contact_footer_copyright);
-      footerCopyright.textContent = translation.contact_footer_copyright;
+      footerCopyright.textContent = translation.contact_footer_copyright || '© 2025 UpSkilled. All rights reserved.';
     }
 
     // Update page-specific content for contact.html
@@ -217,7 +216,7 @@ const TranslationManager = {
 
   updateDirectionality(lang) {
     console.log('TranslationManager: Updating text direction for language:', lang);
-    const direction = this.languages.find(l => l.code === lang).direction;
+    const direction = (this.languages.find(l => l.code === lang) || { direction: 'ltr' }).direction;
     document.documentElement.setAttribute('dir', direction);
     console.log('TranslationManager: Document direction set to:', direction);
   },

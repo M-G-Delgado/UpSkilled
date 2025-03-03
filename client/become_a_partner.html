@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Become a Partner – UpSkilled</title>
+  
   <!-- SEO Meta Tags -->
   <meta name="description" content="Partner with UpSkilled to host hands-on workshops, expand your reach, and increase your revenue with minimal hassle." />
   <meta name="keywords" content="UpSkilled, partner, workshops, hands-on learning, local businesses, skill training" />
   <link rel="canonical" href="https://www.yourwebsite.com/become_a_partner.html" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Become a Partner – UpSkilled" />
   <meta property="og:description" content="Join UpSkilled to offer skill-based workshops, reach more customers, and earn more profit." />
@@ -19,52 +21,36 @@
   <meta name="twitter:title" content="Become a Partner – UpSkilled" />
   <meta name="twitter:description" content="Partner with UpSkilled to host workshops, expand your brand, and maximize your revenue." />
   <meta name="twitter:image" content="https://placehold.co/600x400?text=Partner+With+Us" />
+
   <!-- Google Fonts: Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
   <!-- Bootstrap CSS & Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" />
+
   <!-- External CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Additional Inline Styles for Highlighting -->
+  <style>
+    .highlight-earnings {
+      /* A subtle, modern, Excel-like style */
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #333;
+      background-color: #f1f9f1; /* Soft green-ish background reminiscent of Excel cells */
+      border: 1px solid #c2ecc2; /* Subtle border */
+      border-radius: 4px;
+      padding: 0.25em 0.5em;
+      margin-left: 0.5em;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand custom-navbar-brand" href="index.html">UpSkilled</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="customNavbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#selection-heading">Browse Courses</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="become_a_partner.html">Become a Partner</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="our_mission.html">Our Mission</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-3">
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Get Help</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe"></i> English</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item lang-option" data-lang="en" href="#">English</a></li>
-              <li><a class="dropdown-item lang-option" data-lang="de" href="#">Deutsch</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <img src="https://placehold.co/40x40?text=User" id="profileIcon" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#authModalTopRight">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Placeholder for Navigation Bar (dynamically loaded) -->
+  <div id="navbar">
+    <p class="text-center text-muted" style="padding: 1rem;">Loading navigation... If this persists, check your connection or refresh the page.</p>
+  </div>
 
   <!-- Main Section -->
   <main>
@@ -126,6 +112,41 @@
         </div>
       </div>
 
+      <!-- Earnings Calculator Section (Project Your Earnings) -->
+      <div class="partner-section-box earnings">
+        <h3 class="text-center">Project Your Earnings</h3>
+        <p class="text-center">
+          Adjust the sliders below to see how much you can earn—and save—by hosting workshops with UpSkilled. We take the hassle out of admin and marketing so you can focus on teaching.
+        </p>
+        <div class="earnings-calculator">
+          <div class="partner-sliders-column">
+            <div class="partner-slider-group">
+              <label for="courseLevel" class="form-label">Course Level: <span id="courseLevelDisplay">Intermediate (€80)</span></label>
+              <input type="range" class="form-range" id="courseLevel" min="0" max="3" value="1" step="1" oninput="EarningsCalculator.updateEarnings()">
+            </div>
+            <div class="partner-slider-group">
+              <label for="participants" class="form-label">Participants per Course: <span id="participantsDisplay">8</span></label>
+              <input type="range" class="form-range" id="participants" min="4" max="15" value="8" step="1" oninput="EarningsCalculator.updateEarnings()">
+            </div>
+            <div class="partner-slider-group">
+              <label for="coursesPerMonth" class="form-label">Courses per Month: <span id="coursesPerMonthDisplay">6</span></label>
+              <input type="range" class="form-range" id="coursesPerMonth" min="2" max="10" value="6" step="1" oninput="EarningsCalculator.updateEarnings()">
+            </div>
+          </div>
+          <div class="partner-result-column">
+            <h4>Your Yearly Projections</h4>
+            <!-- The updated "yearlyEarnings" block now only highlights the numeric total. -->
+            <div id="yearlyEarnings">0 €</div>
+            <p><strong>Estimated Time Holding Courses:</strong> <span id="totalHours">0 hours/year</span></p>
+            <p><strong>Potential Time Saved via UpSkilled:</strong> <span id="timeSaved">0 hours/year</span></p>
+            <p><strong>Estimated Savings via UpSkilled:</strong> <span id="costSaved">0 €/year</span></p>
+            <p class="text-muted">
+              Earnings reflect your take-home pay after our performance-based commission (25% down to 10% as you grow). Savings come from offloading admin, software, and marketing tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- How It Works Section -->
       <div class="partner-section-box steps">
         <h3 class="text-center">How It Works</h3>
@@ -134,74 +155,28 @@
             <i class="fas fa-user-plus partner-icon"></i>
             <h5>1. Sign Up</h5>
             <p>
-              Complete our brief form to initiate a conversation. Our onboarding team will
-              review your workshop ideas and ensure they align with our hands-on, gamified
-              approach.
+              Complete our brief form to start the conversation. Our onboarding team reviews your workshop ideas to ensure they fit our hands-on, gamified method.
             </p>
           </div>
           <div class="col-md-3 text-center">
             <i class="fas fa-chalkboard-teacher partner-icon"></i>
             <h5>2. Design Your Courses</h5>
             <p class="partner-descriptive">
-              We collaborate with you to structure your workshops—from 1-hour Discovery sessions
-              to multi-day Intensives—ensuring an optimal blend of expert demonstration and
-              practical application.
+              We work with you to create courses—ranging from 1-hour Discovery sessions to multi-day Intensives—ensuring a perfect mix of expert demos and practical experience.
             </p>
           </div>
           <div class="col-md-3 text-center">
             <i class="fas fa-bullhorn partner-icon"></i>
             <h5>3. Reach New Audiences</h5>
             <p class="partner-descriptive">
-              UpSkilled promotes your courses to local learners, hobbyists, and corporate teams,
-              increasing your enrollment with minimal extra effort on your part.
+              UpSkilled promotes your courses to local learners, hobbyists, and corporate teams, increasing your enrollment with minimal extra effort.
             </p>
           </div>
           <div class="col-md-3 text-center">
             <i class="fas fa-money-bill-wave partner-icon"></i>
             <h5>4. Earn & Grow</h5>
             <p class="partner-descriptive">
-              Keep the majority of your earnings (75–90%) while benefiting from performance-based
-              commission reductions. Expand your offerings as your reputation grows.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Potential Earnings Section -->
-      <div class="partner-section-box earnings">
-        <h3 class="text-center">Project Your Earnings</h3>
-        <p class="text-center">
-          Adjust the sliders below to estimate your annual income potential from hosting
-          workshops on UpSkilled.
-        </p>
-        <div class="earnings-calculator">
-          <div class="partner-sliders-column">
-            <div class="partner-slider-group">
-              <label for="coursePrice" class="d-block">Course Price (in €)</label>
-              <input type="range" class="form-range" id="coursePrice" min="25" max="250" value="75" step="5" oninput="updateEarnings()">
-              <div class="slider-value" id="coursePriceDisplay">75€</div>
-            </div>
-            <div class="partner-slider-group">
-              <label for="participants" class="d-block">Participants</label>
-              <input type="range" class="form-range" id="participants" min="3" max="12" value="7" step="1" oninput="updateEarnings()">
-              <div class="slider-value" id="participantsDisplay">7</div>
-            </div>
-            <div class="partner-slider-group">
-              <label for="coursesPerMonth" class="d-block">Courses per Month</label>
-              <input type="range" class="form-range" id="coursesPerMonth" min="2" max="14" value="4" step="1" oninput="updateEarnings()">
-              <div class="slider-value" id="coursesPerMonthDisplay">4</div>
-            </div>
-          </div>
-          <div class="partner-result-column">
-            <h4>Your Yearly Earnings</h4>
-            <p style="font-size: 1.75rem; font-weight: bold;" id="yearlyEarnings">0 €</p>
-            <p>
-              With about <span id="totalHours">0</span> hours of work per year, that’s roughly 
-              <span id="avgHourlyEarnings">0</span> € per hour.
-            </p>
-            <p>
-              As your courses gain traction, offering more advanced or multi-day sessions can
-              further increase your revenue.
+              Keep most of your earnings (75–90%) while enjoying performance-based commission benefits. Expand as your reputation and business grow.
             </p>
           </div>
         </div>
@@ -211,8 +186,7 @@
       <div class="partner-section-box partner-signup" id="partner-signup">
         <h3 class="text-center">Ready to Partner?</h3>
         <p class="text-center">
-          Complete the form below to begin hosting workshops with UpSkilled. Our team will
-          contact you to finalize details and guide you through the onboarding process.
+          Complete the form below to begin hosting workshops with UpSkilled. Our team will contact you to finalize details and guide you through the onboarding process.
         </p>
         <div class="row justify-content-center">
           <div class="col-md-8">
@@ -250,24 +224,10 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
-    <div class="container">
-      <div class="custom-social-icons mb-3">
-        <a href="#"><i class="fas fa-instagram"></i></a>
-        <a href="#"><i class="fas fa-twitter"></i></a>
-        <a href="#"><i class="fas fa-facebook-f"></i></a>
-      </div>
-      <div class="quick-links mb-3">
-        <a href="privacy.html" id="footerPrivacy">Privacy Policy</a> |
-        <a href="terms.html" id="footerTerms">Terms & Conditions</a> |
-        <a href="become_a_partner.html" id="footerPartner">Become a Partner</a> |
-        <a href="contact.html" id="footerContact">Get Help</a>
-      </div>
-      <p>Training 5,000 underserved learners by 2030. Join the movement!</p>
-      <p>© 2025 UpSkilled. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Placeholder for Footer (dynamically loaded) -->
+  <div id="footer">
+    <p class="text-center text-muted" style="padding: 1rem;">Loading footer... If this persists, check your connection or refresh the page.</p>
+  </div>
 
   <!-- Login/Signup Modal -->
   <div class="modal fade" id="authModalTopRight" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
@@ -297,8 +257,10 @@
     </div>
   </div>
 
-  <!-- Bootstrap & Main JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
   <script src="js/userInteractions.js" defer></script>
+  <script src="js/earningsCalculator.js" defer></script>
 </body>
 </html>

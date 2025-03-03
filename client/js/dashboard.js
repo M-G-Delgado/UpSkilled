@@ -65,9 +65,9 @@ const Dashboard = {
     },
   
     updateSkillPoints(points) {
-      document.getElementById('currentLevel').textContent = points.level || 'Explorer (Level 3)';
-      document.getElementById('totalSkillPoints').textContent = `${points.total || 150} points`;
-      document.getElementById('pointsToNextLevel').textContent = `${points.toNext || 50} points to ${points.nextLevel || 'Level 4 (Adventurer)'}`;
+      document.getElementById('currentLevel')?.textContent = points.level || 'Explorer (Level 3)';
+      document.getElementById('totalSkillPoints')?.textContent = `${points.total || 150} points`;
+      document.getElementById('pointsToNextLevel')?.textContent = `${points.toNext || 50} points to ${points.nextLevel || 'Level 4 (Adventurer)'}`;
       const progressBar = document.querySelector('.progress-bar');
       if (progressBar) {
         const progress = points.progress || 75;
@@ -76,11 +76,11 @@ const Dashboard = {
         progressBar.textContent = `${progress}% to Next Level`;
       }
       // Update user level in modal
-      document.getElementById('userLevel').textContent = points.level || 'Explorer (Level 3)';
+      document.getElementById('userLevel')?.textContent = points.level || 'Explorer (Level 3)';
     },
   
     updateMembership(membership) {
-      document.getElementById('currentMembership').textContent = membership.status || 'Free Membership';
+      document.getElementById('currentMembership')?.textContent = membership.status || 'Free Membership';
       // Update benefits or other membership details as needed
     },
   
@@ -91,9 +91,13 @@ const Dashboard = {
       const currentDate = new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
       const userLevel = localStorage.getItem('userLevel') || 'Explorer (Level 3)';
   
-      document.getElementById('userName').textContent = userName;
-      document.getElementById('userDate').textContent = currentDate;
-      document.getElementById('userLevel').textContent = userLevel;
+      const userNameElement = document.getElementById('userName');
+      const userDateElement = document.getElementById('userDate');
+      const userLevelElement = document.getElementById('userLevel');
+  
+      if (userNameElement) userNameElement.textContent = userName;
+      if (userDateElement) userDateElement.textContent = currentDate;
+      if (userLevelElement) userLevelElement.textContent = userLevel;
     },
   
     signOut() {

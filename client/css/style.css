@@ -73,6 +73,7 @@ h6 { font-size: 1rem; letter-spacing: 1px; }
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   padding: 0.25rem 0.75rem !important;
 }
+
 .profile-icon {
   width: 40px;
   height: 40px;
@@ -275,41 +276,173 @@ header.container-fluid {
   margin-top: 11%;
 }
 
-.newsletter {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 5px;
-  text-align: center;
-  margin: 3rem auto;
-  max-width: 600px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+/* Modal positioning for bottom-right (used for newsletter) */
+.modal-bottom-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  margin: 0;
+  max-width: 400px; /* Adjust width as needed */
+  transform: translateX(0) translateY(0); /* Override default modal positioning */
 }
 
-.newsletter input,
-.newsletter button {
-  width: 100%;
-  margin-bottom: 1rem;
+.modal-bottom-right .modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
-.newsletter input {
-  padding: 0.75rem;
-  border: 1px solid #666;
-  border-radius: 5px;
+.modal-bottom-right .modal-body {
+  padding: 1.5rem;
   background-color: #fff;
-  color: #000;
 }
 
-.newsletter button {
+.modal-bottom-right .btn-primary {
   background-color: var(--accent-color);
   border: none;
-  padding: 0.75rem;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.newsletter button:hover { background-color: var(--secondary-color); }
+.modal-bottom-right .btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
+.modal-bottom-right .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.modal-bottom-right .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Ensure the modal doesn’t overlap with other fixed elements (e.g., back-to-top button) */
+.modal-bottom-right .modal-dialog {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal-bottom-right {
+    right: 10px;
+    bottom: 10px;
+    max-width: 320px; /* Reduce width on smaller screens */
+  }
+}
+
+/* Cookie Notice (Persistent, Bottom of Page) */
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--divider);
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 999;
+  color: var(--text-color);
+}
+
+.cookie-notice p {
+  margin: 0;
+}
+
+.cookie-notice .btn {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  border: 1px solid var(--divider);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cookie-notice .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+.cookie-notice .btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.cookie-notice .btn-secondary {
+  background-color: #fff;
+  border-color: var(--divider);
+}
+
+.cookie-notice .btn-secondary:hover {
+  background-color: #e9ecef;
+}
+
+/* Newsletter Fallback (Static, Bottom of Page) */
+.newsletter-fallback {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid var(--divider);
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 999;
+  color: var(--text-color);
+}
+
+.newsletter-fallback p {
+  margin: 0;
+}
+
+.newsletter-fallback input {
+  padding: 0.25rem;
+  margin: 0 0.25rem;
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.newsletter-fallback .btn {
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  border: 1px solid var(--divider);
+  background-color: #fff;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.newsletter-fallback .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+}
+
+.newsletter-fallback .btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.newsletter-fallback .btn-secondary {
+  background-color: #fff;
+  border-color: var(--divider);
+}
+
+.newsletter-fallback .btn-secondary:hover {
+  background-color: #e9ecef;
+}
 
 .custom-footer {
   background-color: var(--footer-bg);
@@ -480,6 +613,35 @@ header.container-fluid {
     margin-left: 7%;
     margin-right: 7%;
   }
+}
+
+/* Updated Partner Slider Group for Inline Labels */
+.partner-slider-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.partner-slider-group .form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--brand-primary);
+}
+
+.partner-slider-group .form-label span {
+  font-weight: 700;
+  color: var(--accent-color);
+  background-color: rgba(231, 158, 79, 0.1); /* Light accent background for emphasis */
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Ensure sliders remain clean and aligned */
+.partner-slider-group .form-range {
+  width: 100%;
 }
 
 /* Our Mission Page Specific Styles */
