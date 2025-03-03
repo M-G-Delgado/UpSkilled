@@ -7,14 +7,20 @@ const CourseLoader = {
 
   init() {
     console.log('Initializing CourseLoader...');
-    this.setupEventListeners();
-    console.log('Event listeners set up');
-    this.setupHeroFallback();
-    console.log('Hero fallback set up');
-    this.initializeCourseDetailsModal();
-    console.log('Course details modal setup completed');
-    // Start loading courses immediately
-    this.loadCoursesFromLocalOrFetch();
+    // Check if this is a course-related page (e.g., has #city or #course-container)
+    const isCoursePage = document.getElementById('city') || document.getElementById('course-container');
+    if (isCoursePage) {
+      this.setupEventListeners();
+      console.log('Event listeners set up for course page');
+      this.setupHeroFallback();
+      console.log('Hero fallback set up');
+      this.initializeCourseDetailsModal();
+      console.log('Course details modal setup completed');
+      this.loadCoursesFromLocalOrFetch();
+      console.log('Courses loading initiated');
+    } else {
+      console.log('Not a course page, skipping course-related initialization');
+    }
   },
 
   loadCoursesFromLocalOrFetch() {
@@ -40,7 +46,8 @@ const CourseLoader = {
       return fetch(`http://localhost:${port}/api/courses`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        mode: 'cors' // CORS mode explicitly enabled
+        mode: 'cors', // CORS mode explicitly enabled
+        credentials: 'include' // If authentication is required
       })
       .then(response => {
         console.log(`Fetch response from port ${port}: Status ${response.status} - ${response.statusText}`);
@@ -117,35 +124,45 @@ const CourseLoader = {
     const sortSelect = document.getElementById("sortCourses");
     const searchInput = document.getElementById("courseSearch");
     const attendeesSelect = document.getElementById("attendees");
+    const reserveSpotButton = document.getElementById("reserveSpotButton");
 
-    citySelect.addEventListener("change", () => {
-      console.log('City selection changed to:', citySelect.value);
-      this.loadCategories(citySelect.value);
-    });
-    categorySelect.addEventListener("change", () => {
-      console.log('Category selection changed to:', categorySelect.value);
-      this.updateIntroText();
-      this.loadCourses(citySelect.value, categorySelect.value, searchInput.value);
-    });
-    sortSelect.addEventListener("change", () => {
-      console.log('Sort selection changed to:', sortSelect.value);
-      this.loadCourses(citySelect.value, categorySelect.value, searchInput.value);
-    });
-    searchInput.addEventListener("input", () => {
-      console.log('Search input changed to:', searchInput.value);
-      this.loadCourses(citySelect.value, categorySelect.value, searchInput.value);
-    });
-    document.getElementById("reserveSpotButton")?.addEventListener("click", () => {
-      console.log('Reserve spot button clicked');
-      alert("Your spot has been reserved!");
-      this.awardSkillPoints();
-    });
-    document.getElementById("contactButton")?.addEventListener("click", () => {
-      console.log('Contact button clicked, navigating to contact.html');
-      window.location.href = "contact.html";
-    });
-    attendeesSelect.addEventListener("change", this.updateTotalPrice.bind(this));
-    attendeesSelect.addEventListener("input", this.updateTotalPrice.bind(this));
+    // Add event listeners only if elements exist
+    if (citySelect) {
+      citySelect.addEventListener("change", () => {
+        console.log('City selection changed to:', citySelect.value);
+        this.loadCategories(citySelect.value);
+      });
+    }
+    if (categorySelect) {
+      categorySelect.addEventListener("change", () => {
+        console.log('Category selection changed to:', categorySelect.value);
+        this.updateIntroText();
+        this.loadCourses(citySelect?.value, categorySelect.value, searchInput?.value || "");
+      });
+    }
+    if (sortSelect) {
+      sortSelect.addEventListener("change", () => {
+        console.log('Sort selection changed to:', sortSelect.value);
+        this.loadCourses(citySelect?.value, categorySelect?.value, searchInput?.value || "");
+      });
+    }
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        console.log('Search input changed to:', searchInput.value);
+        this.loadCourses(citySelect?.value, categorySelect?.value, searchInput.value);
+      });
+    }
+    if (reserveSpotButton) {
+      reserveSpotButton.addEventListener("click", () => {
+        console.log('Reserve spot button clicked');
+        alert("Your spot has been reserved!");
+        this.awardSkillPoints();
+      });
+    }
+    if (attendeesSelect) {
+      attendeesSelect.addEventListener("change", this.updateTotalPrice.bind(this));
+      attendeesSelect.addEventListener("input", this.updateTotalPrice.bind(this));
+    }
 
     console.log('Event listeners set up');
   },
@@ -154,15 +171,15 @@ const CourseLoader = {
     console.log('Setting up hero fallback...');
     const heroVideo = document.getElementById("heroVideo");
     const fallback = document.querySelector(".hero-fallback-carousel");
-    if (heroVideo) {
+    if (heroVideo && fallback) { // Only proceed if both elements exist
       heroVideo.addEventListener("error", () => {
         console.log('Hero video error, switching to fallback carousel');
         heroVideo.style.display = "none";
-        if (fallback) {
-          fallback.style.display = "block";
-          new bootstrap.Carousel(fallback, { interval: 3000 });
-        }
+        fallback.style.display = "block";
+        new bootstrap.Carousel(fallback, { interval: 3000 });
       });
+    } else {
+      console.warn('Hero video or fallback carousel not found, skipping hero fallback setup');
     }
     console.log('Hero fallback setup completed');
   },
@@ -170,6 +187,10 @@ const CourseLoader = {
   loadCities() {
     console.log('Loading cities...');
     const citySelect = document.getElementById("city");
+    if (!citySelect) {
+      console.log('City select not found, skipping loadCities');
+      return;
+    }
     citySelect.innerHTML = "";
     if (!this.coursesData || typeof this.coursesData !== "object") {
       console.log('No courses data available, setting default option');
@@ -197,11 +218,16 @@ const CourseLoader = {
   loadCategories(selectedCity) {
     console.log(`Loading categories for city: ${selectedCity}`);
     const categorySelect = document.getElementById("category");
+    if (!categorySelect) {
+      console.log('Category select not found, skipping loadCategories');
+      return;
+    }
     categorySelect.innerHTML = "";
     if (!this.coursesData[selectedCity]) {
       console.log('No categories available for this city');
       categorySelect.innerHTML = "<option value=''>No categories available</option>";
-      document.getElementById("course-container").innerHTML = "<p>No categories available.</p>";
+      const container = document.getElementById("course-container");
+      if (container) container.innerHTML = "<p>No categories available.</p>";
       return;
     }
     console.log('Available categories:', Object.keys(this.coursesData[selectedCity]));
@@ -219,7 +245,8 @@ const CourseLoader = {
     } else {
       console.log('No categories found, setting empty option');
       categorySelect.innerHTML = "<option value=''>No categories available</option>";
-      document.getElementById("course-container").innerHTML = "<p>No categories available.</p>";
+      const container = document.getElementById("course-container");
+      if (container) container.innerHTML = "<p>No categories available.</p>";
     }
     console.log('Categories loaded for', selectedCity);
   },
@@ -227,6 +254,10 @@ const CourseLoader = {
   updateIntroText() {
     console.log('Updating intro text...');
     const categorySelect = document.getElementById("category");
+    if (!categorySelect) {
+      console.log('Category select not found, skipping updateIntroText');
+      return;
+    }
     const selectedCategory = categorySelect.options[categorySelect.selectedIndex]?.text;
     const intros = {
       "Car Maintenance": "Learn simple ways to care for your car.",
@@ -245,6 +276,10 @@ const CourseLoader = {
   loadCourses(city, category, query = "") {
     console.log(`Loading courses for city: ${city}, category: ${category}, query: ${query}`);
     const container = document.getElementById("course-container");
+    if (!container) {
+      console.log('Course container not found, skipping loadCourses');
+      return;
+    }
     let courses = [];
     if (this.coursesData && this.coursesData[city] && this.coursesData[city][category]) {
       console.log('Filtering courses with query:', query);
@@ -269,7 +304,7 @@ const CourseLoader = {
       }
     });
 
-    const sortValue = document.getElementById("sortCourses").value;
+    const sortValue = document.getElementById("sortCourses")?.value || "mostReviews";
     console.log('Sorting courses by:', sortValue);
     if (sortValue === "mostReviews") {
       courses.sort((a, b) => b.computedReviewCount - a.computedReviewCount);
@@ -328,24 +363,26 @@ const CourseLoader = {
       `).join("");
 
       card.append(img, badge, levelBadge, title, info, reviewInfo, topicsDiv);
-      card.addEventListener("click", () => {
-        console.log(`Course card clicked for: ${course.title}`);
-        if (this.courseDetailsModal) {
-          this.showCourseDetails(course);
-        } else {
-          console.error('courseDetailsModal is not initialized. Some features may not work.');
-          this.showNotification('Course details modal failed to load. Please try again.', 'error');
-        }
-      });
-      card.addEventListener("mouseenter", () => {
-        console.log(`Hovering over course: ${course.title}`);
-        this.addFocusBlur(card);
-      });
-      card.addEventListener("mouseleave", () => {
-        console.log(`Left hover on course: ${course.title}`);
-        this.removeFocusBlur();
-      });
-      container.appendChild(card);
+      if (container) { // Ensure container exists before adding card
+        card.addEventListener("click", () => {
+          console.log(`Course card clicked for: ${course.title}`);
+          if (this.courseDetailsModal) {
+            this.showCourseDetails(course);
+          } else {
+            console.error('courseDetailsModal is not initialized. Some features may not work.');
+            this.showNotification('Course details modal failed to load. Please try again.', 'error');
+          }
+        });
+        card.addEventListener("mouseenter", () => {
+          console.log(`Hovering over course: ${course.title}`);
+          this.addFocusBlur(card);
+        });
+        card.addEventListener("mouseleave", () => {
+          console.log(`Left hover on course: ${course.title}`);
+          this.removeFocusBlur();
+        });
+        container.appendChild(card);
+      }
     });
     console.log('Courses rendered successfully');
   },
@@ -353,6 +390,10 @@ const CourseLoader = {
   loadAttendees(dateData) {
     console.log('Loading attendees for date:', dateData);
     const attendeesSelect = document.getElementById("attendees");
+    if (!attendeesSelect) {
+      console.log('Attendees select not found, skipping loadAttendees');
+      return;
+    }
     attendeesSelect.innerHTML = "";
     if (dateData.spotsAvailable === 0) {
       const opt = document.createElement("option");
@@ -374,7 +415,12 @@ const CourseLoader = {
 
   updateTotalPrice() {
     console.log('Updating total price...');
-    const attendeesValue = document.getElementById("attendees").value;
+    const attendeesSelect = document.getElementById("attendees");
+    if (!attendeesSelect) {
+      console.log('Attendees select not found, skipping updateTotalPrice');
+      return;
+    }
+    const attendeesValue = attendeesSelect.value;
     const attendees = parseInt(attendeesValue) || 1;
     if (this.currentPrice === null) {
       document.getElementById("totalPrice").textContent = "Select an available date";
@@ -386,9 +432,9 @@ const CourseLoader = {
     const base = this.currentPrice * attendees;
     const tax = base * 0.19;
     const total = base + tax;
-    document.getElementById("totalPrice").textContent = "€" + total.toFixed(2);
-    document.getElementById("basePrice").textContent = base.toFixed(2);
-    document.getElementById("taxAmount").textContent = tax.toFixed(2);
+    if (document.getElementById("totalPrice")) document.getElementById("totalPrice").textContent = "€" + total.toFixed(2);
+    if (document.getElementById("basePrice")) document.getElementById("basePrice").textContent = base.toFixed(2);
+    if (document.getElementById("taxAmount")) document.getElementById("taxAmount").textContent = tax.toFixed(2);
     console.log(`Total price updated: €${total.toFixed(2)} (Base: €${base.toFixed(2)}, Tax: €${tax.toFixed(2)} for ${attendees} attendees)`);
   },
 
@@ -403,6 +449,10 @@ const CourseLoader = {
       sorted.sort((a, b) => a.rating - b.rating);
     }
     const reviewsContainer = document.getElementById("modalReviews");
+    if (!reviewsContainer) {
+      console.log('Reviews container not found, skipping sortAndDisplayReviews');
+      return;
+    }
     reviewsContainer.innerHTML = "";
     sorted.forEach(r => {
       console.log(`Rendering review from ${r.name} - Rating: ${r.rating}/5`);
@@ -465,40 +515,62 @@ const CourseLoader = {
     }
     this.currentCourse = course;
     const now = new Date();
-    document.getElementById("modalCourseTitle").textContent = course.title;
-    document.getElementById("modalCourseDescription").textContent = course.description;
-    document.getElementById("modalCourseBullets").innerHTML = course.details.map(d => `<li>${d}</li>`).join("");
+    const modalCourseTitle = document.getElementById("modalCourseTitle");
+    const modalCourseDescription = document.getElementById("modalCourseDescription");
+    const modalCourseBullets = document.getElementById("modalCourseBullets");
+    const modalRating = document.getElementById("modalRating");
+    const modalReviewCount = document.getElementById("modalReviewCount");
+    const courseLength = document.getElementById("courseLength");
+    const modalCourseLevel = document.getElementById("modalCourseLevel");
+    const courseMaxClassSize = document.getElementById("courseMaxClassSize");
+    const modalInstructorImage = document.getElementById("modalInstructorImage");
+    const modalInstructorName = document.getElementById("modalInstructorName");
+    const modalInstructorExp = document.getElementById("modalInstructorExp");
+    const modalBusinessImage = document.getElementById("modalBusinessImage");
+    const modalBusinessName = document.getElementById("modalBusinessName");
+    const modalBusinessBadge = document.getElementById("modalBusinessBadge");
+    const skillPoints = document.getElementById("skillPoints");
+    const userLevel = document.getElementById("userLevel");
+    const levelProgressBar = document.getElementById("levelProgressBar");
+    const dateOptions = document.getElementById("dateOptions");
+
+    if (!modalCourseTitle || !modalCourseDescription || !modalCourseBullets || !modalRating || !modalReviewCount || !courseLength || !modalCourseLevel || !courseMaxClassSize || !modalInstructorImage || !modalInstructorName || !modalInstructorExp || !modalBusinessImage || !modalBusinessName || !modalBusinessBadge || !skillPoints || !userLevel || !levelProgressBar || !dateOptions) {
+      console.error('One or more modal elements not found, skipping showCourseDetails');
+      this.showNotification('Course details modal elements not found. Please try again.', 'error');
+      return;
+    }
+
+    modalCourseTitle.textContent = course.title;
+    modalCourseDescription.textContent = course.description;
+    modalCourseBullets.innerHTML = course.details.map(d => `<li>${d}</li>`).join("");
     this.originalPrice = parseFloat(course.price.replace("€", ""));
     let totalReviews = (course.reviews && Array.isArray(course.reviews)) ? course.reviews.length : 0;
     let avgRating = totalReviews > 0 ? course.reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews : 0;
     console.log(`Course reviews count: ${totalReviews}, Average rating: ${avgRating.toFixed(1)}/5`);
-    document.getElementById("modalRating").textContent = `${avgRating.toFixed(1)}/5`;
-    document.getElementById("modalReviewCount").textContent = `${totalReviews} reviews`;
-    document.getElementById("courseLength").textContent = `Course Length: ${course.duration}`;
-    document.getElementById("modalCourseLevel").textContent = course.level;
-    document.getElementById("courseMaxClassSize").textContent = course.maxClassSize;
-    document.getElementById("modalInstructorImage").src = course.instructor.image || "";
-    document.getElementById("modalInstructorName").textContent = course.instructor.name;
-    document.getElementById("modalInstructorExp").textContent = course.instructor.experience;
-    document.getElementById("modalBusinessImage").src = course.business.image || "";
-    document.getElementById("modalBusinessName").textContent = course.business.name;
-    document.getElementById("modalBusinessBadge").textContent = course.business.badge || "";
+    modalRating.textContent = `${avgRating.toFixed(1)}/5`;
+    modalReviewCount.textContent = `${totalReviews} reviews`;
+    courseLength.textContent = `Course Length: ${course.duration}`;
+    modalCourseLevel.textContent = course.level;
+    courseMaxClassSize.textContent = course.maxClassSize;
+    modalInstructorImage.src = course.instructor.image || "";
+    modalInstructorName.textContent = course.instructor.name;
+    modalInstructorExp.textContent = course.instructor.experience;
+    modalBusinessImage.src = course.business.image || "";
+    modalBusinessName.textContent = course.business.name;
+    modalBusinessBadge.textContent = course.business.badge || "";
 
-    const skillPoints = this.getSkillPoints(course);
-    console.log(`Skill points for course: ${skillPoints}`);
-    document.getElementById("skillPoints").textContent = `Earn ${skillPoints} Skill Points`;
-    // Note: Level and progress would typically be managed by userInteractions.js
-    // For now, this logs but doesn’t update UI state
+    const skillPointsValue = this.getSkillPoints(course);
+    console.log(`Skill points for course: ${skillPointsValue}`);
+    skillPoints.textContent = `Earn ${skillPointsValue} Skill Points`;
     const level = this.getLevel(0); // Default to 0 points for now
     console.log(`User level: ${level.name}, Progress: ${level.progress}%`);
-    document.getElementById("userLevel").textContent = `Level: ${level.name}`;
-    document.getElementById("levelProgressBar").style.width = `${level.progress}%`;
+    userLevel.textContent = `Level: ${level.name}`;
+    levelProgressBar.style.width = `${level.progress}%`;
 
     const validDates = course.dates.filter(d => new Date(d.date.split("(")[0]) > now);
     console.log(`Valid dates for course:`, validDates);
     const availableDates = validDates.filter(d => d.spotsAvailable > 0);
     let defaultDate = availableDates[0] || validDates[0];
-    const dateOptions = document.getElementById("dateOptions");
     dateOptions.innerHTML = validDates.map((d, i) => {
       const checked = (d === defaultDate) ? "checked" : "";
       return `
@@ -548,7 +620,8 @@ const CourseLoader = {
       }
     } else {
       console.log('No reviews available for course');
-      document.getElementById("modalReviews").innerHTML = "<p>No reviews available.</p>";
+      const modalReviews = document.getElementById("modalReviews");
+      if (modalReviews) modalReviews.innerHTML = "<p>No reviews available.</p>";
     }
     if (this.courseDetailsModal) {
       this.courseDetailsModal.show();
@@ -577,16 +650,17 @@ const CourseLoader = {
 
   removeFocusBlur() {
     console.log('Removing focus blur effect from course card');
-    const card = event.currentTarget; // Access the card from the event
-    if (card) {
-      card.style.zIndex = ""; // Reset zIndex on the card
-    }
     const overlay = document.getElementById("blurOverlay");
     if (overlay) {
       document.body.removeChild(overlay);
       console.log('Blur overlay removed');
     } else {
       console.warn('Blur overlay not found, may already be removed');
+    }
+    // Reset zIndex on the card if needed
+    const card = document.querySelector('.course-item:hover');
+    if (card) {
+      card.style.zIndex = "";
     }
   },
 

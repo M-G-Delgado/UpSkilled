@@ -6,289 +6,433 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Primary Meta Tags for SEO -->
   <title>Customer Dashboard - UpSkilled | Manage Your Learning Journey</title>
-  <meta name="description" content="Access your UpSkilled customer dashboard to view your course history, skill points, membership details, and more. Manage your hands-on learning journey with ease." />
-  <meta name="keywords" content="UpSkilled, Customer Dashboard, Course History, Skill Points, Membership, Hands-on Learning, Frankfurt Courses, Skill Mastery" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="author" content="UpSkilled Team" />
-  <meta name="publisher" content="UpSkilled" />
+  <meta name="description" content="Access your UpSkilled customer dashboard to view detailed course history, monitor skill points, review membership benefits, and manage your profile information." />
+  <meta name="keywords" content="UpSkilled, Customer Dashboard, Course History, Detailed Course Info, Skill Points, Membership, Profile, Hands-on Learning, Frankfurt Courses" />
+  <meta name="robots" content="index, follow" />
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Customer Dashboard - UpSkilled | Manage Your Learning Journey" />
-  <meta property="og:description" content="Log in to your UpSkilled dashboard to track your course history, skill points, membership, and more. Enhance your hands-on learning with personalized tools." />
+  <meta property="og:description" content="Log in to your detailed UpSkilled dashboard to explore course history, skill points breakdown, membership benefits, and profile management." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.upskilled.com/customer_dashboard.html" />
   <meta property="og:image" content="https://www.upskilled.com/images/dashboard-upskilled.jpg" />
-  <meta property="og:site_name" content="UpSkilled" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Customer Dashboard - UpSkilled | Manage Your Learning Journey" />
-  <meta name="twitter:description" content="Log in to your UpSkilled dashboard to track your course history, skill points, membership, and more. Enhance your hands-on learning with personalized tools." />
+  <meta name="twitter:description" content="Log in to your detailed UpSkilled dashboard to explore course history, skill points breakdown, membership benefits, and profile management." />
   <meta name="twitter:image" content="https://www.upskilled.com/images/dashboard-upskilled.jpg" />
-  <meta name="twitter:site" content="@UpSkilledOfficial" />
-  <!-- Canonical URL to prevent duplicate content -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://www.upskilled.com/customer_dashboard.html" />
-  <!-- Favicon and Apple Touch Icons for Branding -->
+  <!-- Favicon and Apple Touch Icons -->
   <link rel="icon" type="image/png" href="/client/images/favicon.png" />
   <link rel="apple-touch-icon" href="/client/images/favicon.png" />
-  <!-- Structured Data (JSON-LD) for WebPage -->
+  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Customer Dashboard - UpSkilled",
-    "description": "Access your UpSkilled customer dashboard to manage your course history, skill points, membership, and more for hands-on learning in Frankfurt and beyond.",
-    "url": "https://www.upskilled.com/customer_dashboard.html",
-    "potentialAction": {
-      "@type": "ViewAction",
-      "target": "https://www.upskilled.com/customer_dashboard.html",
-      "name": "View Customer Dashboard"
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Customer Dashboard - UpSkilled",
+      "description": "Access your UpSkilled customer dashboard to manage detailed course history, skill points, membership, and profile for hands-on learning in Frankfurt.",
+      "url": "https://www.upskilled.com/customer_dashboard.html",
+      "potentialAction": {
+        "@type": "ViewAction",
+        "target": "https://www.upskilled.com/customer_dashboard.html",
+        "name": "View Customer Dashboard"
+      }
     }
-  }
   </script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <!-- Preload Critical Resources for Performance -->
+  <!-- Preload Critical Resources -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style" />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" />
   <link rel="preload" href="css/style.css" as="style" />
-  <!-- CSS and Fonts -->
+  <!-- CSS Files -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Sitemap and Robots.txt Links -->
+  <!-- Sitemap -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.upskilled.com/sitemap.xml" />
 </head>
 <body>
-  <!-- Navigation Bar (Same as Other Pages, Updated User Icon Behavior) -->
-  <nav class="navbar navbar-expand-lg custom-navbar fixed-top" aria-label="Main navigation">
-    <div class="container-fluid">
-      <a class="navbar-brand custom-navbar-brand">UpSkilled</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="customNavbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html#selection-heading">Browse Courses</a></li>
-          <li class="nav-item"><a class="nav-link" href="become_a_partner.html">Become a Partner</a></li>
-          <li class="nav-item"><a class="nav-link" href="our_mission.html">Our Mission</a></li>
-        </ul>
-        <ul class="navbar-nav ms-3">
-          <li class="nav-item"><a class="nav-link" href="contact.html">Get Help</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">English</a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item lang-option" data-lang="en" href="#">English</a></li>
-              <li><a class="dropdown-item lang-option" data-lang="de" href="#">Deutsch</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <img src="https://placehold.co/40x40?text=User" id="profileIcon" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#userModal">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Dynamically Loaded Navigation Bar -->
+  <div id="navbar">
+    <p class="text-center text-muted">Loading navigation... If this persists, check your connection or refresh the page.</p>
+  </div>
 
   <!-- Main Content: Customer Dashboard -->
   <main class="container py-5">
-    <section class="dashboard-section">
-      <h1 class="text-center mb-4">Welcome to Your Customer Dashboard</h1>
-      <p class="text-center text-muted mb-5">Manage your learning journey, track your progress, and explore member benefits with UpSkilled.</p>
-
-      <!-- Centered Dashboard Tabs -->
-      <div class="d-flex justify-content-center">
-        <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="courseHistory-tab" data-bs-toggle="tab" data-bs-target="#courseHistory" type="button" role="tab" aria-controls="courseHistory" aria-selected="true">Course History</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="skillPoints-tab" data-bs-toggle="tab" data-bs-target="#skillPoints" type="button" role="tab" aria-controls="skillPoints" aria-selected="false">Skill Points</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="membership-tab" data-bs-toggle="tab" data-bs-target="#membership" type="button" role="tab" aria-controls="membership" aria-selected="false">Membership</button>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Tab Content -->
-      <div class="tab-content">
-        <!-- Course History Tab -->
-        <div class="tab-pane fade show active" id="courseHistory" role="tabpanel" aria-labelledby="courseHistory-tab">
-          <h2 class="mb-3">Your Course History</h2>
-          <p class="text-muted mb-4">View the courses you’ve attended, including details, dates, prices, and invoices.</p>
-          <div class="table-responsive">
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th scope="col">Course Name</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Price (excl. VAT)</th>
-                  <th scope="col">Invoice</th>
-                </tr>
-              </thead>
-              <tbody id="courseHistoryTable">
-                <!-- Placeholder Data (Replace with API/Data Integration) -->
-                <tr>
-                  <td>Basic Car Maintenance</td>
-                  <td>March 10, 2025</td>
-                  <td>€45</td>
-                  <td><a href="#" class="text-primary">View Invoice</a></td>
-                </tr>
-                <tr>
-                  <td>Advanced Furniture Design</td>
-                  <td>February 15, 2025</td>
-                  <td>€350</td>
-                  <td><a href="#" class="text-primary">View Invoice</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="mt-3 text-muted">No courses attended yet? <a href="index.html#selection-heading" class="text-primary">Browse Courses</a> to get started!</p>
-        </div>
-
-        <!-- Skill Points Tab -->
-        <div class="tab-pane fade" id="skillPoints" role="tabpanel" aria-labelledby="skillPoints-tab">
-          <h2 class="mb-3">Your Skill Points</h2>
-          <p class="text-muted mb-4">Track your current level, skill points, progress to the next level, and member bonuses.</p>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Current Level</h5>
-                  <p class="card-text" id="currentLevel">Explorer (Level 3)</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Total Skill Points</h5>
-                  <p class="card-text" id="totalSkillPoints">150 points</p>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Points to Next Level</h5>
-                  <p class="card-text" id="pointsToNextLevel">50 points to Level 4 (Adventurer)</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h5 class="card-title">Level Overview</h5>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Level 1: Beginner (0–50 points)</li>
-                    <li class="list-group-item">Level 2: Novice (50–100 points)</li>
-                    <li class="list-group-item">Level 3: Explorer (100–200 points)</li>
-                    <li class="list-group-item">Level 4: Adventurer (200–300 points)</li>
-                    <li class="list-group-item">Level 10: Legend (1000+ points)</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Member Bonuses</h5>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Priority Booking for Popular Workshops</li>
-                    <li class="list-group-item">10% Discount on Premium Courses</li>
-                    <li class="list-group-item">Exclusive Skill Challenges</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="progress mt-4">
-            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% to Next Level</div>
-          </div>
-        </div>
-
-        <!-- Membership Tab -->
-        <div class="tab-pane fade" id="membership" role="tabpanel" aria-labelledby="membership-tab">
-          <h2 class="mb-3">Your Membership</h2>
-          <p class="text-muted mb-4">View your current membership status, pricing, and upgrade options.</p>
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">Current Membership</h5>
-              <p class="card-text" id="currentMembership">Free Membership</p>
-              <p class="text-muted">Benefits: Access to basic courses, limited skill points, and community support.</p>
-            </div>
-          </div>
-          <h5 class="mb-3">Membership Options</h5>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted">Free Membership</h6>
-                  <p class="card-text">Free</p>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Access to basic courses</li>
-                    <li class="list-group-item">Limited skill points</li>
-                    <li class="list-group-item">Community support</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted">Premium Membership</h6>
-                  <p class="card-text">€99/year</p>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Access to all courses</li>
-                    <li class="list-group-item">Unlimited skill points</li>
-                    <li class="list-group-item">Priority booking</li>
-                    <li class="list-group-item">Exclusive member discounts</li>
-                  </ul>
-                  <button class="btn btn-primary mt-3" id="upgradeMembership">Upgrade Now</button>
-                </div>
-              </div>
-            </div>
+    <!-- Welcome & Summary Section -->
+    <header class="mb-5 text-center">
+      <h1>Welcome, <span id="userNameDisplay">John Doe</span>!</h1>
+      <p class="lead text-muted">Your personalized dashboard overview.</p>
+    </header>
+    
+    <!-- Summary Cards -->
+    <div class="row mb-5">
+      <div class="col-md-3">
+        <div class="card text-center mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Courses Attended</h5>
+            <p class="card-text" id="totalCourses">5</p>
           </div>
         </div>
       </div>
-
-      <!-- Quick Link to Customer Service -->
-      <div class="text-center mt-5">
-        <a href="contact.html" class="btn btn-outline-primary">Contact Customer Service</a>
+      <div class="col-md-3">
+        <div class="card text-center mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Skill Points</h5>
+            <p class="card-text" id="totalSkillPointsSummary">150 pts</p>
+          </div>
+        </div>
       </div>
-    </section>
+      <div class="col-md-3">
+        <div class="card text-center mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Membership</h5>
+            <p class="card-text" id="currentMembershipSummary">Free</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Profile</h5>
+            <p class="card-text"><a href="#profileTab" class="text-primary">View Details</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Tabs -->
+    <div class="d-flex justify-content-center">
+      <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="courseHistory-tab" data-bs-toggle="tab" data-bs-target="#courseHistory" type="button" role="tab" aria-controls="courseHistory" aria-selected="true">Course History</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="skillPoints-tab" data-bs-toggle="tab" data-bs-target="#skillPoints" type="button" role="tab" aria-controls="skillPoints" aria-selected="false">Skill Points</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="membership-tab" data-bs-toggle="tab" data-bs-target="#membership" type="button" role="tab" aria-controls="membership" aria-selected="false">Membership</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profileTab-tab" data-bs-toggle="tab" data-bs-target="#profileTab" type="button" role="tab" aria-controls="profileTab" aria-selected="false">Profile</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Course History Tab -->
+      <div class="tab-pane fade show active" id="courseHistory" role="tabpanel" aria-labelledby="courseHistory-tab">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <select class="form-select" id="courseCity">
+              <option value="" selected>All Cities</option>
+              <option value="Frankfurt">Frankfurt</option>
+              <option value="Berlin">Berlin</option>
+              <option value="Munich">Munich</option>
+              <option value="Hamburg">Hamburg</option>
+              <option value="Cologne">Cologne</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <select class="form-select" id="courseCategory">
+              <option value="" selected>All Categories</option>
+              <option value="automotive">Automotive</option>
+              <option value="design">Design</option>
+              <option value="tech">Technology</option>
+              <option value="business">Business</option>
+              <option value="art">Art</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Search courses..." id="courseSearchInput">
+        </div>
+        <h2 class="mb-3">Your Course History</h2>
+        <p class="text-muted mb-4">Review the courses you've attended. Click on a course row to see additional details.</p>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover" id="courseHistoryTable">
+            <thead>
+              <tr>
+                <th>Course Name</th>
+                <th>Date</th>
+                <th>City</th>
+                <th>Category</th>
+                <th>Price (excl. VAT)</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Template Course 1 -->
+              <tr data-bs-toggle="collapse" data-bs-target="#courseDetail1" class="clickable-row">
+                <td>Basic Car Maintenance</td>
+                <td>March 10, 2025</td>
+                <td>Frankfurt</td>
+                <td>Automotive</td>
+                <td>€45</td>
+                <td>
+                  <a href="#" class="text-primary">View Invoice</a>
+                  <button class="btn btn-link btn-sm">Download</button>
+                </td>
+              </tr>
+              <tr class="collapse" id="courseDetail1">
+                <td colspan="6">
+                  <div class="p-3 bg-light rounded">
+                    <strong>Instructor:</strong> Jane Smith<br>
+                    <strong>Location:</strong> Frankfurt Workshop Center<br>
+                    <strong>Summary:</strong> Learn essential car maintenance skills through hands-on practice.
+                  </div>
+                </td>
+              </tr>
+              <!-- Template Course 2 -->
+              <tr data-bs-toggle="collapse" data-bs-target="#courseDetail2" class="clickable-row">
+                <td>Advanced Furniture Design</td>
+                <td>February 15, 2025</td>
+                <td>Berlin</td>
+                <td>Design</td>
+                <td>€350</td>
+                <td>
+                  <a href="#" class="text-primary">View Invoice</a>
+                  <button class="btn btn-link btn-sm">Download</button>
+                </td>
+              </tr>
+              <tr class="collapse" id="courseDetail2">
+                <td colspan="6">
+                  <div class="p-3 bg-light rounded">
+                    <strong>Instructor:</strong> Michael Brown<br>
+                    <strong>Location:</strong> Berlin Design Studio<br>
+                    <strong>Summary:</strong> Dive into furniture design with advanced techniques and creative projects.
+                  </div>
+                </td>
+              </tr>
+              <!-- Template Course 3 -->
+              <tr data-bs-toggle="collapse" data-bs-target="#courseDetail3" class="clickable-row">
+                <td>Intro to Digital Marketing</td>
+                <td>January 20, 2025</td>
+                <td>Munich</td>
+                <td>Business</td>
+                <td>€120</td>
+                <td>
+                  <a href="#" class="text-primary">View Invoice</a>
+                  <button class="btn btn-link btn-sm">Download</button>
+                </td>
+              </tr>
+              <tr class="collapse" id="courseDetail3">
+                <td colspan="6">
+                  <div class="p-3 bg-light rounded">
+                    <strong>Instructor:</strong> Lisa Green<br>
+                    <strong>Location:</strong> Munich Business Hub<br>
+                    <strong>Summary:</strong> Understand the fundamentals of digital marketing through interactive sessions.
+                  </div>
+                </td>
+              </tr>
+              <!-- Template Course 4 -->
+              <tr data-bs-toggle="collapse" data-bs-target="#courseDetail4" class="clickable-row">
+                <td>Creative Photography</td>
+                <td>December 05, 2024</td>
+                <td>Cologne</td>
+                <td>Art</td>
+                <td>€80</td>
+                <td>
+                  <a href="#" class="text-primary">View Invoice</a>
+                  <button class="btn btn-link btn-sm">Download</button>
+                </td>
+              </tr>
+              <tr class="collapse" id="courseDetail4">
+                <td colspan="6">
+                  <div class="p-3 bg-light rounded">
+                    <strong>Instructor:</strong> Sarah Lee<br>
+                    <strong>Location:</strong> Cologne Arts Center<br>
+                    <strong>Summary:</strong> Capture stunning images by learning creative photography techniques.
+                  </div>
+                </td>
+              </tr>
+              <!-- Template Course 5 -->
+              <tr data-bs-toggle="collapse" data-bs-target="#courseDetail5" class="clickable-row">
+                <td>Entrepreneurship Basics</td>
+                <td>November 12, 2024</td>
+                <td>Hamburg</td>
+                <td>Tech</td>
+                <td>€200</td>
+                <td>
+                  <a href="#" class="text-primary">View Invoice</a>
+                  <button class="btn btn-link btn-sm">Download</button>
+                </td>
+              </tr>
+              <tr class="collapse" id="courseDetail5">
+                <td colspan="6">
+                  <div class="p-3 bg-light rounded">
+                    <strong>Instructor:</strong> David Kim<br>
+                    <strong>Location:</strong> Hamburg Innovation Hub<br>
+                    <strong>Summary:</strong> Learn the basics of entrepreneurship and start your own business.
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination controls -->
+        <nav aria-label="Course History Pagination">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Skill Points Tab -->
+      <div class="tab-pane fade" id="skillPoints" role="tabpanel" aria-labelledby="skillPoints-tab">
+        <h2 class="mb-3">Your Skill Points</h2>
+        <p class="text-muted mb-4">Monitor your points breakdown, view progress details, and see your recent achievements.</p>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Current Level</h5>
+                <p class="card-text" id="currentLevel">Explorer (Level 3)</p>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Total Skill Points</h5>
+                <p class="card-text" id="totalSkillPoints">150 points</p>
+              </div>
+            </div>
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Points to Next Level</h5>
+                <p class="card-text" id="pointsToNextLevel">50 points to Level 4 (Adventurer)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <h5 class="card-title">Progress Overview</h5>
+              <div class="progress" style="height: 30px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  75% to Next Level
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Recent Achievements</h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><i class="fas fa-trophy text-warning"></i> Completed 5 Workshops</li>
+                  <li class="list-group-item"><i class="fas fa-medal text-secondary"></i> Earned "Beginner" Badge</li>
+                  <li class="list-group-item"><i class="fas fa-star text-warning"></i> First Course Attended</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Membership Tab -->
+      <div class="tab-pane fade" id="membership" role="tabpanel" aria-labelledby="membership-tab">
+        <h2 class="mb-3">Your Membership</h2>
+        <p class="text-muted mb-4">Review your membership details, benefits, and renewal status. Upgrade for exclusive perks.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Current Membership</h5>
+                <p class="card-text" id="currentMembership">Free Membership</p>
+                <p class="card-text"><strong>Renewal Status:</strong> Not applicable</p>
+                <p class="text-muted">Basic access with limited courses and skill points.</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">View Benefits</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-3 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">Premium Membership</h5>
+                <p class="card-text">€99/year</p>
+                <ul class="list-group list-group-flush mb-3">
+                  <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Advanced courses</li>
+                  <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> More skill points</li>
+                  <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Trade skills</li>
+                  <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Exclusive discounts</li>
+                  <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Priority support</li>
+                </ul>
+                <p class="text-muted"><strong>Renewal Date:</strong> December 31, 2025</p>
+                <button class="btn btn-primary" id="upgradeMembership">Upgrade Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Tab -->
+      <div class="tab-pane fade" id="profileTab" role="tabpanel" aria-labelledby="profileTab-tab">
+        <h2 class="mb-3">Your Profile</h2>
+        <p class="text-muted mb-4">View your detailed profile information and manage your account settings.</p>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-3 text-center">
+                <img src="https://placehold.co/150x150?text=Avatar" alt="Profile Picture" class="img-fluid rounded-circle mb-2">
+                <a href="#" class="btn btn-link btn-sm">Change Photo</a>
+              </div>
+              <div class="col-md-9">
+                <h5 class="card-title" id="profileNameDisplay">John Doe</h5>
+                <p class="card-text"><strong>Email:</strong> <span id="profileEmailDisplay">johndoe@example.com</span></p>
+                <p class="card-text"><strong>Phone:</strong> <span id="profilePhoneDisplay">123-456-7890</span></p>
+                <p class="card-text"><strong>Address:</strong> <span id="profileAddressDisplay">123 Main Street, Frankfurt, DE</span></p>
+                <p class="card-text"><strong>Date Joined:</strong> <span id="profileJoinedDisplay">January 1, 2025</span></p>
+                <div class="mt-3">
+                  <a href="edit_profile.html" class="btn btn-secondary btn-sm">Edit Profile</a>
+                  <a href="account_settings.html" class="btn btn-outline-secondary btn-sm">Account Settings</a>
+                  <a href="activity_log.html" class="btn btn-link btn-sm">View Activity Log</a>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h6>Connect with us:</h6>
+              <a href="#" class="me-2"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-twitter fa-lg"></i></a>
+              <a href="#" class="me-2"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Link to Customer Service -->
+    <div class="text-center mt-5">
+      <a href="contact.html" class="btn btn-outline-primary">Contact Customer Service</a>
+    </div>
   </main>
 
-  <!-- Footer (Same as Other Pages) -->
-  <footer class="custom-footer" itemscope itemtype="http://schema.org/WPFooter">
-    <div class="container">
-      <div class="custom-social-icons mb-3">
-        <a href="https://www.facebook.com/UpSkilledOfficial" aria-label="UpSkilled on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/UpSkilledOfficial" aria-label="UpSkilled on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/UpSkilledOfficial" aria-label="UpSkilled on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      </div>
-      <div class="quick-links mb-3">
-        <a href="/privacy-policy.html" rel="nofollow">Privacy Policy</a> |
-        <a href="/terms-conditions.html" rel="nofollow">Terms & Conditions</a> |
-        <a href="become_a_partner.html">Become a Partner</a> |
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <p>© 2025 UpSkilled. All rights reserved.</p>
-    </div>
-  </footer>
+  <!-- Dynamically Loaded Footer -->
+  <div id="footer">
+    <p class="text-center text-muted">Loading footer... If this persists, check your connection or refresh the page.</p>
+  </div>
 
-  <!-- Floating Live Chat Button (Optional, with Accessibility) -->
-  <div class="live-chat-button" style="position: fixed; bottom: 20px; left: 20px;" role="button" aria-label="Open Live Chat">
+  <!-- Floating Live Chat Button -->
+  <div class="live-chat-button" role="button" aria-label="Open Live Chat" style="position: fixed; bottom: 20px; left: 20px;">
     <button class="btn btn-success" id="liveChatBtn">
       <i class="fas fa-comments me-2"></i>Live Chat
     </button>
   </div>
-  <!-- Live Chat Modal (Optional) -->
-  <div class="chat-box" id="liveChatBox" style="display: none; position: fixed; bottom: 70px; left: 20px; background-color: #fff; border: 1px solid var(--secondary-color); border-radius: 10px; padding: 1rem;" role="dialog" aria-label="Live Chat Dialog">
+  <!-- Live Chat Modal -->
+  <div class="chat-box" id="liveChatBox" role="dialog" aria-label="Live Chat Dialog" style="display: none; position: fixed; bottom: 70px; left: 20px; background-color: #fff; border: 1px solid var(--secondary-color); border-radius: 10px; padding: 1rem;">
     <div class="chat-box-content">
       <p class="coming-soon">Live Chat Coming Soon!</p>
     </div>
   </div>
 
-  <!-- Back-to-Top Button with Accessibility -->
+  <!-- Back-to-Top Button -->
   <button class="custom-back-to-top" aria-label="Back to Top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- User Modal (Replacing Dropdown with Modal, Same Size as Login Modal) -->
+  <!-- User Modal for Profile -->
   <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true" role="dialog">
     <div class="modal-dialog modal-top-right">
       <div class="modal-content">
@@ -306,41 +450,23 @@
     </div>
   </div>
 
-  <!-- Bootstrap Bundle JS with Preload -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer preload></script>
-  <!-- User Interactions JS -->
+  <script src="js/main.js" defer preload></script>
   <script src="js/userInteractions.js" defer preload></script>
-  <!-- Dashboard JS -->
   <script src="js/dashboard.js" defer preload></script>
-  <!-- Inline Critical JS for Performance -->
   <script>
-    // Placeholder for initial dashboard interactions
-    document.addEventListener('DOMContentLoaded', function() {
-      const upgradeButton = document.getElementById('upgradeMembership');
-      if (upgradeButton) {
-        upgradeButton.addEventListener('click', function(e) {
-          e.preventDefault();
-          alert('Upgrade functionality coming soon! Please contact customer service for assistance.');
-        });
-      }
-
-      // Initialize tabs
-      const tabEl = document.querySelector('#dashboardTabs .nav-link.active');
-      if (tabEl) {
-        const tab = new bootstrap.Tab(tabEl);
-        tab.show();
-      }
-    });
-
-    // Lazy load non-critical images and videos for performance
+    // Initialize lazy loading for images
     document.addEventListener('DOMContentLoaded', function() {
       const images = document.querySelectorAll('img');
       images.forEach(img => {
-        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        if (!img.hasAttribute('loading')) {
+          img.setAttribute('loading', 'lazy');
+        }
       });
     });
   </script>
-  <!-- Google Analytics (or Other Analytics) for Tracking -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
