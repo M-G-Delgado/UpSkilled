@@ -4,7 +4,7 @@ const UserInteractions = {
     init() {
       console.log('Initializing UserInteractions...');
       this.initializeAuthModal();
-      this.setupEventListeners();
+      this.setupEventListeners(); // Ensure this method exists
       this.setupFormSubmissions();
       this.setupBackToTop();
     },
@@ -85,6 +85,12 @@ const UserInteractions = {
         console.warn('authModal not found, signup handler not set for signup button');
       }
       console.log('AuthModal event listeners setup completed');
+    },
+  
+    setupEventListeners() {
+      console.log('Setting up general event listeners in UserInteractions...');
+      // Add any additional event listeners here if needed (e.g., form events, other UI interactions)
+      // This method can remain empty if no additional listeners are required beyond authModal
     },
   
     setupFormSubmissions() {
@@ -206,7 +212,7 @@ const UserInteractions = {
   
     // Notification system for form feedback
     showNotification(message, type = "info") {
-      console.log(`Showing notification: ${message} (Type: ${type})`);
+      console.log(`UserInteractions: Showing notification: ${message} (Type: ${type})`);
       const notification = document.createElement("div");
       notification.className = `notification ${type}`;
       notification.textContent = message;
@@ -216,18 +222,10 @@ const UserInteractions = {
         right: 20px;
         padding: 10px 20px;
         background-color: ${
-          type === "success"
-            ? "#d4edda"
-            : type === "error"
-            ? "#f8d7da"
-            : "#cce5ff"
+          type === "success" ? "#d4edda" : type === "error" ? "#f8d7da" : "#cce5ff"
         };
         color: ${
-          type === "success"
-            ? "#155724"
-            : type === "error"
-            ? "#721c24"
-            : "#004085"
+          type === "success" ? "#155724" : type === "error" ? "#721c24" : "#004085"
         };
         border-radius: 5px;
         z-index: 1000;
@@ -262,6 +260,6 @@ const UserInteractions = {
   };
   
   document.addEventListener("DOMContentLoaded", () => {
-    console.log("Document loaded, initializing UserInteractions");
+    console.log("UserInteractions: Document loaded, initializing UserInteractions");
     UserInteractions.init();
   });
