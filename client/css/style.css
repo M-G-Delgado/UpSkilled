@@ -33,8 +33,11 @@ h4 { font-size: 1.5rem; letter-spacing: 1px; }
 h5 { font-size: 1.25rem; letter-spacing: 1px; }
 h6 { font-size: 1rem; letter-spacing: 1px; }
 
-#selection-heading { scroll-margin-top: 80px; }
+#selection-heading {
+  scroll-margin-top: 80px;
+}
 
+/* Navbar Styles */
 .custom-navbar {
   background-color: var(--nav-bg);
   padding: 1rem 2rem;
@@ -88,6 +91,7 @@ h6 { font-size: 1rem; letter-spacing: 1px; }
   opacity: 0.8;
 }
 
+/* Header / Hero Styles */
 header.container-fluid {
   height: 50vh;
   padding-top: var(--navbar-height);
@@ -134,8 +138,16 @@ header.container-fluid {
   height: 100%;
 }
 
-.hero-title { font-size: 2.5rem; color: #fff; }
-.hero-subtitle { font-size: 1.5rem; margin: 1rem 0; color: #fff; }
+.hero-title {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #fff;
+}
 
 .hero-content::before {
   content: "";
@@ -146,17 +158,25 @@ header.container-fluid {
 }
 
 @media (max-width: 768px) {
-  header.container-fluid { height: auto; min-height: 40vh; padding-top: calc(var(--navbar-height) + 10px); }
+  header.container-fluid {
+    height: auto;
+    min-height: 40vh;
+    padding-top: calc(var(--navbar-height) + 10px);
+  }
   .hero-title { font-size: 2rem; }
   .hero-subtitle { font-size: 1.2rem; }
 }
 
 @media (max-width: 576px) {
-  header.container-fluid { min-height: 35vh; padding-top: calc(var(--navbar-height) + 5px); }
+  header.container-fluid {
+    min-height: 35vh;
+    padding-top: calc(var(--navbar-height) + 5px);
+  }
   .hero-title { font-size: 1.8rem; }
   .hero-subtitle { font-size: 1rem; }
 }
 
+/* Sales Letter, Selection, and Course Listings */
 .sales-letter {
   background-color: var(--card-bg);
   padding: 2rem;
@@ -166,12 +186,31 @@ header.container-fluid {
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-.sales-letter h2 { color: var(--brand-primary); text-align: center; margin-bottom: 1rem; }
-.sales-letter p { font-size: 1.1rem; line-height: 1.5; text-align: justify; }
-.sales-letter .benefits { margin-top: 1rem; list-style: disc inside; padding: 0 1rem; }
-.sales-letter .benefits li { margin-bottom: 0.5rem; }
+.sales-letter h2 {
+  color: var(--brand-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
-.selection-section { margin: 2rem 0; }
+.sales-letter p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.sales-letter .benefits {
+  margin-top: 1rem;
+  list-style: disc inside;
+  padding: 0 1rem;
+}
+
+.sales-letter .benefits li {
+  margin-bottom: 0.5rem;
+}
+
+.selection-section {
+  margin: 2rem 0;
+}
 
 .selection-card {
   border: none;
@@ -179,9 +218,18 @@ header.container-fluid {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.selection-card .card-body { padding: 2rem; }
-.selection-card label { font-weight: 600; white-space: nowrap; }
-.sorting-control label { white-space: nowrap; }
+.selection-card .card-body {
+  padding: 2rem;
+}
+
+.selection-card label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sorting-control label {
+  white-space: nowrap;
+}
 
 .course-listings-wrapper {
   background-color: var(--nav-bg);
@@ -247,7 +295,9 @@ header.container-fluid {
   color: #fff;
 }
 
-.course-item .topics { margin-top: auto; }
+.course-item .topics {
+  margin-top: auto;
+}
 
 .topics {
   display: flex;
@@ -276,14 +326,14 @@ header.container-fluid {
   margin-top: 11%;
 }
 
-/* Modal positioning for bottom-right (used for newsletter) */
+/* Modal (Newsletter) Styles */
 .modal-bottom-right {
   position: fixed;
   bottom: 20px;
   right: 20px;
   margin: 0;
-  max-width: 400px; /* Adjust width as needed */
-  transform: translateX(0) translateY(0); /* Override default modal positioning */
+  max-width: 400px;
+  transform: translateX(0) translateY(0);
 }
 
 .modal-bottom-right .modal-content {
@@ -303,7 +353,8 @@ header.container-fluid {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  color: #fff;
+  color: var(--text-color);
+  transition: background-color 0.3s;
 }
 
 .modal-bottom-right .btn-primary:hover {
@@ -322,7 +373,6 @@ header.container-fluid {
   background-color: #5a6268;
 }
 
-/* Ensure the modal doesn’t overlap with other fixed elements (e.g., back-to-top button) */
 .modal-bottom-right .modal-dialog {
   margin-right: 20px;
   margin-bottom: 20px;
@@ -332,11 +382,11 @@ header.container-fluid {
   .modal-bottom-right {
     right: 10px;
     bottom: 10px;
-    max-width: 320px; /* Reduce width on smaller screens */
+    max-width: 320px;
   }
 }
 
-/* Cookie Notice (Persistent, Bottom of Page) */
+/* Cookie Notice */
 .cookie-notice {
   position: fixed;
   bottom: 0;
@@ -369,7 +419,7 @@ header.container-fluid {
 .cookie-notice .btn-primary {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  color: #fff;
+  color: var(--text-color);
 }
 
 .cookie-notice .btn-primary:hover {
@@ -386,7 +436,7 @@ header.container-fluid {
   background-color: #e9ecef;
 }
 
-/* Newsletter Fallback (Static, Bottom of Page) */
+/* Newsletter Fallback */
 .newsletter-fallback {
   position: fixed;
   bottom: 0;
@@ -427,7 +477,7 @@ header.container-fluid {
 .newsletter-fallback .btn-primary {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  color: #fff;
+  color: var(--text-color);
 }
 
 .newsletter-fallback .btn-primary:hover {
@@ -458,7 +508,9 @@ header.container-fluid {
   margin: 0 0.5rem;
 }
 
-.custom-footer a:hover { color: var(--accent-color); }
+.custom-footer a:hover {
+  color: var(--accent-color);
+}
 
 .custom-back-to-top {
   position: fixed;
@@ -475,21 +527,22 @@ header.container-fluid {
   z-index: 1000;
 }
 
-.custom-back-to-top:hover { background-color: var(--secondary-color); }
-.custom-back-to-top.visible { display: block; }
+.custom-back-to-top:hover {
+  background-color: var(--secondary-color);
+}
 
+.custom-back-to-top.visible {
+  display: block;
+}
+
+/* Modal Styles */
 .modal-content {
   background-color: var(--modal-bg);
   color: var(--text-color);
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-}
-
-#courseDetailsModal .modal-dialog {
-  max-width: 850px;
-  margin: 1.75rem auto;
 }
 
 .modal-header {
@@ -502,7 +555,9 @@ header.container-fluid {
   text-align: center;
 }
 
-.modal-header .btn-close { filter: invert(1); }
+.modal-header .btn-close {
+  filter: invert(1);
+}
 
 .modal-body {
   padding: 1.5rem;
@@ -548,14 +603,14 @@ header.container-fluid {
   color: var(--brand-primary);
   font-weight: 500;
   background-color: var(--card-bg);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .nav-tabs .nav-link:hover {
   background-color: #f5f5f5;
   color: var(--accent-color);
   border-color: var(--accent-color);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-tabs .nav-link.active {
@@ -563,20 +618,35 @@ header.container-fluid {
   color: #fff;
   font-weight: 600;
   border-color: var(--accent-color) var(--accent-color) transparent;
-  box-shadow: 0 4px 8px rgba(231,158,79,0.3);
+  box-shadow: 0 4px 8px rgba(231, 158, 79, 0.3);
 }
 
 @media (max-width: 768px) {
-  .nav-tabs .nav-link { padding: 0.5rem 1rem; font-size: 0.9rem; }
+  .nav-tabs .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 576px) {
-  .nav-tabs .nav-link { padding: 0.5rem 0.75rem; font-size: 0.8rem; text-align: center; }
-  .modal-header { font-size: 1.8rem; padding: 0.5rem 1rem; }
-  .modal-body { padding: 1rem 0.5rem; font-size: 0.9rem; }
+  .nav-tabs .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .modal-header {
+    font-size: 1.8rem;
+    padding: 0.5rem 1rem;
+  }
+  .modal-body {
+    padding: 1rem 0.5rem;
+    font-size: 0.9rem;
+  }
 }
 
-.tab-content { margin-top: 1rem; }
+.tab-content {
+  margin-top: 1rem;
+}
 
 .modal-footer {
   background-color: #fff;
@@ -590,7 +660,7 @@ header.container-fluid {
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .partner-section-header {
@@ -634,12 +704,11 @@ header.container-fluid {
 .partner-slider-group .form-label span {
   font-weight: 700;
   color: var(--accent-color);
-  background-color: rgba(231, 158, 79, 0.1); /* Light accent background for emphasis */
+  background-color: rgba(231, 158, 79, 0.1);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
 }
 
-/* Ensure sliders remain clean and aligned */
 .partner-slider-group .form-range {
   width: 100%;
 }
@@ -657,7 +726,7 @@ header.container-fluid {
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .section-header {
@@ -712,7 +781,7 @@ header.container-fluid {
   padding: 0.75rem 1.5rem;
   margin: 0.5rem;
   border-radius: 5px;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 500;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -722,102 +791,124 @@ header.container-fluid {
   transform: scale(1.05);
 }
 
+/* New Our Mission Additions */
+.why-section {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.impact-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.impact-box {
+  background-color: #e8f7ef;
+  border: 1px solid #c2ecc2;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.impact-box h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.core-values-section {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.core-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.core-value {
+  flex: 1 1 30%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.involvement-section {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* Contact Page Specific Styles */
 .contact-section {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  margin-top: 2rem;
 }
 
 .contact-form-card,
 .faq-card {
+  background-color: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form-card {
-  background-color: var(--bg-color);
-}
-
-.contact-form-card .input-group-text {
-  background-color: var(--card-bg);
-  border-color: var(--divider);
-  color: var(--text-muted);
-}
-
-.contact-form-card .form-control {
-  background-color: #fff;
-  border-color: var(--divider);
-  color: var(--text-color);
-}
-
-.contact-form-card .form-control::placeholder {
-  color: var(--text-muted);
-}
-
-.contact-form-card .form-control:focus {
-  background-color: #fff;
-  border-color: var(--brand-primary);
-  box-shadow: 0 0 5px rgba(28, 61, 90, 0.3);
-}
-
-.contact-form-card .invalid-feedback {
-  color: #ff6b6b;
-}
-
-.contact-form-card .btn-primary {
-  background-color: var(--brand-primary);
-  border: none;
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 5px;
-}
-
-.contact-form-card .btn-primary:hover {
-  background-color: #153a6a;
-}
-
-.faq-card {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-}
-
-.faq-card .accordion-button {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--divider);
-}
-
-.faq-card .accordion-button:not(.collapsed) {
+/* Use same button styling as other pages */
+.btn-contact {
   background-color: var(--accent-color);
-  color: #fff;
-  border-color: var(--accent-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.faq-card .accordion-button:focus {
-  box-shadow: none;
-  border-color: var(--secondary-color);
+.btn-contact:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
-.faq-card .accordion-body {
+/* Live Chat Button and Chat Box */
+.live-chat-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.chat-box {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
   background-color: #fff;
-  border-left: 2px solid var(--secondary-color);
-  padding-left: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 999;
 }
 
-.faq-card .social-links a {
-  transition: color 0.3s ease;
+/* Specific override for the login button in the modal */
+#authModalTopRight #loginButton {
+  background-color: var(--accent-color);
+  border: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
-.faq-card .social-links a:hover {
-  color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-  .contact-section .row {
-    flex-direction: column;
-  }
-  .contact-form-card,
-  .faq-card {
-    margin-bottom: 1rem;
-  }
+#authModalTopRight #loginButton:hover {
+  background-color: var(--secondary-color);
 }
