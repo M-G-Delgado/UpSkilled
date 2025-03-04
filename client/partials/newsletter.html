@@ -1,0 +1,55 @@
+<!-- client/partials/newsletter.html -->
+<div class="modal" id="newsletterSection" tabindex="-1" aria-labelledby="newsletterLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" style="max-width: 500px;">
+    <div class="modal-content border-0 shadow">
+      <!-- Modal Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title w-100 text-center" id="newsletterLabel" style="font-weight: 700;">
+          Unlock Exclusive Perks!
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body pt-0">
+        <p class="text-center mb-4" style="font-size: 1rem; line-height: 1.5;">
+          Sign up for our newsletter to be the first to hear about <strong>brand-new workshops</strong>, 
+          <strong>special discounts</strong>, and <strong>practical tips</strong> that make learning easier. 
+          We only send helpful updates—unsubscribe any time.
+        </p>
+        <form id="newsletterForm" class="px-3">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="newsletterCity"
+              placeholder="Your city"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="newsletterEmail"
+              placeholder="Your email"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary fw-bold"
+            style="width: 200px; display: block; margin: 0 auto;"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+      <!-- Modal Footer (Optional) -->
+      <div class="modal-footer border-0 d-flex flex-column">
+        <small class="text-muted text-center">
+          We respect your privacy. No spam, ever.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>

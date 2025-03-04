@@ -313,36 +313,6 @@
     </div>
   </div>
 
-  <!-- Newsletter Modal (Embedded Inline, Positioned Bottom Right, Dismissible) -->
-  <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-bottom-right">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newsletterModalLabel">Subscribe to Our Newsletter</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div id="newsletterModalContent">
-          <form id="newsletterForm" class="p-3">
-            <div class="mb-3">
-              <label for="newsletterCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="newsletterCity" name="city" placeholder="Enter your city" required>
-            </div>
-            <div class="mb-3">
-              <label for="newsletterEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="newsletterEmail" name="email" placeholder="Enter your email" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Fallback Static Newsletter Notice (Hidden by Default) -->
-  <div id="newsletterFallback" class="newsletter-fallback" style="display: none;">
-    <p>Stay updated with UpSkilled! Subscribe to our newsletter. <input type="text" id="fallbackCity" placeholder="Your city" required> <input type="email" id="fallbackEmail" placeholder="Your email" required> <button id="fallbackSubscribe" class="btn btn-primary btn-sm">Subscribe</button> <button id="fallbackDismiss" class="btn btn-secondary btn-sm">Dismiss</button></p>
-  </div>
-
   <!-- Persistent Cookie Notice (Static, Bottom of Page) -->
   <div id="cookieNotice" class="cookie-notice">
     <p>We use cookies to ensure the best experience on our website. Some are essential for functionality, while others help us analyze and improve our services. By clicking "Accept," you agree to our use of cookies as described in our <a href="/client/privacy.html" target="_blank">Privacy Policy</a>. <button id="agreeCookie" class="btn btn-primary btn-sm">Accept</button> <button id="disagreeCookie" class="btn btn-secondary btn-sm">Decline</button></p>

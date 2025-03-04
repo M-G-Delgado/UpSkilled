@@ -1,21 +1,33 @@
 <!-- client/partials/loginSignupModal.html -->
-<!-- Remove any references to "modal-top-right" and use "authModal" as the ID -->
 
 <style>
-  /* OPTIONAL: Adjust tab button sizes to appear smaller */
-  .nav-tabs .nav-link {
-    font-size: 0.875rem; /* smaller font */
-    padding: 0.4rem 1rem; /* reduce padding */
+  /* Optional: Adjust spacing and reduce the body top padding to 10px */
+  .modal-body {
+    padding-top: 10px !important;
+  }
+  /* Margin below nav tabs for spacing */
+  .nav.nav-tabs {
+    margin-bottom: 10px;
   }
 </style>
 
-<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-  <!-- .modal-dialog-centered for vertical centering, .modal-lg for wider layout -->
+<div class="modal fade" id="authModalTopRight" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content shadow-sm">
+      <!-- Modal Header -->
       <div class="modal-header border-0 pb-0">
-        <!-- Use justify-content-center to center the tabs horizontally -->
-        <ul class="nav nav-tabs justify-content-center w-100" id="authTabs" role="tablist">
+        <h5 class="modal-title mx-auto" id="authModalLabel">Become a Member!</h5>
+        <button
+          type="button"
+          class="btn-close position-absolute top-0 end-0 m-2"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <!-- Modal Body with centered nav tabs -->
+      <div class="modal-body pt-0">
+        <ul class="nav nav-tabs justify-content-center" id="authTabs" role="tablist">
           <li class="nav-item" role="presentation">
             <button
               class="nav-link active"
@@ -45,24 +57,11 @@
             </button>
           </li>
         </ul>
-        <button
-          type="button"
-          class="btn-close position-absolute top-0 end-0 m-2"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
 
-      <div class="modal-body">
         <div class="tab-content" id="authTabContent">
           <!-- Log In Tab -->
-          <div
-            class="tab-pane fade show active"
-            id="loginTabContent"
-            role="tabpanel"
-            aria-labelledby="login-tab"
-          >
-            <form id="loginForm" class="mt-4 px-3">
+          <div class="tab-pane fade show active" id="loginTabContent" role="tabpanel" aria-labelledby="login-tab">
+            <form id="loginForm" class="p-3">
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                 <input
@@ -83,8 +82,9 @@
                   required
                 />
               </div>
-              <div class="d-grid mb-2">
-                <button type="submit" class="btn btn-primary">Log In</button>
+              <!-- Centered button with fixed width -->
+              <div class="text-center mb-2">
+                <button type="submit" class="btn btn-primary" style="width: 200px;">Log In</button>
               </div>
             </form>
             <div class="text-center pb-3">
@@ -93,13 +93,8 @@
           </div>
 
           <!-- Sign Up Tab -->
-          <div
-            class="tab-pane fade"
-            id="signupTabContent"
-            role="tabpanel"
-            aria-labelledby="signup-tab"
-          >
-            <form id="signupForm" class="mt-4 px-3">
+          <div class="tab-pane fade" id="signupTabContent" role="tabpanel" aria-labelledby="signup-tab">
+            <form id="signupForm" class="p-3">
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                 <input
@@ -130,8 +125,15 @@
                   required
                 />
               </div>
-              <div class="d-grid">
-                <button type="submit" class="btn btn-secondary">Sign Up</button>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="joinNewsletter" />
+                <label class="form-check-label" for="joinNewsletter">
+                  Join Newsletter: Get early access updates and discounts
+                </label>
+              </div>
+              <!-- Centered button with fixed width -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-secondary" style="width: 200px;">Sign Up</button>
               </div>
             </form>
           </div>

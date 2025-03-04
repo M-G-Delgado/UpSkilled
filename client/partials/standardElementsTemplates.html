@@ -1,0 +1,117 @@
+<!-- client/partials/standardElementsTemplates.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Standard Elements Templates</title>
+
+  <!-- Google Fonts (Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="/client/css/style.css" />
+</head>
+<body style="font-family: 'Roboto', sans-serif;">
+  <!-- Navbar loaded dynamically by main.js -->
+  <div id="navbar">[Navbar Placeholder]</div>
+
+  <!-- Sample Headings & Paragraphs -->
+  <section class="container my-4">
+    <h1 class="primary-heading">Primary Heading</h1>
+    <h2 class="subtitle">Subtitle</h2>
+    <p class="normal-text">
+      This is a sample paragraph demonstrating the standard text style used throughout the site.
+    </p>
+    <p class="normal-text">
+      Additional text to showcase typography and spacing.
+    </p>
+  </section>
+
+  <!-- Buttons -->
+  <section class="container my-4">
+    <h2 class="subtitle">Buttons</h2>
+    <!-- Using Bootstrap button classes plus optional style overrides -->
+    <button class="btn btn-primary me-2" style="width:200px;">Primary Button</button>
+    <button class="btn btn-secondary me-2" style="width:200px;">Secondary Button</button>
+    <button class="btn btn-tertiary" style="width:200px;">Tertiary Button</button>
+  </section>
+
+  <!-- Nav Tabs (Demo) -->
+  <section class="container my-4">
+    <h2 class="subtitle">Nav Tabs (Demo)</h2>
+    <ul class="nav nav-tabs justify-content-center" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab">Tab One</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab">Tab Two</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab">Tab Three</button>
+      </li>
+    </ul>
+    <div class="tab-content p-3">
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel">Content for Tab One</div>
+      <div class="tab-pane fade" id="tab2" role="tabpanel">Content for Tab Two</div>
+      <div class="tab-pane fade" id="tab3" role="tabpanel">Content for Tab Three</div>
+    </div>
+  </section>
+
+  <!-- Sample Modal (Used for Newsletter, loaded by main.js) -->
+  <!-- *IMPORTANT*: This is appended by main.js as /client/partials/newsletter.html, 
+       so you won't see it here in the raw HTML. 
+       Make sure newsletter.html is a valid Bootstrap modal. -->
+
+  <!-- Example Standard Modal for demonstration (optional) -->
+  <section class="container my-4">
+    <h2 class="subtitle">Standard Modal</h2>
+    <button class="btn btn-primary" style="width:200px;" onclick="document.getElementById('demoModal').style.display='flex'">
+      Open Standard Modal
+    </button>
+    <div class="modal" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="demoModalLabel">Modal Title</h5>
+            <button type="button" class="btn-close" onclick="document.getElementById('demoModal').style.display='none'" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This is a standard modal design. Click close to dismiss.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('demoModal').style.display='none'">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Scheme Swatches -->
+  <section class="container my-4">
+    <h2 class="subtitle">Color Scheme</h2>
+    <div>
+      <div class="color-swatch" style="background-color: var(--brand-primary); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Brand Primary<br>
+      <div class="color-swatch" style="background-color: var(--secondary-color); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Secondary Color<br>
+      <div class="color-swatch" style="background-color: var(--accent-color); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Accent Color<br>
+      <div class="color-swatch" style="background-color: var(--card-bg); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Card Background<br>
+      <div class="color-swatch" style="background-color: var(--nav-bg); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Navbar Background<br>
+      <div class="color-swatch" style="background-color: var(--footer-bg); width:50px; height:50px; display:inline-block; margin-right:10px; border:1px solid #ccc;"></div> Footer Background
+    </div>
+  </section>
+
+  <!-- Footer loaded dynamically by main.js -->
+  <div id="footer">[Footer Placeholder]</div>
+
+  <!-- Bootstrap JS (Bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- main.js and userInteractions.js for dynamic loading & interactions -->
+  <script src="/client/js/main.js"></script>
+  <script src="/client/js/userInteractions.js"></script>
+</body>
+</html>

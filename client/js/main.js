@@ -2,323 +2,120 @@
 
 const Main = {
     init() {
-      console.log(`Main: Initializing... [Timestamp: ${new Date().toISOString()}]`);
+      console.log('Main.init()');
       this.loadTemplates()
         .then(() => {
-          console.log(`Main: Templates loaded successfully [Timestamp: ${new Date().toISOString()}]`);
           this.initializeModules();
-          this.showNewsletterModalOnFirstVisit(); // Show newsletter modal only on first visit
+          // Only show the newsletter on relevant pages
+          if (this.shouldShowNewsletter()) {
+            // Set a random delay between 15 and 75 seconds
+            const delay = Math.floor(Math.random() * (65000 - 10000 + 1)) + 15000;
+            console.log(`Newsletter will show in ${delay} ms.`);
+            setTimeout(() => {
+              this.showNewsletterOnEveryLoad();
+            }, delay);
+          }
         })
         .catch(error => {
-          console.error(`Main: Error initializing templates [Timestamp: ${new Date().toISOString()}]:`, error);
-          this.showNotification('Failed to load page components. Please check your connection or refresh the page.', 'error');
+          console.error('Error loading templates:', error);
           this.showFallbackContent();
         });
     },
   
     loadTemplates() {
-      console.log(`Main: Loading templates (navbar, footer, newsletter, login/signup modal)... [Timestamp: ${new Date().toISOString()}]`);
+      console.log('Main.loadTemplates()');
+      const origin = window.location.origin;
       const templates = [
-        { url: '/client/partials/navbar.html', elementId: 'navbar' },
-        { url: '/client/partials/footer.html', elementId: 'footer' },
-        { url: '/client/partials/newsletterModal.html', append: true },
-        { url: '/client/partials/loginSignupModal.html', append: true }
+        { url: `${origin}/client/partials/navbar.html`, elementId: 'navbar' },
+        { url: `${origin}/client/partials/footer.html`, elementId: 'footer' },
+        { url: `${origin}/client/partials/newsletter.html`, append: true },
+        { url: `${origin}/client/partials/loginSignupModal.html`, append: true }
       ];
   
       return Promise.all(templates.map(template => {
-        console.log(`Main: Attempting to fetch ${template.url} [Timestamp: ${new Date().toISOString()}]`);
-        return fetch(template.url, {
-          mode: 'cors',
-          credentials: 'include',
-          headers: {
-            'Accept': 'text/html'
-          }
-        })
-        .then(response => {
-          console.log(`Main: Fetch response for ${template.url}: Status ${response.status} - ${response.statusText} [Timestamp: ${new Date().toISOString()}]`);
-          if (!response.ok) {
-            console.error(`Main: Fetch failed for ${template.url} with status ${response.status} [Timestamp: ${new Date().toISOString()}]`);
-            throw new Error(`Failed to load ${template.url}: ${response.status} - ${response.statusText}`);
-          }
-          return response.text();
-        })
-        .then(data => {
-          console.log(`Main: Received data for ${template.url}: ${data.substring(0, 100)}... [Timestamp: ${new Date().toISOString()}]`);
-          if (template.append) {
-            document.body.insertAdjacentHTML('beforeend', data);
-            console.log(`Main: Appended ${template.url} to document body [Timestamp: ${new Date().toISOString()}]`);
-          } else {
-            const element = document.getElementById(template.elementId);
-            if (element) {
-              try {
-                console.log(`Main: Parsing HTML for ${template.url} [Timestamp: ${new Date().toISOString()}]`);
-                const parser = new DOMParser();
-                const parsedDoc = parser.parseFromString(data, 'text/html');
-                const content = parsedDoc.body.firstChild ? parsedDoc.body.firstChild.outerHTML : data;
-                element.innerHTML = content;
-                console.log(`Main: Successfully loaded ${template.url} into #${template.elementId} [Timestamp: ${new Date().toISOString()}]`);
-              } catch (parseError) {
-                console.error(`Main: Error parsing ${template.url}:`, parseError, `[Timestamp: ${new Date().toISOString()}]`);
-                this.showNotification(`Failed to parse ${template.url}. Showing fallback content.`, 'warning');
-                this.showFallbackContent();
-                throw parseError;
-              }
+        console.log(`Fetching: ${template.url}`);
+        return fetch(template.url)
+          .then(res => {
+            if (!res.ok) throw new Error(`Failed to load ${template.url}: ${res.status}`);
+            return res.text();
+          })
+          .then(html => {
+            if (template.append) {
+              document.body.insertAdjacentHTML('beforeend', html);
+              console.log(`Appended: ${template.url}`);
             } else {
-              console.warn(`Main: Element #${template.elementId} not found for ${template.url} [Timestamp: ${new Date().toISOString()}]`);
-              this.showNotification(`Element for ${template.url} not found. Showing fallback content.`, 'warning');
-              this.showFallbackContent();
-              throw new Error(`Element #${template.elementId} not found for ${template.url}`);
+              const el = document.getElementById(template.elementId);
+              if (!el) {
+                console.warn(`No element #${template.elementId} found. Fallback invoked.`);
+                this.showFallbackContent();
+                throw new Error(`Missing #${template.elementId}`);
+              }
+              el.innerHTML = html;
+              console.log(`Injected: ${template.url} into #${template.elementId}`);
             }
-          }
-        })
-        .catch(error => {
-          console.error(`Main: Error loading ${template.url}:`, error, `[Timestamp: ${new Date().toISOString()}]`);
-          this.showNotification(`Failed to load ${template.url}. Showing fallback content.`, 'error');
-          this.showFallbackContent();
-          throw error;
-        });
+          })
+          .catch(error => {
+            console.error(`Error loading ${template.url}:`, error);
+            throw error;
+          });
       }));
     },
   
     initializeModules() {
-      console.log(`Main: Initializing dependent modules (UserInteractions)... [Timestamp: ${new Date().toISOString()}]`);
-      UserInteractions.init();
-    },
-  
-    showNewsletterModalOnFirstVisit() {
-      console.log(`Main: Checking if newsletter modal should be shown on first visit... [Timestamp: ${new Date().toISOString()}]`);
-      const hasSeenNewsletter = localStorage.getItem('newsletterSeen');
-      console.log(`Main: Newsletter seen status: ${hasSeenNewsletter} [Timestamp: ${new Date().toISOString()}]`);
-  
-      if (hasSeenNewsletter !== 'true') {
-        const observer = new MutationObserver(() => {
-          const newsletterModal = document.getElementById('newsletterModal');
-          if (newsletterModal) {
-            let attempts = 0;
-            const maxAttempts = 3;
-            const showModal = () => {
-              if (attempts >= maxAttempts) {
-                console.error(`Main: Max attempts reached, showing fallback newsletter notice [Timestamp: ${new Date().toISOString()}]`);
-                this.showNewsletterFallback();
-                return;
-              }
-              attempts++;
-              console.log(`Main: Attempt ${attempts} to show newsletter modal... [Timestamp: ${new Date().toISOString()}]`);
-              setTimeout(() => {
-                try {
-                  const bsModal = new bootstrap.Modal(newsletterModal, {
-                    backdrop: 'static',
-                    keyboard: false
-                  });
-                  console.log(`Main: Showing newsletter modal [Timestamp: ${new Date().toISOString()}]`);
-                  bsModal.show();
-                  newsletterModal.addEventListener('hidden.bs.modal', () => {
-                    console.log(`Main: Newsletter modal hidden, marking as seen in localStorage [Timestamp: ${new Date().toISOString()}]`);
-                    localStorage.setItem('newsletterSeen', 'true');
-                  });
-                  const newsletterForm = document.getElementById('newsletterForm');
-                  if (newsletterForm) {
-                    newsletterForm.addEventListener('submit', (e) => {
-                      e.preventDefault();
-                      const city = document.querySelector('input[name="city"]').value;
-                      const email = document.querySelector('input[name="email"]').value;
-                      if (!city || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                        console.log(`Main: Invalid newsletter form input detected [Timestamp: ${new Date().toISOString()}]`);
-                        this.showNotification('Please enter a valid city and email address.', 'error');
-                        return;
-                      }
-                      fetch('https://jsonplaceholder.typicode.com/posts', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        mode: 'cors',
-                        credentials: 'include'
-                      })
-                      .then(response => {
-                        if (response.ok) {
-                          console.log(`Main: Newsletter subscription successful [Timestamp: ${new Date().toISOString()}]`);
-                          this.showNotification('Thank you for subscribing to our newsletter!', 'success');
-                          bsModal.hide();
-                          localStorage.setItem('newsletterSeen', 'true');
-                        } else {
-                          throw new Error('Subscription failed.');
-                        }
-                      })
-                      .catch(error => {
-                        console.error(`Newsletter subscription error:`, error, `[Timestamp: ${new Date().toISOString()}]`);
-                        this.showNotification('Failed to subscribe. Please try again later.', 'error');
-                      });
-                    });
-                  } else {
-                    console.error(`Main: Newsletter form not found in modal content [Timestamp: ${new Date().toISOString()}]`);
-                    this.showNotification('Newsletter form failed to load. Please check your connection or refresh the page.', 'error');
-                    showModal();
-                  }
-                } catch (error) {
-                  console.error(`Main: Error showing newsletter modal on attempt ${attempts}:`, error, `[Timestamp: ${new Date().toISOString()}]`);
-                  this.showNotification(`Error loading newsletter modal (Attempt ${attempts}). Retrying...`, 'warning');
-                  showModal();
-                }
-              }, 5000);
-            };
-            showModal();
-            observer.disconnect();
-          }
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-      } else {
-        console.log(`Main: User has already seen the newsletter modal, skipping display [Timestamp: ${new Date().toISOString()}]`);
+      console.log('Main.initializeModules()');
+      if (typeof UserInteractions !== 'undefined') {
+        UserInteractions.init();
       }
     },
   
-    showNewsletterFallback() {
-      console.log(`Main: Showing fallback newsletter notice... [Timestamp: ${new Date().toISOString()}]`);
-      const newsletterFallback = document.getElementById('newsletterFallback');
-      if (newsletterFallback) {
-        newsletterFallback.style.display = 'block';
-        const fallbackSubscribe = document.getElementById('fallbackSubscribe');
-        const fallbackDismiss = document.getElementById('fallbackDismiss');
-        if (fallbackSubscribe) {
-          fallbackSubscribe.addEventListener('click', () => {
-            const city = document.getElementById('fallbackCity').value;
-            const email = document.getElementById('fallbackEmail').value;
-            if (!city || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-              console.log(`Main: Invalid fallback newsletter input detected [Timestamp: ${new Date().toISOString()}]`);
-              this.showNotification('Please enter a valid city and email address.', 'error');
-              return;
-            }
-            fetch('https://jsonplaceholder.typicode.com/posts', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              mode: 'cors',
-              credentials: 'include'
-            })
-            .then(response => {
-              if (response.ok) {
-                console.log(`Main: Fallback newsletter subscription successful [Timestamp: ${new Date().toISOString()}]`);
-                this.showNotification('Thank you for subscribing to our newsletter!', 'success');
-                newsletterFallback.style.display = 'none';
-                localStorage.setItem('newsletterSeen', 'true');
-              } else {
-                throw new Error('Subscription failed.');
-              }
-            })
-            .catch(error => {
-              console.error(`Newsletter fallback subscription error:`, error, `[Timestamp: ${new Date().toISOString()}]`);
-              this.showNotification('Failed to subscribe. Please try again later.', 'error');
-            });
-          });
+    // Return true if the current page is one where the newsletter should be shown
+    shouldShowNewsletter() {
+      // List the paths where the newsletter should appear
+      const allowedPaths = ["/client/index.html", "/", "/"];
+      const currentPath = window.location.pathname;
+      console.log(`Current page path: ${currentPath}`);
+      return allowedPaths.includes(currentPath);
+    },
+  
+    // Show the newsletter modal using Bootstrap's modal API
+    showNewsletterOnEveryLoad() {
+      console.log('Main.showNewsletterOnEveryLoad()');
+      const newsletterSection = document.getElementById('newsletterSection');
+      if (newsletterSection) {
+        if (typeof bootstrap === 'undefined' || typeof bootstrap.Modal !== 'function') {
+          console.error('Bootstrap Modal not available.');
+          return;
         }
-        if (fallbackDismiss) {
-          fallbackDismiss.addEventListener('click', () => {
-            console.log(`Main: Newsletter fallback dismissed, marking as seen in localStorage [Timestamp: ${new Date().toISOString()}]`);
-            localStorage.setItem('newsletterSeen', 'true');
-            newsletterFallback.style.display = 'none';
+        try {
+          const newsletterModal = new bootstrap.Modal(newsletterSection, {
+            backdrop: 'static',
+            keyboard: true
           });
+          newsletterModal.show();
+          console.log('Newsletter modal displayed.');
+        } catch (err) {
+          console.error('Error creating/showing newsletter modal:', err);
         }
       } else {
-        console.error(`Main: Newsletter fallback element (#newsletterFallback) not found in DOM [Timestamp: ${new Date().toISOString()}]`);
-        this.showNotification('Newsletter fallback failed to load. Please check your connection or refresh the page.', 'error');
+        console.warn('Newsletter section not found in DOM.');
       }
     },
   
     showFallbackContent() {
-      console.log(`Main: Showing fallback content for navbar and footer... [Timestamp: ${new Date().toISOString()}]`);
+      console.warn('Showing fallback content.');
       const navbar = document.getElementById('navbar');
       const footer = document.getElementById('footer');
       if (navbar) {
-        navbar.innerHTML = `
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
-              <div class="container-fluid">
-                <a class="navbar-brand custom-navbar-brand text-white fw-bold" href="/client/index.html">UpSkilled</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarNav" aria-controls="customNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="customNavbarNav">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link text-white" href="/client/index.html#selection-heading">Browse Courses</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="/client/become_a_partner.html">Become a Partner</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="/client/our_mission.html">Our Mission</a></li>
-                  </ul>
-                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link text-white" href="/client/contact.html">Get Help</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#">English</a></li>
-                    <li class="nav-item"><img src="https://placehold.co/40x40?text=User" class="profile-icon" alt="User Profile" role="button" data-bs-toggle="modal" data-bs-target="#authModalTopRight" /></li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          `;
-        console.log(`Main: Fallback navbar injected into DOM [Timestamp: ${new Date().toISOString()}]`);
+        navbar.innerHTML = `<nav class="navbar navbar-light bg-light"><div class="container">Fallback Navbar</div></nav>`;
       }
       if (footer) {
-        footer.innerHTML = `
-            <footer class="custom-footer">
-              <div class="container">
-                <div class="custom-social-icons mb-3">
-                  <a href="#"><i class="fas fa-instagram"></i></a>
-                  <a href="#"><i class="fas fa-twitter"></i></a>
-                  <a href="#"><i class="fas fa-facebook-f"></i></a>
-                </div>
-                <div class="quick-links mb-3">
-                  <a href="/client/privacy.html">Privacy Policy</a> | 
-                  <a href="/client/terms.html">Terms & Conditions</a> | 
-                  <a href="/client/become_a_partner.html">Become a Partner</a> | 
-                  <a href="/client/contact.html">Get Help</a>
-                </div>
-                <p>Training 5,000 underserved learners by 2030. Join the movement!</p>
-                <p>© 2025 UpSkilled. All rights reserved.</p>
-              </div>
-            </footer>
-          `;
-        console.log(`Main: Fallback footer injected into DOM [Timestamp: ${new Date().toISOString()}]`);
+        footer.innerHTML = `<footer class="footer bg-light"><div class="container text-center">Fallback Footer</div></footer>`;
       }
-    },
-  
-    showNotification(message, type = 'info') {
-      console.log(`Main: Showing notification: ${message} (Type: ${type}) [Timestamp: ${new Date().toISOString()}]`);
-      const notification = document.createElement('div');
-      notification.className = `notification ${type}`;
-      notification.textContent = message;
-      notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: ${type === 'success' ? '#d4edda' : type === 'error' ? '#f8d7da' : '#cce5ff'};
-            color: ${type === 'success' ? '#155724' : type === 'error' ? '#721c24' : '#004085'};
-            border-radius: 5px;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            animation: slideIn 0.5s ease-out, fadeOut 3s ease-out 2s;
-          `;
-      document.body.appendChild(notification);
-  
-      const styles = document.createElement('style');
-      styles.textContent = `
-            @keyframes slideIn {
-              from { right: -300px; opacity: 0; }
-              to { right: 20px; opacity: 1; }
-            }
-            @keyframes fadeOut {
-              from { opacity: 1; }
-              to { opacity: 0; }
-            }
-            .notification {
-              transition: opacity 0.5s;
-            }
-          `;
-      document.head.appendChild(styles);
-  
-      setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => notification.remove(), 500);
-      }, 5000);
     }
   };
   
   document.addEventListener('DOMContentLoaded', () => {
-    console.log(`Main: Document loaded, current URL: ${window.location.href} [Timestamp: ${new Date().toISOString()}]`);
-    console.log(`Main: Initializing Main [Timestamp: ${new Date().toISOString()}]`);
+    console.log('DOMContentLoaded -> Main.init()');
     Main.init();
   });
   
