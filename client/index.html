@@ -108,13 +108,7 @@
         <div class="row g-3">
           <div class="col-12">
             <label for="courseSearch" class="form-label">Search Courses</label>
-            <input
-              type="text"
-              id="courseSearch"
-              class="form-control"
-              placeholder="e.g., Car Maintenance"
-              aria-label="Search for courses"
-            />
+            <input type="text" id="courseSearch" class="form-control" placeholder="e.g., Car Maintenance" aria-label="Search for courses" />
           </div>
           <div class="col-md-6">
             <label for="city" class="form-label">Choose a City</label>
@@ -168,44 +162,17 @@
         <div class="modal-body" style="max-height: 80vh; overflow-y: auto;">
           <ul class="nav nav-tabs sticky-tabs" id="courseTab" role="tablist" aria-label="Course information tabs">
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active"
-                id="details-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#details"
-                type="button"
-                role="tab"
-                aria-selected="true"
-                aria-controls="details"
-              >
+              <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-selected="true" aria-controls="details">
                 Details
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="reviews-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#reviews"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="reviews"
-              >
+              <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-selected="false" aria-controls="reviews">
                 Success Stories
               </button>
             </li>
             <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="booking-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#booking"
-                type="button"
-                role="tab"
-                aria-selected="false"
-                aria-controls="booking"
-              >
+              <button class="nav-link" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" type="button" role="tab" aria-selected="false" aria-controls="booking">
                 Booking
               </button>
             </li>
@@ -346,34 +313,6 @@
     </div>
   </div>
 
-  <!-- Login/Signup Modal (Positioned Top and Right, 7% Margins on Larger Screens) -->
-  <div class="modal fade" id="authModalTopRight" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-top-right">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="authModalLabel">Become a Member!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="authForm">
-            <div class="mb-3">
-              <input type="email" class="form-control" id="authEmail" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" id="authPassword" placeholder="Enter your password" required>
-            </div>
-            <div class="d-flex justify-content-center align-items-center gap-3">
-              <button type="submit" class="btn btn-primary" id="loginButton">Log In</button>
-              <div class="auth-divider"></div>
-              <button type="submit" class="btn btn-secondary" id="signupButton">Sign Up</button>
-            </div>
-          </form>
-          <p class="mt-2 text-center">Forgot password? <a href="/client/forgot-password.html" class="text-primary" rel="nofollow">Reset it</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Newsletter Modal (Embedded Inline, Positioned Bottom Right, Dismissible) -->
   <div class="modal fade" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-bottom-right">
@@ -423,12 +362,12 @@
   <!-- Inline Script for Lazy Loading Images, Font, and Style Debugging -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('Inline Script: Lazy loading images, checking fonts, and debugging styles [Timestamp:', new Date().toISOString(), ']');
+      console.log(`Inline Script: Lazy loading images, checking fonts, and debugging styles [Timestamp: ${new Date().toISOString()}]`);
       const images = document.querySelectorAll('img');
       images.forEach(img => {
         if (!img.hasAttribute('loading')) {
           img.setAttribute('loading', 'lazy');
-          console.log(`Inline Script: Added loading="lazy" to image: ${img.src} [Timestamp:', new Date().toISOString(), ']`);
+          console.log(`Inline Script: Added loading="lazy" to image: ${img.src} [Timestamp: ${new Date().toISOString()}]`);
         }
       });
 
@@ -440,7 +379,7 @@
       document.body.appendChild(testElement);
       setTimeout(() => {
         const isRobotoLoaded = window.getComputedStyle(testElement).fontFamily.toLowerCase().includes('roboto');
-        console.log(`Inline Script: Roboto font loaded: ${isRobotoLoaded} [Timestamp:', new Date().toISOString(), ']`);
+        console.log(`Inline Script: Roboto font loaded: ${isRobotoLoaded} [Timestamp: ${new Date().toISOString()}]`);
         document.body.removeChild(testElement);
       }, 1000);
 
@@ -449,15 +388,15 @@
       const footer = document.querySelector('#footer .custom-footer');
       if (navbar) {
         const styles = window.getComputedStyle(navbar);
-        console.log(`Inline Script: Navbar styles - backgroundColor: ${styles.backgroundColor}, color: ${styles.color}, fontFamily: ${styles.fontFamily} [Timestamp:', new Date().toISOString(), ']`);
+        console.log(`Inline Script: Navbar styles - backgroundColor: ${styles.backgroundColor}, color: ${styles.color}, fontFamily: ${styles.fontFamily} [Timestamp: ${new Date().toISOString()}]`);
       } else {
-        console.warn('Inline Script: Navbar not found for style debugging [Timestamp:', new Date().toISOString(), ']');
+        console.warn(`Inline Script: Navbar not found for style debugging [Timestamp: ${new Date().toISOString()}]`);
       }
       if (footer) {
         const styles = window.getComputedStyle(footer);
-        console.log(`Inline Script: Footer styles - backgroundColor: ${styles.backgroundColor}, color: ${styles.color}, fontFamily: ${styles.fontFamily} [Timestamp:', new Date().toISOString(), ']`);
+        console.log(`Inline Script: Footer styles - backgroundColor: ${styles.backgroundColor}, color: ${styles.color}, fontFamily: ${styles.fontFamily} [Timestamp: ${new Date().toISOString()}]`);
       } else {
-        console.warn('Inline Script: Footer not found for style debugging [Timestamp:', new Date().toISOString(), ']');
+        console.warn(`Inline Script: Footer not found for style debugging [Timestamp: ${new Date().toISOString()}]`);
       }
     });
   </script>
@@ -465,7 +404,7 @@
   <!-- Inline Cookie Notification Script (Minimal, for Persistent Notice) -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      console.log('Inline Script: Initializing cookie notice [Timestamp:', new Date().toISOString(), ']');
+      console.log(`Inline Script: Initializing cookie notice [Timestamp: ${new Date().toISOString()}]`);
       const cookieNotice = document.getElementById("cookieNotice");
       const agreeButton = document.getElementById("agreeCookie");
       const disagreeButton = document.getElementById("disagreeCookie");
@@ -473,15 +412,15 @@
 
       if (consent === "accepted" || consent === "declined") {
         cookieNotice.style.display = "none";
-        console.log('Inline Script: Cookie notice hidden (consent already set) [Timestamp:', new Date().toISOString(), ']');
+        console.log(`Inline Script: Cookie notice hidden (consent already set) [Timestamp: ${new Date().toISOString()}]`);
       } else {
-        cookieNotice.style.display = "block"; // Show persistently at the bottom
-        console.log('Inline Script: Cookie notice displayed (no consent) [Timestamp:', new Date().toISOString(), ']');
+        cookieNotice.style.display = "block";
+        console.log(`Inline Script: Cookie notice displayed (no consent) [Timestamp: ${new Date().toISOString()}]`);
       }
 
       if (agreeButton) {
         agreeButton.addEventListener("click", function() {
-          console.log('Inline Script: Cookie consent accepted [Timestamp:', new Date().toISOString(), ']');
+          console.log(`Inline Script: Cookie consent accepted [Timestamp: ${new Date().toISOString()}]`);
           localStorage.setItem("cookieChoice", "accepted");
           cookieNotice.style.display = "none";
         });
@@ -489,7 +428,7 @@
 
       if (disagreeButton) {
         disagreeButton.addEventListener("click", function() {
-          console.log('Inline Script: Cookie consent declined [Timestamp:', new Date().toISOString(), ']');
+          console.log(`Inline Script: Cookie consent declined [Timestamp: ${new Date().toISOString()}]`);
           localStorage.setItem("cookieChoice", "declined");
           cookieNotice.style.display = "none";
         });
@@ -497,7 +436,7 @@
     });
   </script>
 
-  <!-- Google Analytics (Optional, Based on Your Previous Files) -->
+  <!-- Google Analytics (Optional) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
