@@ -37,6 +37,7 @@ exports.userLogin = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
+    // Include role: 'user' in the token payload
     const token = jwt.sign({ id: user._id, role: 'user' }, JWT_SECRET, { expiresIn: '1h' });
     res.json({ message: 'Logged in successfully', token });
   } catch (error) {
@@ -83,6 +84,7 @@ exports.partnerLogin = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
+    // Include role: 'partner' in the token payload
     const token = jwt.sign({ id: partner._id, role: 'partner' }, JWT_SECRET, { expiresIn: '1h' });
     res.json({ message: 'Partner logged in successfully', token });
   } catch (error) {
